@@ -64,6 +64,14 @@ function AddConsumable(props) {
           onChange={handleChange}
         />
 
+        <label>Image URL:</label>
+        <textarea
+          type="text"
+          name="image"
+          value={consumable.image}
+          onChange={handleChange}
+        />
+
         <button type="submit">Add Consumable</button>
       </form>
     </div>

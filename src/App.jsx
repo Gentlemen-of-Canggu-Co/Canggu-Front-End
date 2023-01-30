@@ -11,8 +11,7 @@ import AddEvent from "./pages/AddEvent";
 import EditEvent from "./pages/EditEvent";
 import EditSpot from "./pages/EditSpot";
 import ConsumableDetailsPage from "./pages/ConsumableDetailsPage";
-
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar";
 // import IsPrivate from "./components/IsPrivate/IsPrivate";
 import IsAnon from "./components/IsAnon/IsAnon";
 import AddSpot from "./pages/AddSpot";
@@ -20,6 +19,7 @@ import AddSpot from "./pages/AddSpot";
 function App() {
   return (
     <div className="App">
+      {/* <Navbar /> */}
       <Navbar />
 
       <Routes>

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import EventListCard from "../components/EventList/EventListCard";
-// import EventListSeoText from "../components/EventList/EventListSeoText";
+import EventCard from "../components/SpotDetailsPage/EventCard";
 
 function EventList() {
   const [events, setEvents] = useState([]);
@@ -22,11 +21,8 @@ function EventList() {
 
 
 <div>
-  
   <h1>Upcoming events in Canggus Spots</h1>
-  <EventListCard events={events} spots={spots} />
-  {/* <EventListSeoText /> */}
-
+  <EventCard events={events}/>
 </div>
 
 
