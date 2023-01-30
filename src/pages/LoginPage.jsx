@@ -50,7 +50,12 @@ function LoginPage() {
 
       <form onSubmit={handleLoginSubmit}>
         <label>Username:</label>
-        <input type="text" name="username" value={email} onChange={handleEmail} />
+        <input
+          type="text"
+          name="username"
+          value={email}
+          onChange={handleEmail}
+        />
 
         <label>Password:</label>
         <input

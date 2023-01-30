@@ -1,11 +1,10 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import NavbarBS from 'react-bootstrap/Navbar';
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import NavbarBS from "react-bootstrap/Navbar";
 
-function Navbar(){
-
-    return(
-<NavbarBS bg="light" expand="lg">
+function Navbar() {
+  return (
+    <NavbarBS bg="light" expand="lg">
       <Container>
         <NavbarBS.Brand href="/">Taste of Canggu</NavbarBS.Brand>
         <NavbarBS.Toggle aria-controls="basic-navbar-nav" />
@@ -17,7 +16,7 @@ function Navbar(){
         </NavbarBS.Collapse>
       </Container>
     </NavbarBS>
-    )
+  );
 }
 
-export default Navbar
+export default Navbar;

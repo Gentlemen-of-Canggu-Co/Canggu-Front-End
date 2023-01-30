@@ -18,14 +18,10 @@ function EventList() {
   }, []);
 
   return (
-
-
-<div>
-  <h1>Upcoming events in Canggus Spots</h1>
-  <EventCard events={events}/>
-</div>
-
-
+    <div>
+      <h1>Upcoming events in Canggus Spots</h1>
+      <EventCard events={events} />
+    </div>
   );
 }
 

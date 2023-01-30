@@ -1,14 +1,7 @@
-function Map(props){
+function Map(props) {
+  const { spot } = props;
 
-    const {spot} = props
-
-    return(
-
-    <div
-      dangerouslySetInnerHTML={{__html: spot.location}}
-    />
-
-    )
+  return <div dangerouslySetInnerHTML={{ __html: spot.location }} />;
 }
 
-export default Map
+export default Map;
