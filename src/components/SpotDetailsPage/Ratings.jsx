@@ -11,15 +11,22 @@ const {spot} = props
         <p>Food</p>
     </div>   
 
+    {spot.coffeeRating && 
     <div>
         <p>{spot.coffeeRating}</p>
         <p>Coffee</p> 
-    </div> 
+    </div> }
+
+    {spot.drinkRating && 
+    <div>
+        <p>{spot.drinkRating}</p>
+        <p>Coffee</p> 
+    </div> }
 
     <div>
         <p>{spot.ambienceRating}</p>
         <p>Ambience</p>   
-    </div>    
+    </div>  
 
 </div>
     )

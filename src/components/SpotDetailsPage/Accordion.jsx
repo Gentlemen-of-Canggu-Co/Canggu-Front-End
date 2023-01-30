@@ -5,10 +5,9 @@ function Accordion(props){
     return(
 
         <div>
-            <button className="accordion">Opening Times & Contact</button>
-            <div className="panel">
-                <p>Opening times: {spot.openingTimes}</p>
-            </div>
+                <div
+      dangerouslySetInnerHTML={{__html: spot.openingTimes}}
+    />
         </div>
 
     )

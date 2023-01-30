@@ -11,6 +11,8 @@ import Accordion from "../components/SpotDetailsPage/Accordion";
 import Map from "../components/SpotDetailsPage/Map";
 import Description from "../components/SpotDetailsPage/Description";
 import EventCard from "../components/SpotDetailsPage/EventCard";
+import SpotCard from "../components/SpotList/SpotCard";
+import ConsumableCard from "../components/SpotDetailsPage/ConsumableCard";
 
 function SpotDetailsPage() {
 const API_URL= "http://localhost:5005"
@@ -25,36 +27,20 @@ useEffect(() => {
 
 <div>
 
-<ImgSlider spot={spot}/>
-<Overview spot={spot}/>
-<Ratings spot={spot}/>
+<SpotCard spot={spot} />
 <Pictograms spot={spot}/>
 <Menu spot={spot}/>
-<Accordion spot={spot}/>
-<Map spot={spot}/>
+<ConsumableCard spot={spot}/>
 <Description spot={spot}/>
 <EventCard spot={spot}/>
 
+<Accordion spot={spot}/>
+<Map spot={spot}/>
 
 
 
-{spot.consumables && spot.consumables.map((singleConsumable) =>{
-  return  <div>
 
-        <h1>{singleConsumable.name}</h1>
 
-        <img style={{width: "100vw"}} src={singleConsumable.image} alt="singleEventpicture" />
-
-        <div style={{display: "flex", justifyContent: "space-evenly"}}>
-            <p>{singleConsumable.tagline}</p>
-            <p>{singleConsumable.price}k IDR</p>
-            <p>{singleConsumable.rating}</p>
-
-        </div>
-        
-
-            </div>
-        })}
       <AddConsumable ownerId={spotId} />
       
       

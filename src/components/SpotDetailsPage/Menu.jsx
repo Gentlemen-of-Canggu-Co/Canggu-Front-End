@@ -1,3 +1,9 @@
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Typography from '@mui/material/Typography';
+
 function Menu(props){
 
 
@@ -5,8 +11,27 @@ function Menu(props){
 
     return(
 
-<div>
+<div>  <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          
+          <Typography><h2>{spot.name} menu</h2></Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+
+          <Typography>
+
+
     {spot.menuImage && <img style={{width: "100vw"}} src={spot.menuImage} alt="pictogram" />}
+
+</Typography>
+        </AccordionDetails>
+      </Accordion>
+
+
 </div>
 
     )
