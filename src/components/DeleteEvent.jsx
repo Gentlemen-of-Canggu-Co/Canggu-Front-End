@@ -1,3 +1,5 @@
+import Button from "@mui/material/Button";
+
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 const API_URL = "http://localhost:5005";
@@ -14,7 +16,7 @@ function DeleteEvent(props) {
 
   return (
     <div>
-      <button onClick={handleSubmit}>Delete Event</button>
+      <Button variant="contained" onClick={handleSubmit}>Delete Event</Button>
     </div>
   );
 }
