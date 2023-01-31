@@ -31,9 +31,9 @@ useEffect(() => {
 
 <Link to={`/events/${event._id}/edit`}><button>Edit Event</button></Link>
 
-        <h1>{event.name} @ {spot.name}</h1>
+        <h1>{event.name} @ <Link to={`/spots/${spot._id}`}>{spot.name}</Link></h1>
 
-        <img style={{width: "100vw"}} src={event.eventImage} alt="eventpicture" />
+        {event.eventImage && <img style={{width: "100vw"}} src={event.eventImage} alt="eventpicture" />}
 
         <div style={{display: "flex", justifyContent: "space-evenly"}}>
             <p>{event.date}</p>
@@ -45,7 +45,6 @@ useEffect(() => {
 <div style={{display: "flex", flexDirection: "column"}}>
 
 
-<button>See more Events</button>
 <add-to-calendar-button
   name={event.name}
   options="'Google'"

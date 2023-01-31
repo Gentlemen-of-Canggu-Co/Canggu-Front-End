@@ -2,16 +2,22 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import EventListCard from "../components/EventList/EventListCard";
 // import EventListSeoText from "../components/EventList/EventListSeoText";
+import Loading from '../components/Loading/Loading';
 
 function EventList() {
   const [events, setEvents] = useState([]);
   const [spots, setSpots] = useState([]);
+  const [isLoading, setIsLoading] = useState(false)
   const API_URL = "http://localhost:5005";
 
   useEffect(() => {
+    setIsLoading(true);
     axios
       .get(`${API_URL}/api/events`)
-      .then((response) => setEvents(response.data));
+      .then((response) => {
+        setEvents(response.data);
+        setIsLoading(false)
+      });
   }, []);
 
   useEffect(() => {
@@ -24,7 +30,7 @@ function EventList() {
 <div>
   
   <h1>Upcoming events in Canggus Spots</h1>
-  <EventListCard events={events} spots={spots} />
+  {isLoading ? <Loading/> : <EventListCard events={events} spots={spots} />}     
   {/* <EventListSeoText /> */}
 
 </div>

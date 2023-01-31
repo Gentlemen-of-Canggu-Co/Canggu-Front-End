@@ -11,6 +11,8 @@ function EventListCard(props){
     return(
    <div>
 
+{events === null && <h1>LOADING GEEZ</h1> }
+
 {events.map((event) => {
         return (
 
@@ -33,6 +35,7 @@ function EventListCard(props){
 
 <Card sx={{ maxWidth: "100vw" }}>
     <Box sx={{ position: 'relative' }}>
+
 
     <CardMedia
         sx={{ height: 220 }}

@@ -1,6 +1,5 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-
 import HomePage from "./pages/HomePage";
 import SpotList from "./pages/SpotList";
 import SpotDetailsPage from "./pages/SpotDetailsPage";
@@ -11,7 +10,6 @@ import AddEvent from "./pages/AddEvent";
 import EditEvent from "./pages/EditEvent";
 import EditSpot from "./pages/EditSpot";
 import ConsumableDetailsPage from "./pages/ConsumableDetailsPage";
-
 import Navbar from "./components/Navbar/Navbar";
 // import IsPrivate from "./components/IsPrivate/IsPrivate";
 import IsAnon from "./components/IsAnon/IsAnon";

@@ -1,3 +1,11 @@
 body {
   margin: 0;
 }
+
+.carousel {
+  background-color: black;
+}
+
+.carousel img{
+  opacity: 0.7;
+}
