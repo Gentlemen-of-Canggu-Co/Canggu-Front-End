@@ -17,7 +17,7 @@ function Menu(props) {
           id="panel1a-header"
         >
           <Typography>
-            <h2>{spot.name} menu</h2>
+            <h2>Menu</h2>
           </Typography>
         </AccordionSummary>
         <AccordionDetails>

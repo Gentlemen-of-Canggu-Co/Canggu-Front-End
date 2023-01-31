@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import SliderFilter from "../components/SpotList/SliderFilter";
 import SpotCard from "../components/SpotList/SpotCard";
+import Breadcrumbs from "../components/Breadcrumbs"
+
 
 function SpotList() {
   const [spots, setSpots] = useState([]);
@@ -17,6 +19,8 @@ function SpotList() {
 
   return (
     <div>
+      <Breadcrumbs spots={spots} />
+
       <h1>Spots in Canggu</h1>
       <p>Find your perfect spot, based on what matters to you.</p>
       <div>

@@ -22,7 +22,7 @@ function EventCard(props) {
             id="panel1a-header"
           >
             <Typography>
-              <h2>Events @ {spot.name}</h2>
+              <h2>Events</h2>
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
