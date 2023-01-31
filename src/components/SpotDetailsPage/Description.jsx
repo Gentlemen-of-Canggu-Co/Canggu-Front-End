@@ -22,7 +22,7 @@ function Description(props) {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography style={{textAlign: "justify"}}>
             {spot.description}
             <Pictograms spot={spot} />
           </Typography>
