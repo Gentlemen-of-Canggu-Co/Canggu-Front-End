@@ -20,7 +20,7 @@ function EventList() {
         setEvents(response.data);
         setIsLoading(false)
       });
-  }, []);
+  }, []); 
 
   useEffect(() => {
     axios
