@@ -34,8 +34,8 @@ function AddSpot() {
   const [meal6, setMeal6] = useState("");
 
   const navigate = useNavigate();
-  const API_URL = "http://localhost:5005";
-
+  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
+  
   useEffect(() => {
     const myWidget = window.cloudinary.createUploadWidget(
       {

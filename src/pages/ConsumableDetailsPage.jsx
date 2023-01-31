@@ -4,7 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import DeleteConsumable from "../components/DeleteConsumable";
 
 function ConsumableDetailsPage() {
-  const API_URL = "http://localhost:5005";
+  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
   const { consumableId } = useParams();
   const [consumable, setConsumable] = useState({});
   const [spot, setSpot] = useState({});

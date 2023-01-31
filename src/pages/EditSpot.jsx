@@ -6,8 +6,7 @@ function EditSpot(){
 
 const navigate = useNavigate()
 const {spotId} = useParams()    
-const API_URL= "http://localhost:5005"
-
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
 const [type, setType] = useState([])
 const [name, setName] = useState("")
 const [meal, setMeal] = useState([])

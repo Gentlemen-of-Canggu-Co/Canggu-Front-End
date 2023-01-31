@@ -13,8 +13,8 @@ import Description from "../components/SpotDetailsPage/Description";
 import EventCard from "../components/SpotDetailsPage/EventCard";
 
 function SpotDetailsPage() {
-const API_URL= "http://localhost:5005"
-const {spotId} = useParams()
+  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
+  const {spotId} = useParams()
 const [spot, setSpot] = useState({})
 
 useEffect(() => {

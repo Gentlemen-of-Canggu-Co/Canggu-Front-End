@@ -3,7 +3,7 @@ import axios from "axios";
 
 function AddConsumable(props) {
   const { ownerId } = props;
-  const API_URL = "http://localhost:5005";
+  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
   const [consumable, setConsumable] = useState({
     name: "",
     tagline: "",
@@ -15,7 +15,7 @@ function AddConsumable(props) {
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    setConsumable((consumable) => ({ ...consumable, [name]: value}))
+    setConsumable((consumable) => ({ ...consumable, [name]: value }));
   };
 
   const handleSubmit = (e) => {
@@ -23,7 +23,15 @@ function AddConsumable(props) {
 
     axios
       .post(`${API_URL}/api/consumable`, consumable)
-      .then(() => setConsumable({ name: "", tagline: "", price: 0, rating: 0, ownerId: ownerId }))
+      .then(() =>
+        setConsumable({
+          name: "",
+          tagline: "",
+          price: 0,
+          rating: 0,
+          ownerId: ownerId,
+        })
+      )
       .catch((err) => console.log(err));
   };
 
@@ -61,6 +69,14 @@ function AddConsumable(props) {
           type="number"
           name="rating"
           value={consumable.rating}
+          onChange={handleChange}
+        />
+
+        <label>Image URL:</label>
+        <textarea
+          type="text"
+          name="image"
+          value={consumable.image}
           onChange={handleChange}
         />
 
