@@ -3,6 +3,7 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Pictograms from "./Pictograms";
 
 function Description(props) {
   const { spot } = props;
@@ -17,12 +18,13 @@ function Description(props) {
           id="panel1a-header"
         >
           <Typography>
-            <h2>Description</h2>
+            <h2>Review</h2>
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            <p>{spot.description}</p>
+            {spot.description}
+            <Pictograms spot={spot} />
           </Typography>
         </AccordionDetails>
       </Accordion>

@@ -118,7 +118,7 @@ function SpotCard(props) {
         <Card sx={{ maxWidth: "100vw" }}>
           <Box sx={{ position: "relative" }}>
             <CardMedia
-              sx={{ height: 220 }}
+              sx={{ height: 400 }}
               image={spot.spotImage}
               title="green iguana"
             />
@@ -148,7 +148,7 @@ function SpotCard(props) {
                   </Typography>
                 </div>
 
-                <p
+                {/* <p
                   style={{
                     fontSize: "2rem",
                     alignContent: "center",
@@ -158,7 +158,7 @@ function SpotCard(props) {
                   }}
                 >
                   {spot.overallRating}
-                </p>
+                </p> */}
               </div>
             </Box>
           </Box>

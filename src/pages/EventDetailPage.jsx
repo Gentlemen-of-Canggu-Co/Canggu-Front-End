@@ -6,6 +6,8 @@ import DeleteEvent from "../components/DeleteEvent";
 import EventCard from "../components/SpotDetailsPage/EventCard";
 import Button from "@mui/material/Button";
 import { Typography } from "@mui/material";
+import Breadcrumbs from "../components/Breadcrumbs"
+
 
 function EventDetailPage() {
   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
@@ -33,7 +35,7 @@ function EventDetailPage() {
         </Link>
         <DeleteEvent eventId={eventId} />
       </div>
-
+      <Breadcrumbs event={event} />
       <EventCard spot={spot} event={event} />
       <Typography>{event.description}</Typography>
 

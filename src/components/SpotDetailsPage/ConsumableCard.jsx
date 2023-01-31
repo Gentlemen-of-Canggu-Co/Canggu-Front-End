@@ -19,7 +19,7 @@ function ConsumableCard(props) {
           id="panel1a-header"
         >
           <Typography>
-            <h2>What I ate @ {spot.name}</h2>
+            <h2>What (not) to eat</h2>
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
