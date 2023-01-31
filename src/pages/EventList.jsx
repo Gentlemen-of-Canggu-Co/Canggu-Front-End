@@ -9,7 +9,7 @@ function EventList() {
   const [spots, setSpots] = useState([]);
   const [isLoading, setIsLoading] = useState(false)
   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
-
+  
   useEffect(() => {
     setIsLoading(true);
     axios
