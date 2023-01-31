@@ -37,7 +37,7 @@ function EventList() {
           <Breadcrumbs events={events} />
 
       <h1>Upcoming events in Canggus Spots</h1>
-      <EventCard events={events} />
+      {isLoading ? <Loading/> :<EventCard events={events} />}
     </div>
   );
 }
