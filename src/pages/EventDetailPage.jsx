@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 import { Typography } from "@mui/material";
 
 function EventDetailPage() {
-  const API_URL = "http://localhost:5005";
+  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
   const { eventId } = useParams();
   const [event, setEvent] = useState({});
   const [spot, setSpot] = useState({});
