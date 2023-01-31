@@ -15,6 +15,7 @@ import Navbar from "./components/Navbar";
 // import IsPrivate from "./components/IsPrivate/IsPrivate";
 import IsAnon from "./components/IsAnon/IsAnon";
 import AddSpot from "./pages/AddSpot";
+import Footer from "./pages/Footer";
 
 function App() {
   return (
@@ -63,6 +64,8 @@ function App() {
           }
         />
       </Routes>
+
+      <Footer />
     </div>
   );
 }
