@@ -14,7 +14,7 @@ function ConsumableDetailsPage() {
       .get(`${API_URL}/api/consumable/${consumableId}`)
       .then((response) => setConsumable(response.data));
   }, [consumableId]);
-
+ 
   useEffect(() => {
     axios
       .get(`${API_URL}/api/spots/${consumable.owner}`)
