@@ -26,7 +26,6 @@ function AddEvent() {
       (error, result) => {
         if (!error && result && result.event === "success") {
           setEventImage(result.info.secure_url);
-          console.log(eventImage)
         }
       }
     );

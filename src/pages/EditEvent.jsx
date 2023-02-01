@@ -27,7 +27,7 @@ function EditEvent() {
       (error, result) => {
         if (!error && result && result.event === "success") {
           setEventImage(result.info.secure_url);
-          console.log(result.info.secure_url)
+          console.log(result.info.secure_url);
         }
       }
     );
@@ -38,12 +38,28 @@ function EditEvent() {
       },
       false
     );
-    document.getElementById("upload_widget").addEventListener("click", (event) => {
-      event.preventDefault()
-    });
+    document
+      .getElementById("upload_widget")
+      .addEventListener("click", (event) => {
+        event.preventDefault();
+      });
   }, []);
 
-  
+  useEffect(() => {
+    axios.get(`${API_URL}/api/events/${eventId}`).then((response) => {
+      setName(response.data.name);
+      setDescription(response.data.description);
+      setPrice(response.data.price);
+      setStartDate(response.data.startDate);
+      setEndDate(response.data.endDate);
+      setStartTime(response.data.startTime);
+      setEndTime(response.data.endTime);
+      setSignupRequired(response.data.signupRequired);
+      setSignupLink(response.data.signupLink);
+      setEventImage(response.data.eventImage);
+    });
+  }, [eventId]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -62,30 +78,16 @@ function EditEvent() {
     };
 
     axios.put(`${API_URL}/api/events/${eventId}`, editedEvent).then(() => {
+      console.log(editedEvent);
       navigate("/events");
     });
   };
-
-  useEffect(() => {
-    axios.get(`${API_URL}/api/events/${eventId}`).then((response) => {
-      setName(response.data.name);
-      setDescription(response.data.description);
-      setPrice(response.data.price);
-      setStartDate(response.data.startDate);
-      setEndDate(response.data.endDate);
-      setStartTime(response.data.startTime);
-      setEndTime(response.data.endTime);
-      setSignupRequired(response.data.signupRequired);
-      setSignupLink(response.data.signupLink);
-      setEventImage(response.data.eventImage);
-    });
-  }, [eventId]);
 
   return (
     <div>
       <div>
         <h3>Add new Event</h3>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} encType="multipart/form-data">
           <label>Name</label>
           <input
             type="text"
@@ -144,9 +146,9 @@ function EditEvent() {
           />
           <br />
           <label>Event image</label>
-        <button id="upload_widget" className="cloudinary-button">
-          Change
-        </button>
+          <button id="upload_widget" className="cloudinary-button">
+            Change
+          </button>
           <br />
           <label>Do you need to sign up?</label>
           <input
@@ -164,7 +166,7 @@ function EditEvent() {
             onChange={(event) => setSignupLink(event.target.value)}
           />
           <br />
-       
+
           <button type="submit">Edit Event</button>
         </form>
       </div>
