@@ -58,7 +58,7 @@ function SliderFilter(props) {
           <Typography>Filter results</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography component={'div'}>
             <div>
               <form onSubmit={handleSubmit}>
                 <div
