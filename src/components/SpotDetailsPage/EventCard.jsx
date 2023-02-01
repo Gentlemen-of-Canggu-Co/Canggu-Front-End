@@ -161,12 +161,12 @@ function EventCard(props) {
           <Card sx={{ maxWidth: "100vw" }}>
             <Box sx={{ position: "relative" }}>
               <CardMedia
-                sx={{ height: 220 }}
+                sx={{ height: 400 }}
                 image={event.eventImage}
                 title="green iguana"
               />
 
-              <Box
+              {/* <Box
                 sx={{
                   position: "absolute",
                   bottom: 0,
@@ -176,32 +176,32 @@ function EventCard(props) {
                   color: "white",
                   padding: "10px",
                 }}
-              >
-                <div
+              > */}
+                {/* <div
                   style={{
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
                   }}
-                >
-                  <div>
-                    <Typography variant="h5">
+                > */}
+                  {/* <div> */}
+                    {/* <Typography variant="h5">
                       {event.name} @ {spot.name}
-                    </Typography>
-                    {event.price && (
+                    </Typography> */}
+                    {/* {event.price && (
                       <Typography variant="body2">
-                        {event.startDate} | {event.startTime} | {event.price}k{" "}
+                        {event.startDate} | {event.startTime} | {event.price}k
                       </Typography>
                     )}
                     {!event.price && (
                       <Typography variant="body2">
-                        {event.startDate} | {event.startTime} | Free{" "}
+                        {event.startDate} | {event.startTime} | Free
                       </Typography>
-                    )}
-                  </div>
-                </div>
+                    )} */}
+                  {/* </div> */}
+                {/* </div> */}
               </Box>
-            </Box>
+            {/* </Box> */}
           </Card>
         </div>
       )}
