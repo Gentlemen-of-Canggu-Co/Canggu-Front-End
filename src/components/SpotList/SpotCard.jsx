@@ -13,8 +13,7 @@ function SpotCard(props) {
 
   return (
     <div>
-      {spots &&
-        spots &&
+      {spots && 
         filteredSpots.map((spot) => {
           return (
             <div key={spot._id}>
@@ -37,20 +36,20 @@ function SpotCard(props) {
                       padding: "10px",
                     }}
                   >
-                    <div
+                    {/* <div
                       style={{
                         display: "flex",
                         justifyContent: "space-between",
                         alignItems: "center",
                       }}
-                    >
+                    > */}
                       <div>
                         <Typography variant="h5">{spot.name}</Typography>
                         <Typography variant="body2">
                           <i>{spot.tagline}</i>
                         </Typography>
                       </div>
-
+{/* 
                       <p
                         style={{
                           fontSize: "2rem",
@@ -62,7 +61,7 @@ function SpotCard(props) {
                       >
                         {spot.overallRating}
                       </p>
-                    </div>
+                    </div> */}
                   </Box>
                 </Box>
 
@@ -134,19 +133,19 @@ function SpotCard(props) {
                 padding: "10px",
               }}
             >
-              <div
+              {/* <div
                 style={{
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
                 }}
-              >
-                <div>
-                  <Typography variant="h5">{spot.name}</Typography>
-                  <Typography variant="body2">
-                    <i>{spot.tagline}</i>
-                  </Typography>
-                </div>
+              > */}
+                      <div>
+                        <Typography variant="h5">{spot.name}</Typography>
+                        <Typography variant="body2">
+                          <i>{spot.tagline}</i>
+                        </Typography>
+                      </div>
 
                 {/* <p
                   style={{
@@ -159,7 +158,7 @@ function SpotCard(props) {
                 >
                   {spot.overallRating}
                 </p> */}
-              </div>
+              {/* </div> */}
             </Box>
           </Box>
 
