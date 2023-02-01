@@ -8,7 +8,7 @@ import { AuthContext } from "../context/auth.context";
 
 function Navbar() {
   const {
-    isLoggiedIn,
+    isLoggedIn,
     user,
     logOutUser
   } = useContext(AuthContext);
