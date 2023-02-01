@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <NavbarBS bg="light" expand="lg">
       <Container>
-        <NavbarBS.Brand href="/">Taste of Canggu</NavbarBS.Brand>
+        <NavbarBS.Brand href="/">Chunks of Canggu</NavbarBS.Brand>
         <NavbarBS.Toggle aria-controls="basic-navbar-nav" />
         <NavbarBS.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
