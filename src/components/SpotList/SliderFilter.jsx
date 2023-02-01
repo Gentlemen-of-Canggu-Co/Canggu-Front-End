@@ -49,7 +49,7 @@ function SliderFilter(props) {
 
   return (
     <div>
-      <Accordion>
+      <Accordion style={{marginBottom: "20px"}}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -65,11 +65,11 @@ function SliderFilter(props) {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "space-evenly",
+                    // justifyContent: "space-evenly",
                   }}
                 >
                   <Slider
-                    style={{ width: "60vw" }}
+                    style={{ width: "60vw" ,marginRight: "10px"}}
                     aria-label="Overall"
                     defaultValue={1}
                     sx={{
@@ -93,11 +93,11 @@ function SliderFilter(props) {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "space-evenly",
+                    // justifyContent: "space-evenly",
                   }}
                 >
                   <Slider
-                    style={{ width: "60vw" }}
+                    style={{ width: "60vw" ,marginRight: "10px"}}
                     aria-label="Food"
                     defaultValue={1}
                     //   getAriaValueText={valuetext}
@@ -120,11 +120,11 @@ function SliderFilter(props) {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "space-evenly",
+                    // justifyContent: "space-evenly",
                   }}
                 >
                   <Slider
-                    style={{ width: "60vw" }}
+                    style={{ width: "60vw" ,marginRight: "10px"}}
                     aria-label="Coffee"
                     defaultValue={1}
                     //   getAriaValueText={valuetext}
@@ -147,11 +147,11 @@ function SliderFilter(props) {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "space-evenly",
+                    // justifyContent: "space-evenly",
                   }}
                 >
                   <Slider
-                    style={{ width: "60vw" }}
+                    style={{ width: "60vw" ,marginRight: "10px"}}
                     aria-label="Ambience"
                     defaultValue={1}
                     name="AbienceRating"
