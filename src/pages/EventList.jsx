@@ -23,12 +23,6 @@ function EventList() {
   }, []); 
 
   useEffect(() => {
-    axios
-      .get(`${API_URL}/api/events`)
-      .then((response) => setEvents(response.data));
-  }, []);
-
-  useEffect(() => {
     axios.get(`${API_URL}/api/spots`).then((result) => setSpots(result.data));
   }, []);
 

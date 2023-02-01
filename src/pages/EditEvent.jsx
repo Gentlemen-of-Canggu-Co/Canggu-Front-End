@@ -7,20 +7,43 @@ function EditEvent() {
   const { eventId } = useParams();
   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
 
-  const [name, setName] = useState();
+  const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState();
+  const [price, setPrice] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
   const [signupRequired, setSignupRequired] = useState(false);
   const [signupLink, setSignupLink] = useState("No signup required.");
-  const [eventImage, setEventImage] = useState(
-    "https://img.freepik.com/premium-vector/red-beer-pong-pyramyd-illustration-plastic-cups-ball-with-splashing-beer-traditional-party-drinking-game_501173-311.jpg?w=2000"
-  );
-  const [ownerId, setOwnerId] = useState("");
+  const [eventImage, setEventImage] = useState("");
 
+  useEffect(() => {
+    const myWidget = window.cloudinary.createUploadWidget(
+      {
+        cloudName: "dya5f34qe",
+        uploadPreset: "uw_test",
+      },
+      (error, result) => {
+        if (!error && result && result.event === "success") {
+          setEventImage(result.info.secure_url);
+          console.log(result.info.secure_url)
+        }
+      }
+    );
+    document.getElementById("upload_widget").addEventListener(
+      "click",
+      function () {
+        myWidget.open();
+      },
+      false
+    );
+    document.getElementById("upload_widget").addEventListener("click", (event) => {
+      event.preventDefault()
+    });
+  }, []);
+
+  
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -35,11 +58,11 @@ function EditEvent() {
       signupRequired,
       signupLink,
       eventImage,
-      ownerId,
+      ownerId: eventId,
     };
 
     axios.put(`${API_URL}/api/events/${eventId}`, editedEvent).then(() => {
-      navigate("/");
+      navigate("/events");
     });
   };
 
@@ -55,7 +78,6 @@ function EditEvent() {
       setSignupRequired(response.data.signupRequired);
       setSignupLink(response.data.signupLink);
       setEventImage(response.data.eventImage);
-      setOwnerId(response.data._id);
     });
   }, [eventId]);
 
@@ -122,12 +144,9 @@ function EditEvent() {
           />
           <br />
           <label>Event image</label>
-          <input
-            type="string"
-            name="eventImage"
-            value={eventImage}
-            onChange={(event) => setEventImage(event.target.value)}
-          />
+        <button id="upload_widget" className="cloudinary-button">
+          Change
+        </button>
           <br />
           <label>Do you need to sign up?</label>
           <input
@@ -145,13 +164,7 @@ function EditEvent() {
             onChange={(event) => setSignupLink(event.target.value)}
           />
           <br />
-          <label>DONT CHANGE DUDE</label>
-          <input
-            type="text"
-            name="ownerId"
-            value={ownerId}
-            onChange={(event) => setOwnerId(event.target.value)}
-          />
+       
           <button type="submit">Edit Event</button>
         </form>
       </div>
