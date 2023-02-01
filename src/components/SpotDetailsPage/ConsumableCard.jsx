@@ -20,12 +20,12 @@ function ConsumableCard(props) {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>
+          <Typography component={'div'}>
             <h2>What (not) to eat</h2>
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography component={'div'}>
             {spot.consumables &&
               spot.consumables.map((singleConsumable) => {
                 return (
@@ -57,10 +57,10 @@ function ConsumableCard(props) {
                             }}
                           >
                             <div>
-                              <Typography variant="h5">
+                              <Typography component={'div'} variant="h5">
                                 {singleConsumable.name}
                               </Typography>
-                              <Typography variant="body2">
+                              <Typography component={'div'} variant="body2">
                                 {singleConsumable.tagline}
                               </Typography>
                             </div>
@@ -89,7 +89,7 @@ function ConsumableCard(props) {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>
+          <Typography component={'div'}>
             <h2>Add new consumable</h2>
           </Typography>
         </AccordionSummary>

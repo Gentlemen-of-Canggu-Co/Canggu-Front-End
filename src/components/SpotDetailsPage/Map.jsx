@@ -13,7 +13,7 @@ function Map(props) {
     aria-controls="panel1a-content"
     id="panel1a-header"
   >
-    <Typography>
+    <Typography component={'div'}>
       <h2>Location</h2>
       </Typography>
 </AccordionSummary>

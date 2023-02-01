@@ -21,12 +21,12 @@ function EventCard(props) {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography>
+            <Typography component={'div'}>
               <h2>Events</h2>
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
+            <Typography component={'div'}>
               {spot.events &&
                 spot.events.map((singleEvent) => {
                   return (
@@ -58,18 +58,18 @@ function EventCard(props) {
                               }}
                             >
                               <div>
-                                <Typography variant="h5">
+                                <Typography component={'div'} variant="h5">
                                   {singleEvent.name}
                                 </Typography>
                                 {singleEvent.price && (
-                                  <Typography variant="body2">
+                                  <Typography component={'div'} variant="body2">
                                     {singleEvent.startDate} |{" "}
                                     {singleEvent.startTime} |{" "}
                                     {singleEvent.price}k{" "}
                                   </Typography>
                                 )}
                                 {!singleEvent.price && (
-                                  <Typography variant="body2">
+                                  <Typography component={'div'} variant="body2">
                                     {singleEvent.startDate} |{" "}
                                     {singleEvent.startTime} | Free{" "}
                                   </Typography>
@@ -129,15 +129,15 @@ function EventCard(props) {
                       }}
                     >
                       <div>
-                        <Typography variant="h5">{event.name}</Typography>
+                        <Typography component={'div'} variant="h5">{event.name}</Typography>
                         {event.price && (
-                          <Typography variant="body2">
+                          <Typography component={'div'} variant="body2">
                             {event.startDate} | {event.startTime} |{" "}
                             {event.price}k{" "}
                           </Typography>
                         )}
                         {!event.price && (
-                          <Typography variant="body2">
+                          <Typography component={'div'} variant="body2">
                             {event.startDate} | {event.startTime} | Free{" "}
                           </Typography>
                         )}{" "}
