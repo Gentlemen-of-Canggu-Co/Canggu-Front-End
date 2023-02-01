@@ -24,15 +24,6 @@ function SpotDetailsPage() {
   const getSpot = () => {
     axios
       .get(`${API_URL}/api/spots/${spotId}`)
-
-      .then((response) => {setSpot(response.data); setIsLoading(false)});
-  }, [spotId]);
-
-  if(isLoading){
-    return <p>Loading</p>
-  }
-
-
       .then((response) => setSpot(response.data));
   }
 
