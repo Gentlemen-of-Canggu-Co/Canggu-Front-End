@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom';
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
@@ -6,9 +7,10 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import AddConsumable from './AddConsumable';
 
 function ConsumableCard(props) {
-  const { spot } = props;
+  const { spot, spotId, getSpots } = props;
   return (
     <div>
       {" "}
@@ -18,23 +20,23 @@ function ConsumableCard(props) {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>
+          <Typography component={'div'}>
             <h2>What (not) to eat</h2>
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography component={'div'}>
             {spot.consumables &&
               spot.consumables.map((singleConsumable) => {
                 return (
                   <div key={singleConsumable._id}>
                     <Card sx={{ maxWidth: "100vw" }}>
                       <Box sx={{ position: "relative" }}>
-                        <CardMedia
+                        <Link to={`/consumable/${singleConsumable._id}`}><CardMedia
                           sx={{ height: 220 }}
                           image={singleConsumable.image}
                           title="green iguana"
-                        />
+                        /></Link>
 
                         <Box
                           sx={{
@@ -55,10 +57,10 @@ function ConsumableCard(props) {
                             }}
                           >
                             <div>
-                              <Typography variant="h5">
+                              <Typography component={'div'} variant="h5">
                                 {singleConsumable.name}
                               </Typography>
-                              <Typography variant="body2">
+                              <Typography component={'div'} variant="body2">
                                 {singleConsumable.tagline}
                               </Typography>
                             </div>
@@ -81,7 +83,20 @@ function ConsumableCard(props) {
                   </div>
                 );
               })}
+          </Typography><Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography component={'div'}>
+            <h2>Add new consumable</h2>
           </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <AddConsumable spotId={spotId} getSpots={getSpots}/>
+          </AccordionDetails>
+          </Accordion>
         </AccordionDetails>
       </Accordion>
     </div>

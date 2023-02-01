@@ -16,6 +16,7 @@ function AddEvent() {
   const ownerId = spotId;
   const navigate = useNavigate();
   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
+  
   useEffect(() => {
     const myWidget = window.cloudinary.createUploadWidget(
       {
@@ -25,6 +26,7 @@ function AddEvent() {
       (error, result) => {
         if (!error && result && result.event === "success") {
           setEventImage(result.info.secure_url);
+          console.log(eventImage)
         }
       }
     );
@@ -36,6 +38,7 @@ function AddEvent() {
       false
     );
   }, []);
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     const newEvent = {

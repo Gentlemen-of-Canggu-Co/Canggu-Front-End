@@ -43,8 +43,8 @@ function SpotCard(props) {
                       }}
                     > */}
                       <div>
-                        <Typography variant="h5">{spot.name}</Typography>
-                        <Typography variant="body2">
+                        <Typography component={'div'} variant="h5">{spot.name}</Typography>
+                        <Typography component={'div'} variant="body2">
                           <i>{spot.tagline}</i>
                         </Typography>
                       </div>
@@ -65,7 +65,7 @@ function SpotCard(props) {
                 </Box>
 
                 <CardContent>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography component={'div'} variant="body2" color="text.secondary">
                     <div style={{ display: "flex" }}>
                       <div style={{ display: "flex", width: "100vw" }}>
                         <div
@@ -140,8 +140,8 @@ function SpotCard(props) {
                 }}
               > */}
                       <div>
-                        <Typography variant="h5">{spot.name}</Typography>
-                        <Typography variant="body2">
+                        <Typography component={'div'} variant="h5">{spot.name}</Typography>
+                        <Typography component={'div'} variant="body2">
                           <i>{spot.tagline}</i>
                         </Typography>
                       </div>
@@ -162,7 +162,7 @@ function SpotCard(props) {
           </Box>
 
           <CardContent>
-            <Typography variant="body2" color="text.secondary">
+            <Typography component={'div'} variant="body2" color="text.secondary">
               <div
                 style={{
                   display: "flex",

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -12,11 +12,11 @@ function AddSpot() {
   const [spotImage, setSpotImage] = useState("");
   const [priceLevel, setPriceLevel] = useState("");
   const [description, setDescription] = useState("");
-  const [overallRating, setOverallRating] = useState(null);
-  const [coffeeRating, setCoffeeRating] = useState(null);
-  const [drinkRating, setDrinkRating] = useState(null);
-  const [foodRating, setFoodRating] = useState(null);
-  const [ambienceRating, setAmbienceRating] = useState(null);
+  const [overallRating, setOverallRating] = useState("");
+  const [coffeeRating, setCoffeeRating] = useState("");
+  const [drinkRating, setDrinkRating] = useState("");
+  const [foodRating, setFoodRating] = useState("");
+  const [ambienceRating, setAmbienceRating] = useState("");
   const [veganFriendly, setVeganFriendly] = useState(false);
   const [hasPool, setHasPool] = useState(false);
   const [coWorkingFriendly, setCoWorkingFriendly] = useState(false);
@@ -35,9 +35,50 @@ function AddSpot() {
 
   const navigate = useNavigate();
   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
+  const pics = [];
 
+  useEffect(() => {
+    const myWidget = window.cloudinary.createUploadWidget(
+      {
+        cloudName: "dya5f34qe",
+        uploadPreset: "uw_test"
+      },
+      (error, result) => {
+        if (!error && result && result.event === "success") {
+          pics.push(result.info.secure_url);
+          setSpotImage(pics[0]);
+          setMenuImage(pics[1])
+        }
+      }
+    );
+    
+    document.getElementById("upload_widget1").addEventListener(
+      "click",
+      function () {
+        myWidget.open();
+      },
+      false
+    );
+    document.getElementById("upload_widget2").addEventListener(
+      "click",
+      function () {
+        myWidget.open();
+      },
+      false
+    );
+
+    document.getElementById("upload_widget1").addEventListener("click", (event) => {
+      event.preventDefault()
+    });
+    document.getElementById("upload_widget2").addEventListener("click", (event) => {
+      event.preventDefault()
+    })  
+    
+  }, []);
+  
   const handleSubmit = (e) => {
     e.preventDefault();
+   
     const meal = [];
 
     if (meal1 !== "") {
@@ -90,10 +131,11 @@ function AddSpot() {
       events,
       consumables,
     };
-
     axios.post(`${API_URL}/api/spots`, newSpot).then((response) => {
+      console.log('this is a string', response.data);
       navigate(`/spots/${response.data._id}`);
     });
+
   };
 
   return (
@@ -106,6 +148,7 @@ function AddSpot() {
             type="text"
             name="type"
             value={type}
+            required
             onChange={(event) => setType(event.target.value)}
           />
           <br />
@@ -114,6 +157,7 @@ function AddSpot() {
             type="text"
             name="meal1"
             value={meal1}
+            required
             onChange={(event) => setMeal1(event.target.value)}
           />
           <br />
@@ -163,6 +207,7 @@ function AddSpot() {
             type="text"
             name="name"
             value={name}
+            required
             onChange={(event) => setName(event.target.value)}
           />
           <br />
@@ -171,6 +216,7 @@ function AddSpot() {
             type="text"
             name="tagline"
             value={tagline}
+            required
             onChange={(event) => setTagline(event.target.value)}
           />
           <br />
@@ -190,27 +236,20 @@ function AddSpot() {
             onChange={(event) => setOpeningTimes(event.target.value)}
           />
           <br />
-          <label>Menu Image</label>
-          <input
-            type="text"
-            name="menuImage"
-            value={menuImage}
-            onChange={(event) => setMenuImage(event.target.value)}
-          />
+          <button id="upload_widget1" className="cloudinary-button">
+            Upload Spot Image
+          </button>
           <br />
-          <label>Spot Images</label>
-          <input
-            type="text"
-            name="spotImages"
-            value={spotImage}
-            onChange={(event) => setSpotImage(event.target.value)}
-          />
+          <button id="upload_widget2" className="cloudinary-button">
+            Upload Menu image
+          </button>
           <br />
           <label>priceLevel</label>
           <input
             type="text"
             name="priceLevel"
             value={priceLevel}
+            required
             onChange={(event) => setPriceLevel(event.target.value)}
           />
           <br />

@@ -12,10 +12,11 @@ import EditEvent from "./pages/EditEvent";
 import EditSpot from "./pages/EditSpot";
 import ConsumableDetailsPage from "./pages/ConsumableDetailsPage";
 import Navbar from "./components/Navbar";
-// import IsPrivate from "./components/IsPrivate/IsPrivate";
+import IsPrivate from "./components/IsPrivate/IsPrivate";
 import IsAnon from "./components/IsAnon/IsAnon";
 import AddSpot from "./pages/AddSpot";
 import Footer from "./pages/Footer";
+import SignupPage from "./pages/SignupPage";
 
 function App() {
   return (
@@ -30,31 +31,30 @@ function App() {
 
         <Route path="/spots" element={<SpotList />} />
 
-        <Route path="/spots/create" element={<AddSpot />} />
+        <Route path="/spots/create" element={<IsPrivate><AddSpot /></IsPrivate>} />
 
-        <Route path="/events/:eventId" element={<EventDetailPage />} />
-
-        <Route path="/spots/:spotId/edit" element={<EditSpot />} />
+        <Route path="/spots/:spotId/edit" element={<IsPrivate><EditSpot /></IsPrivate>} />
 
         <Route path="/events" element={<EventList />} />
 
-        <Route path="/events/:spotId/create" element={<AddEvent />} />
+        <Route path="/events/:eventId" element={<EventDetailPage />} />
 
-        <Route path="/events/:eventId/edit" element={<EditEvent />} />
+        <Route path="/events/:spotId/create" element={<IsPrivate><AddEvent /></IsPrivate>} />
+
+        <Route path="/events/:eventId/edit" element={<IsPrivate><EditEvent /></IsPrivate>} />
 
         <Route
           path="/consumable/:consumableId"
           element={<ConsumableDetailsPage />}
         />
 
-        {/* <Route
+        <Route
           path="/signup"
           element={
             <IsAnon>
               <SignupPage />
             </IsAnon>
-          } */}
-        {/* /> */}
+          }/> 
         <Route
           path="/login"
           element={

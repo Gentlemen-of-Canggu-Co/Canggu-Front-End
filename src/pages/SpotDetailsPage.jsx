@@ -21,15 +21,25 @@ function SpotDetailsPage() {
   const [isLoading, setIsLoading] = useState(true)
   console.log("LENGTH OF ARRAY",typeof spot.events)
 
-  useEffect(() => {
+  const getSpot = () => {
     axios
       .get(`${API_URL}/api/spots/${spotId}`)
+
       .then((response) => {setSpot(response.data); setIsLoading(false)});
   }, [spotId]);
 
   if(isLoading){
     return <p>Loading</p>
   }
+
+
+      .then((response) => setSpot(response.data));
+  }
+
+  useEffect(() => {
+    getSpot()
+  }, [spotId]);
+  
 
   return (
     <div>
@@ -45,7 +55,7 @@ function SpotDetailsPage() {
       <Breadcrumbs spot={spot} />
       <SpotCard spot={spot} />
       <Description spot={spot} />
-      <ConsumableCard spot={spot} />
+      <ConsumableCard spotId={spotId} getSpot={getSpot} spot={spot} />
       <Menu spot={spot} />
       {/* <Map spot={spot} /> */}
 {   spot.events.length > 0 && <EventCard spot={spot} />}

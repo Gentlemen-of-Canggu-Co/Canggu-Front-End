@@ -10,7 +10,7 @@ function Pictograms(props) {
   const { spot } = props;
 
   return (
-    <Typography>
+    <Typography component={'div'}>
       <div
         style={{
           display: "flex",
