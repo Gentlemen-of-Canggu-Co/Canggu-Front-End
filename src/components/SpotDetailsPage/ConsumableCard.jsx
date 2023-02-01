@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom';
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
@@ -6,7 +7,7 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import AddConsumable from "../../pages/ConsumableDetailsPage";
+import AddConsumable from './AddConsumable';
 
 function ConsumableCard(props) {
   const { spot, spotId, getSpots } = props;
@@ -31,11 +32,11 @@ function ConsumableCard(props) {
                   <div key={singleConsumable._id}>
                     <Card sx={{ maxWidth: "100vw" }}>
                       <Box sx={{ position: "relative" }}>
-                        <CardMedia
+                        <Link to={`/consumable/${singleConsumable._id}`}><CardMedia
                           sx={{ height: 220 }}
                           image={singleConsumable.image}
                           title="green iguana"
-                        />
+                        /></Link>
 
                         <Box
                           sx={{
