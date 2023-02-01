@@ -18,6 +18,7 @@ function SpotDetailsPage() {
   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
   const { spotId } = useParams();
   const [spot, setSpot] = useState({});
+  console.log("LENGTH OF ARRAY",typeof spot.events)
 
   useEffect(() => {
     axios

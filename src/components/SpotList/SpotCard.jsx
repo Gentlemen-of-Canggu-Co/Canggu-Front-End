@@ -10,7 +10,6 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 
 function SpotCard(props) {
   const { spots, filteredSpots, spot } = props;
-
   return (
     <div>
       {spots && 
