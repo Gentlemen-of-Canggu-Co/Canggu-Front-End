@@ -31,7 +31,7 @@ function EventCard(props) {
                 spot.events.map((singleEvent) => {
                   return (
                     <div key={singleEvent._id}>
-                      <Card sx={{ maxWidth: "100vw" }}>
+                      <Card sx={{ maxWidth: "100vw"}}>
                         <Box sx={{ position: "relative" }}>
                           <CardMedia
                             sx={{ height: 220 }}
@@ -107,7 +107,7 @@ function EventCard(props) {
                   <CardMedia
                     sx={{ height: 220 }}
                     image={event.eventImage}
-                    title="green iguana"
+                    title={event.eventImage}
                   />
 
                   <Box

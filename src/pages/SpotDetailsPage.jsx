@@ -18,13 +18,19 @@ function SpotDetailsPage() {
   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
   const { spotId } = useParams();
   const [spot, setSpot] = useState({});
+  const [isLoading, setIsLoading] = useState(true)
   console.log("LENGTH OF ARRAY",typeof spot.events)
 
   useEffect(() => {
     axios
       .get(`${API_URL}/api/spots/${spotId}`)
-      .then((response) => setSpot(response.data));
+      .then((response) => {setSpot(response.data); setIsLoading(false)});
   }, [spotId]);
+
+  if(isLoading){
+    return <p>Loading</p>
+  }
+
   return (
     <div>
 
@@ -42,7 +48,7 @@ function SpotDetailsPage() {
       <ConsumableCard spot={spot} />
       <Menu spot={spot} />
       {/* <Map spot={spot} /> */}
-      <EventCard spot={spot} />
+{   spot.events.length > 0 && <EventCard spot={spot} />}
       {/* <AddConsumable ownerId={spotId} /> */}
     </div>
   );
