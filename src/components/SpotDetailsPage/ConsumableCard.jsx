@@ -83,8 +83,20 @@ function ConsumableCard(props) {
                   </div>
                 );
               })}
+          </Typography><Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography>
+            <h2>Add new consumable</h2>
           </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
           <AddConsumable spotId={spotId} getSpots={getSpots}/>
+          </AccordionDetails>
+          </Accordion>
         </AccordionDetails>
       </Accordion>
     </div>

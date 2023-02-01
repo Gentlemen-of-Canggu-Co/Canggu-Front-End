@@ -16,6 +16,7 @@ import Navbar from "./components/Navbar";
 import IsAnon from "./components/IsAnon/IsAnon";
 import AddSpot from "./pages/AddSpot";
 import Footer from "./pages/Footer";
+import SignupPage from "./pages/SignupPage";
 
 function App() {
   return (
@@ -47,14 +48,13 @@ function App() {
           element={<ConsumableDetailsPage />}
         />
 
-        {/* <Route
+        <Route
           path="/signup"
           element={
             <IsAnon>
               <SignupPage />
             </IsAnon>
-          } */}
-        {/* /> */}
+          }/> 
         <Route
           path="/login"
           element={
