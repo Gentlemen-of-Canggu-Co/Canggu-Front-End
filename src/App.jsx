@@ -23,7 +23,7 @@ function App() {
     <div className="App">
       {/* <Navbar /> */}
       <Navbar />
-
+ 
       <Routes>
         <Route path="/" element={<HomePage />} />
 
