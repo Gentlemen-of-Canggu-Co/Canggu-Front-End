@@ -1,39 +1,63 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 function AddConsumable(props) {
-  const { ownerId } = props;
+  const { spotId, getSpot } = props;
   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
-  const [consumable, setConsumable] = useState({
-    name: "",
-    tagline: "",
-    price: 0,
-    rating: 0,
-    ownerId: ownerId,
-  });
+  const [name, setName] = useState("");
+  const [tagline, setTagline] = useState("");
+  const [price, setPrice] = useState("");
+  const [rating, setRating] = useState("");
+  const [image, setImage] = useState("");
+  const ownerId = spotId;
 
-  const handleChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setConsumable((consumable) => ({ ...consumable, [name]: value }));
-  };
+
+  useEffect(() => {
+    const myWidget = window.cloudinary.createUploadWidget(
+      {
+        cloudName: "dya5f34qe",
+        uploadPreset: "uw_test",
+      },
+      (error, result) => {
+        if (!error && result && result.event === "success") {
+          setImage(result.info.secure_url);
+        }
+      }
+    );
+    document.getElementById("upload_widget").addEventListener(
+      "click",
+      function () {
+        myWidget.open();
+      },
+      false
+    );
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const newConsumable = {
+      name,
+      tagline,
+      price,
+      rating,
+      image,
+      ownerId
+    }
+
+    if(image){
     axios
-      .post(`${API_URL}/api/consumable`, consumable)
-      .then(() =>
-        setConsumable({
-          name: "",
-          tagline: "",
-          price: 0,
-          rating: 0,
-          ownerId: ownerId,
-        })
-      )
+      .post(`${API_URL}/api/consumable`, newConsumable)
+      .then(() => {
+        setName("");
+        setTagline("");
+        setPrice("");
+        setRating("");
+        setImage("");
+        getSpot()
+  })
       .catch((err) => console.log(err));
-  };
+  }};
 
   return (
     <div className="AddConsumable">
@@ -44,42 +68,34 @@ function AddConsumable(props) {
         <input
           type="text"
           name="name"
-          value={consumable.name}
-          onChange={handleChange}
-        />
+          value={name}
+          onChange={(event) => setName(event.target.value)}        />
 
         <label>Tagline:</label>
         <textarea
           type="text"
           name="tagline"
-          value={consumable.tagline}
-          onChange={handleChange}
-        />
+          value={tagline}
+          onChange={(event) => setTagline(event.target.value)}        />
 
         <label>Price:</label>
         <textarea
           type="number"
           name="price"
-          value={consumable.price}
-          onChange={handleChange}
-        />
+          value={price}
+          onChange={(event) => setPrice(event.target.value)}        />
 
         <label>Rating:</label>
         <textarea
           type="number"
           name="rating"
-          value={consumable.rating}
-          onChange={handleChange}
-        />
+          value={rating}
+          onChange={(event) => setRating(event.target.value)}        />
 
-        <label>Image URL:</label>
-        <textarea
-          type="text"
-          name="image"
-          value={consumable.image}
-          onChange={handleChange}
-        />
-
+        <label>Image</label>
+        <button id="upload_widget" className="cloudinary-button">
+          Upload
+        </button>
         <button type="submit">Add Consumable</button>
       </form>
     </div>
