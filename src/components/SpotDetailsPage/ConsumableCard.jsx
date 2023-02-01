@@ -6,9 +6,10 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import AddConsumable from "../../pages/ConsumableDetailsPage";
 
 function ConsumableCard(props) {
-  const { spot } = props;
+  const { spot, spotId, getSpots } = props;
   return (
     <div>
       {" "}
@@ -82,6 +83,7 @@ function ConsumableCard(props) {
                 );
               })}
           </Typography>
+          <AddConsumable spotId={spotId} getSpots={getSpots}/>
         </AccordionDetails>
       </Accordion>
     </div>
