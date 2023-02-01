@@ -19,11 +19,16 @@ function SpotDetailsPage() {
   const { spotId } = useParams();
   const [spot, setSpot] = useState({});
 
-  useEffect(() => {
+  const getSpot = () => {
     axios
       .get(`${API_URL}/api/spots/${spotId}`)
       .then((response) => setSpot(response.data));
+  }
+
+  useEffect(() => {
+    getSpot()
   }, [spotId]);
+  
   return (
     <div>
 
@@ -38,7 +43,7 @@ function SpotDetailsPage() {
       <Breadcrumbs spot={spot} />
       <SpotCard spot={spot} />
       <Description spot={spot} />
-      <ConsumableCard spot={spot} />
+      <ConsumableCard spotId={spotId} getSpot={getSpot} spot={spot} />
       <Menu spot={spot} />
       {/* <Map spot={spot} /> */}
       <EventCard spot={spot} />
