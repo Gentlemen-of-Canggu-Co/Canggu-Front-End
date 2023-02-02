@@ -10,12 +10,24 @@ function SpotList() {
   const [filteredSpots, setFilteredSpots] = useState([]);
   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
 
+  // useEffect(() => {
+  //   axios.get(`${API_URL}/api/spots`).then((response) => {
+  //     setSpots(response.data);
+  //     setFilteredSpots(response.data);
+  //   });
+  // }, []);
+
   useEffect(() => {
-    axios.get(`${API_URL}/api/spots`).then((response) => {
-      setSpots(response.data);
-      setFilteredSpots(response.data);
-    });
-  }, []);
+    axios.get(`${API_URL}/api/spots`)
+        .then((response) => {
+            const filteredByRatings = response.data.sort((a,b) => b.overallRating - a.overallRating)
+            setSpots(filteredByRatings)
+            setFilteredSpots(filteredByRatings)
+        })
+}, [])
+
+
+
 
   return (
     <div>
