@@ -83,7 +83,9 @@ function ConsumableCard(props) {
                   </div>
                 );
               })}
-          </Typography><Accordion>
+          </Typography>
+          
+         <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -99,7 +101,7 @@ function ConsumableCard(props) {
           </Accordion>
         </AccordionDetails>
       </Accordion>
-    </div>
+    </div> 
   );
 }
 
