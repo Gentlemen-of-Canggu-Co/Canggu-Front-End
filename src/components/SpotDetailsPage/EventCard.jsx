@@ -10,9 +10,12 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AddEvent from "../../pages/AddEvent";
-import IsPrivate from "../IsPrivate/IsPrivate";
+import { useContext } from "react";
+import { AuthContext } from "../../context/auth.context";
 
 function EventCard(props) {
+  const { isLoggedIn, isLoading } = useContext(AuthContext);
+
   const { spot, events, event } = props;
   return (
     <div>
@@ -98,7 +101,7 @@ function EventCard(props) {
             </Typography>
 
 
-            {IsPrivate && <Accordion>
+            {isLoggedIn && <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
