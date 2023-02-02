@@ -43,6 +43,7 @@ function SpotCard(props) {
                         <Typography component={"div"} variant="body2" sx={{ fontFamily: 'Montserrat', fontSize: "15px" }}>
                           <i>{spot.tagline}</i>
                           <span class="badge bg-success" style={{margin: '5px'}}>{spot.priceLevel}</span>
+
                         </Typography>
                       </div>
                     </Box>
@@ -97,6 +98,7 @@ function SpotCard(props) {
                   </CardContent>
                 </Card>
               </Link>
+
             </div>
           );
         })}

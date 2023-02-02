@@ -10,13 +10,16 @@ import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import Loading from "../components/Loading/Loading";
 
+
 function EventDetailPage() {
   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
   const { eventId } = useParams();
   const [event, setEvent] = useState({});
   const [spot, setSpot] = useState({});
+
   const { isLoggedIn } = useContext(AuthContext);
   const [isLoading, setIsLoading] = useState(false);
+
 
   useEffect(() => {
     setIsLoading(true)
@@ -49,6 +52,16 @@ function EventDetailPage() {
           <DeleteEvent eventId={eventId} />
         </div>
       )}
+
+
+
+      {isLoggedIn && <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+        <Link to={`/events/${event._id}/edit`}>
+          <Button variant="contained">Edit Event</Button>
+        </Link>
+        <DeleteEvent eventId={eventId} />
+      </div>}
+
 
       <EventCard spot={spot} event={event} />
 
