@@ -25,23 +25,25 @@ function EventCard(props) {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography component={'div'}>
+            <Typography component={"div"}>
               <h2>Events</h2>
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography component={'div'}>
+            <Typography component={"div"}>
               {spot.events &&
                 spot.events.map((singleEvent) => {
                   return (
                     <div key={singleEvent._id}>
-                      <Card sx={{ maxWidth: "100vw"}}>
+                      <Card sx={{ maxWidth: "100vw" }}>
                         <Box sx={{ position: "relative" }}>
-                          <CardMedia
-                            sx={{ height: 220 }}
-                            image={singleEvent.eventImage}
-                            title="green iguana"
-                          />
+                          <Link to={`/events/${singleEvent._id}`}>
+                            <CardMedia
+                              sx={{ height: 220 }}
+                              image={singleEvent.eventImage}
+                              title="green iguana"
+                            />
+                          </Link>
 
                           <Box
                             sx={{
@@ -54,41 +56,26 @@ function EventCard(props) {
                               padding: "10px",
                             }}
                           >
-                            <div
-                              style={{
-                                display: "flex",
-                                justifyContent: "space-between",
-                                alignItems: "center",
-                              }}
-                            >
+                           
                               <div>
-                                <Typography component={'div'} variant="h5">
+                                <Typography component={"div"} variant="h5" sx={{ fontFamily: 'Teko', fontSize: "30px" }}>
                                   {singleEvent.name}
                                 </Typography>
                                 {singleEvent.price && (
-                                  <Typography component={'div'} variant="body2">
+                                  <Typography component={"div"} variant="body2" sx={{ fontFamily: 'Montserrat', fontSize: "15px" }}>
                                     {singleEvent.startDate} |{" "}
                                     {singleEvent.startTime} |{" "}
                                     {singleEvent.price}k{" "}
                                   </Typography>
                                 )}
                                 {!singleEvent.price && (
-                                  <Typography component={'div'} variant="body2">
+                                  <Typography component={"div"} variant="body2" sx={{ fontFamily: 'Montserrat', fontSize: "15px" }}>
                                     {singleEvent.startDate} |{" "}
                                     {singleEvent.startTime} | Free{" "}
                                   </Typography>
                                 )}
                               </div>
-
-                              <CardActions style={{ width: "20vw" }}>
-                                <Link
-                                  key={singleEvent._id}
-                                  to={`/events/${singleEvent._id}`}
-                                >
-                                    See detaiasdfls
-                                </Link>
-                              </CardActions>
-                            </div>
+                            
                           </Box>
                         </Box>
                       </Card>
@@ -96,38 +83,24 @@ function EventCard(props) {
                   );
                 })}
             </Typography>
-
-
-            {isLoggedIn && <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography component={'div'}>
-          <Link to={`/events/${spot._id}/create`}><h2>Add new event</h2></Link>
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          </AccordionDetails>
-          </Accordion>}
-
-
           </AccordionDetails>
         </Accordion>
       )}
 
+     
       {events &&
         events.map((event) => {
           return (
             <div key={event._id}>
               <Card sx={{ maxWidth: "100vw" }}>
                 <Box sx={{ position: "relative" }}>
-                  <CardMedia
-                    sx={{ height: 220 }}
-                    image={event.eventImage}
-                    title={event.eventImage}
-                  />
+                <Link to={`/events/${event._id}`}>
+                            <CardMedia
+                              sx={{ height: 220 }}
+                              image={event.eventImage}
+                              title="green iguana"
+                            />
+                          </Link>
 
                   <Box
                     sx={{
@@ -148,25 +121,21 @@ function EventCard(props) {
                       }}
                     >
                       <div>
-                        <Typography component={'div'} variant="h5">{event.name}</Typography>
+                        <Typography component={"div"} variant="h5" sx={{ fontFamily: 'Teko', fontSize: "30px" }}>
+                          {event.name}
+                        </Typography>
                         {event.price && (
-                          <Typography component={'div'} variant="body2">
+                          <Typography component={"div"} variant="body2" sx={{ fontFamily: 'Montserrat', fontSize: "15px" }}>
                             {event.startDate} | {event.startTime} |{" "}
                             {event.price}k{" "}
                           </Typography>
                         )}
                         {!event.price && (
-                          <Typography component={'div'} variant="body2">
+                          <Typography component={"div"} variant="body2" sx={{ fontFamily: 'Montserrat', fontSize: "15px" }}>
                             {event.startDate} | {event.startTime} | Free{" "}
                           </Typography>
                         )}{" "}
                       </div>
-
-                      <CardActions>
-                        <Link key={event._id} to={`/events/${event._id}`}>
-                        <button type="button" className="btn btn-success">See details</button>
-                        </Link>
-                      </CardActions>
                     </div>
                   </Box>
                 </Box>
@@ -196,18 +165,18 @@ function EventCard(props) {
                   padding: "10px",
                 }}
               > */}
-                {/* <div
+              {/* <div
                   style={{
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
                   }}
                 > */}
-                  {/* <div> */}
-                    {/* <Typography variant="h5">
+              {/* <div> */}
+              {/* <Typography variant="h5">
                       {event.name} @ {spot.name}
                     </Typography> */}
-                    {/* {event.price && (
+              {/* {event.price && (
                       <Typography variant="body2">
                         {event.startDate} | {event.startTime} | {event.price}k
                       </Typography>
@@ -217,9 +186,9 @@ function EventCard(props) {
                         {event.startDate} | {event.startTime} | Free
                       </Typography>
                     )} */}
-                  {/* </div> */}
-                {/* </div> */}
-              </Box>
+              {/* </div> */}
+              {/* </div> */}
+            </Box>
             {/* </Box> */}
           </Card>
         </div>

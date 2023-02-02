@@ -14,7 +14,7 @@ function DeleteConsumable(props) {
 
   return (
     <div>
-      <button onClick={handleSubmit}>Delete Consumable</button>
+      <button type="submit" class="btn btn-danger" onClick={handleSubmit}>Delete Consumable</button>
     </div>
   );
 }

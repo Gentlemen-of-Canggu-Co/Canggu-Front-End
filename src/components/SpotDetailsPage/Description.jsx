@@ -17,12 +17,12 @@ function Description(props) {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography component={'div'}>
+          <Typography component={'div'} sx={{ fontFamily: 'Teko', fontSize: "40px" }}>
             <h2>Review</h2>
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography component={'div'} style={{textAlign: "justify"}}>
+          <Typography component={'div'} style={{textAlign: "justify"}} sx={{ fontFamily: 'Montserrat', fontSize: "15px" }}>
             {spot.description}
             <Pictograms spot={spot} />
           </Typography>

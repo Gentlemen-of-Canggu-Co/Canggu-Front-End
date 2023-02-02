@@ -20,9 +20,9 @@ function AlternativeNavbar (){
               className="d-inline-block align-top"
             />{' '}
           </Navbar.Brand>
-          <div style={{display: "flex"}}>
+          <div className="navbar" style={{display: "flex"}}>
           <Nav.Link style={{marginRight:"10px"}} href="/spots">Spots</Nav.Link>
-            <Nav.Link href="/events">Events</Nav.Link>
+            <Nav.Link style={{marginRight:"10px"}} href="/events">Events</Nav.Link>
           </div>
           
         </Container>

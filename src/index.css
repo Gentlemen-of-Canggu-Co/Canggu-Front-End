@@ -26,17 +26,18 @@ body {
     color: white;
   }
 
-  .jumbotron h1 {
+  /* .jumbotron h1 {
+    font-size: 40px;
     font-family: 'Teko', sans-serif;
-  }
+  } */
 
   .jumbotron p {
-    font-size: 15px;
+    font-size: 20px;
     font-family: 'Montserrat', sans-serif;
 
   }
 
-.spotlist-headline {
+.spotlist-headline, .upcoming-events, .jumbotron h1 {
   font-size: 40px;
   font-family: 'Teko', sans-serif;
 }
@@ -46,9 +47,14 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-.Button:hover {
-  background-color: white;
+.navbar {
+  font-family: 'Montserrat', sans-serif;
+
 }
 
+.consumable {
+  font-family: 'Teko', sans-serif;
+  font-size: 20px;
+}
 
 
