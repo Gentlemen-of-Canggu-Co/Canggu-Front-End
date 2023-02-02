@@ -7,13 +7,16 @@ import EventCard from "../components/SpotDetailsPage/EventCard";
 import Button from "@mui/material/Button";
 import { Typography } from "@mui/material";
 import Breadcrumbs from "../components/Breadcrumbs"
-
+import { useContext } from "react";
+import { AuthContext } from "../context/auth.context";
 
 function EventDetailPage() {
   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
   const { eventId } = useParams();
   const [event, setEvent] = useState({});
   const [spot, setSpot] = useState({});
+  const { isLoggedIn, isLoading } = useContext(AuthContext);
+
 
   useEffect(() => {
     axios
@@ -31,15 +34,14 @@ function EventDetailPage() {
     <div>
 
 
-      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+      {isLoggedIn && <div style={{ display: "flex", justifyContent: "space-evenly" }}>
         <Link to={`/events/${event._id}/edit`}>
           <Button variant="contained">Edit Event</Button>
         </Link>
         <DeleteEvent eventId={eventId} />
-      </div>
+      </div>}
 
 
-      <Breadcrumbs event={event} />
       <EventCard spot={spot} event={event} />
 
 
