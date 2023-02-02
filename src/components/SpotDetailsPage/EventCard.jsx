@@ -9,6 +9,8 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import AddEvent from "../../pages/AddEvent";
+import IsPrivate from "../IsPrivate/IsPrivate";
 
 function EventCard(props) {
   const { spot, events, event } = props;
@@ -94,6 +96,24 @@ function EventCard(props) {
                   );
                 })}
             </Typography>
+
+
+            {IsPrivate && <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography component={'div'}>
+            <h2>Add new event</h2>
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <AddEvent />
+          </AccordionDetails>
+          </Accordion>}
+
+
           </AccordionDetails>
         </Accordion>
       )}
