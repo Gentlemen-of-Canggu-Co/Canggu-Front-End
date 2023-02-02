@@ -47,7 +47,7 @@ function SpotDetailsPage() {
         <Button variant="contained">Add Event</Button>
       </Link>
 </div> */}
-      <Breadcrumbs spot={spot} />
+      {/* <Breadcrumbs spot={spot} /> */}
       <SpotCard spot={spot} />
       <Description spot={spot} />
       <ConsumableCard spotId={spotId} getSpot={getSpot} spot={spot} />
