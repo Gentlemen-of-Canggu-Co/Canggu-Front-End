@@ -127,7 +127,7 @@ function AddEvent() {
           type="checkbox"
           name="signupRequired"
           value={signupRequired}
-          onChange={(event) => setSignupRequired(event.target.value)}
+          onChange={(event) => setSignupRequired(event.target.checked)}
         />
         <br />
         <label>Link to Signup</label>

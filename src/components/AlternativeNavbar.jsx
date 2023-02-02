@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Coco from "../assets/images/Coco.png"
 import Nav from 'react-bootstrap/Nav';
+import Logo from "../assets/images/logo.svg"
 
 function AlternativeNavbar (){
 
@@ -13,9 +14,9 @@ function AlternativeNavbar (){
           <Navbar.Brand href="/">
             <img
               alt=""
-              src={Coco}
+              src={Logo}
               width="60"
-              height="30"
+              height="40"
               className="d-inline-block align-top"
             />{' '}
           </Navbar.Brand>
