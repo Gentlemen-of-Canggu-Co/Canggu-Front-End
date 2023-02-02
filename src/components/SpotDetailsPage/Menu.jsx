@@ -16,7 +16,7 @@ function Menu(props) {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography component={'div'}>
+          <Typography component={'div'} sx={{ fontFamily: 'Teko', fontSize: "40px" }}>
             <h2>Menu</h2>
           </Typography>
         </AccordionSummary>

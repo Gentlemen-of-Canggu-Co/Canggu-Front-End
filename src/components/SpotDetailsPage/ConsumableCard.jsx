@@ -15,7 +15,7 @@ import { AuthContext } from "../../context/auth.context";
 function ConsumableCard(props) {
   const { isLoggedIn, isLoading } = useContext(AuthContext);
 
-  const { spot, spotId, getSpots } = props;
+  const { spot, spotId, getSpot } = props;
   return (
     <div>
       {" "}
@@ -25,7 +25,7 @@ function ConsumableCard(props) {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography component={'div'}>
+          <Typography component={'div'} sx={{ fontFamily: 'Teko', fontSize: "40px" }}>
             <h2>What (not) to eat</h2>
           </Typography>
         </AccordionSummary>
@@ -97,11 +97,11 @@ function ConsumableCard(props) {
           id="panel1a-header"
         >
           <Typography component={'div'}>
-            <h2>Add new consumable</h2>
+          <h3 className="consumable">Add New Consumable</h3>
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <AddConsumable spotId={spotId} getSpots={getSpots}/>
+          <AddConsumable spotId={spotId} getSpot={getSpot}/>
           </AccordionDetails>
           </Accordion>}
         </AccordionDetails>

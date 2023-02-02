@@ -42,7 +42,7 @@ function ConsumableDetailsPage() {
 
       <div style={{ display: "flex", flexDirection: "column" }}>
         <Link to={`/spots/${spot._id}`}>
-          <button>Back to spot</button>
+        <button type="submit" class="btn btn-success">Back to spot</button>
         </Link>
         <DeleteConsumable consumableId={consumableId} spot={spot} />
       </div>
