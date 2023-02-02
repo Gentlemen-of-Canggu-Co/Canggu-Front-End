@@ -8,7 +8,8 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-/* .filter {
-  font-family: 'Teko', sans-serif;
-} */
+.Button:hover {
+  background-color: white;
+}
+
 
