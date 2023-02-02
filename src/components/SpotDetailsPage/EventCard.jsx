@@ -10,7 +10,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AddEvent from "../../pages/AddEvent";
-import IsPrivate from "../IsPrivate/IsPrivate";
+import IsPrivate from "./components/IsPrivate/IsPrivate";
 
 function EventCard(props) {
   const { spot, events, event } = props;
