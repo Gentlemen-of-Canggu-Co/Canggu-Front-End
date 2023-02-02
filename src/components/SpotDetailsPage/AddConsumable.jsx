@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import IsPrivate from "./components/IsPrivate/IsPrivate";
+
 
 function AddConsumable(props) {
   const { spotId, getSpot } = props;
