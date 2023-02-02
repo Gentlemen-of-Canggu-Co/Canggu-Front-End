@@ -16,7 +16,7 @@ function SpotCard(props) {
         filteredSpots.map((spot) => {
           return (
             <div key={spot._id}>
-              <Card sx={{ maxWidth: "100vw" }}>
+            <Link key={spot._id} to={`/spots/${spot._id}`}><Card sx={{ maxWidth: "100vw" }}>
                 <Box sx={{ position: "relative" }}>
                   <CardMedia
                     sx={{ height: 220 }}
@@ -55,41 +55,41 @@ function SpotCard(props) {
                             display: "flex",
                             flexDirection: "column",
                             justifyContent: "space-evenly",
-                            width: "70vw",
+                            paddingLeft: "0"
                           }}
                         >
                           <ProgressBar
                             className="bg-secondary"
-                            style={{ width: "70vw" }}
+                            style={{ width: "90vw" , marginBottom:"5px"}}
                             animated={true}
                             now={spot.coffeeRating}
                             label={`Coffee`}
                           />
                           <ProgressBar
                             className="bg-secondary"
-                            style={{ width: "70vw" }}
+                            style={{ width: "90vw" , marginBottom:"5px"}}
                             animated={true}
                             now={spot.foodRating}
                             label={`Food`}
                           />
                           <ProgressBar
                             className="bg-secondary"
-                            style={{ width: "70vw" }}
+                            style={{ width: "90vw" }}
                             animated={true}
                             now={spot.ambienceRating}
                             label={`Ambience`}
                           />
                         </div>
-                        <CardActions style={{ width: "30vw" }}>
+                        {/* <CardActions style={{ width: "30vw" }}>
                           <Link key={spot._id} to={`/spots/${spot._id}`}>
                             <Button variant="contained">See details</Button>
                           </Link>
-                        </CardActions>
+                        </CardActions> */}
                       </div>
                     </div>
                   </Typography>
                 </CardContent>
-              </Card>
+              </Card></Link>
             </div>
           );
         })}
