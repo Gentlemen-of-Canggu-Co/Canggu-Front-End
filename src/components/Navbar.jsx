@@ -20,8 +20,8 @@ function Navbar() {
         <NavbarBS.Toggle aria-controls="basic-navbar-nav" />
         <NavbarBS.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/spots">Spots</Nav.Link>
-            <Nav.Link href="/events">Events</Nav.Link>
+            <Nav.Link className="nav-font" href="/spots">Spots</Nav.Link>
+            <Nav.Link className="nav-font" href="/events">Events</Nav.Link>
           </Nav>
         </NavbarBS.Collapse>
       </Container>

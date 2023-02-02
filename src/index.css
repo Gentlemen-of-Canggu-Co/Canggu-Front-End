@@ -20,3 +20,25 @@ body {
   body{
     background-color: black;
   }
+
+  .jumbotron {
+    background: rgba(100, 100, 100, 0.5);
+    color: white;
+    font-family: Candara;
+  }
+
+.spotlist-headline {
+  font-size: 40px;
+  font-family: 'Teko', sans-serif;
+}
+
+.spotlist-p {
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.filter {
+  font-family: 'Teko', sans-serif;
+}
+
+
