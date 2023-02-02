@@ -49,13 +49,16 @@ function SliderFilter(props) {
 
   return (
     <div>
-      <Accordion style={{marginBottom: "20px"}}>
+      <Accordion style={{margin: "20px", padding: "10px"}}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>Filter results</Typography>
+          <Typography sx={{
+              fontFamily: 'Teko',
+              fontSize: '20px'
+          }}>Filter results</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography component={'div'}>
@@ -86,7 +89,7 @@ function SliderFilter(props) {
                     max={100}
                   />
 
-                  <p>Overall</p>
+                  <p style={{fontSize: 12, fontFamily: 'Montserrat'}}>Overall</p>
                 </div>
 
                 <div
@@ -113,7 +116,7 @@ function SliderFilter(props) {
                     }}
                     max={100}
                   />
-                  <p>Food</p>
+                  <p style={{fontSize: 12, fontFamily: 'Montserrat'}}>Food</p>
                 </div>
 
                 <div
@@ -140,7 +143,7 @@ function SliderFilter(props) {
                     min={1}
                     max={100}
                   />
-                  <p>Coffee</p>
+                  <p style={{fontSize: 12, fontFamily: 'Montserrat'}}>Coffee</p>
                 </div>
 
                 <div
@@ -167,9 +170,12 @@ function SliderFilter(props) {
                     min={1}
                     max={100}
                   />
-                  <p>Ambience</p>
+                  <p style={{fontSize: 12, fontFamily: 'Montserrat'}}>Ambience</p>
                 </div>
-                <Button type="submit" variant="contained">
+                <Button type="submit" variant="contained" sx={{
+                  fontFamily: 'Montserrat',
+                  backgroundColor: 'green'
+                }}>
                   Show results
                 </Button>
               </form>
