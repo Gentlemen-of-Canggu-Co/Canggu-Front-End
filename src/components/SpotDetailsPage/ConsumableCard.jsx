@@ -8,7 +8,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AddConsumable from './AddConsumable';
-import IsPrivate from "./components/IsPrivate/IsPrivate";
+import IsPrivate from "../IsPrivate/IsPrivate";
 
 
 function ConsumableCard(props) {
