@@ -2,10 +2,53 @@ body {
   margin: 0;
 }
 
-.carousel {
-  background-color: black;
+.my-nav{
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  }
+  
+  .carousel-item {
+    height: 100vh;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
+  body{
+    background-color: black;
+  }
+
+  .jumbotron {
+    background: rgba(100, 100, 100, 0.5);
+    color: white;
+  }
+
+  .jumbotron h1 {
+    font-family: 'Teko', sans-serif;
+  }
+
+  .jumbotron p {
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+
+  }
+
+.spotlist-headline {
+  font-size: 40px;
+  font-family: 'Teko', sans-serif;
 }
 
-.carousel img {
-  opacity: 0.6;
+.spotlist-p {
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
 }
+
+.Button:hover {
+  background-color: white;
+}
+
+
+

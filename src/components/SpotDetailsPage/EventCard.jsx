@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Accordion from "@mui/material/Accordion";
@@ -86,9 +85,7 @@ function EventCard(props) {
                                   key={singleEvent._id}
                                   to={`/events/${singleEvent._id}`}
                                 >
-                                  <Button variant="contained">
-                                    See details
-                                  </Button>
+                                    See detaiasdfls
                                 </Link>
                               </CardActions>
                             </div>
@@ -108,11 +105,10 @@ function EventCard(props) {
           id="panel1a-header"
         >
           <Typography component={'div'}>
-            <h2>Add new event</h2>
+          <Link to={`/events/${spot._id}/create`}><h2>Add new event</h2></Link>
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <AddEvent />
           </AccordionDetails>
           </Accordion>}
 
@@ -166,9 +162,9 @@ function EventCard(props) {
                         )}{" "}
                       </div>
 
-                      <CardActions style={{ width: "20vw" }}>
+                      <CardActions>
                         <Link key={event._id} to={`/events/${event._id}`}>
-                          <Button variant="contained">See details</Button>
+                        <button type="button" className="btn btn-success">See details</button>
                         </Link>
                       </CardActions>
                     </div>

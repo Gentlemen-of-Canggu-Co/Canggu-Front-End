@@ -1,46 +1,48 @@
-import Carousel from 'react-bootstrap/Carousel';
 import Bali1 from '../assets/images/Bali1.jpg';
 import Bali2 from '../assets/images/Bali2.jpg';
-import Bali3 from '../assets/images/Bali3.jpg';
+import Bali4 from '../assets/images/Bali4.jpg';
+
+
 function HomePageCarousel() {
   return (
-    <Carousel className="carousel" fade>
-      <Carousel.Item interval={5000}>
-        <img
-          className="d-block w-100"
-          src={Bali1}
-          alt="First slide"
-        />
-        <Carousel.Caption>
-          <h3>We don't offer a lot</h3>
-          <p>But what we do offer...</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item interval={5000}>
-        <img
-          className="d-block w-100"
-          src={Bali2}
-          alt="Second slide"
-        />
-        <Carousel.Caption>
-          <h3>Is a guided tour of Canggu</h3>
-          <p>And a chance to discover it's best bars, restaurants, and cafes...</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item interval={5000}>
-        <img
-          className="d-block w-100"
-          src={Bali3}
-          alt="Third slide"
-        />
-        <Carousel.Caption>
-          <h3>So join us at our table, by the pool, or at the bar</h3>
-          <p>
-            And let's chow down in Canggu!
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
+    <div>
+    <div id="carouselExampleIndicators" className="carousel slide my-carousel my-carousel" data-ride="carousel">
+      <ol className="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div className="carousel-inner" role="listbox">
+        <div className="carousel-item active" style={{backgroundImage: `url(${Bali1})`}}>
+        <div className="jumbotron">
+  <h1 className="display-4">Welcome to Chunks of Canggu</h1>
+  <p className="lead">Let us show you around</p>
+</div>
+        </div>
+          <div className="carousel-item " style={{backgroundImage: `url(${Bali2})`}}>
+          <div className="jumbotron">
+  <h1 className="display-4">Explore the best Spots in town</h1>
+  <p className="lead">Find the best coffee, the chillest vibes, and the tastiest meals around</p>
+</div>
+        </div>
+        <div className="carousel-item " style={{backgroundImage: `url(${Bali4})`}}>
+        <div className="jumbotron">
+  <h1 className="display-4">Explore local Events</h1>
+  <p className="lead">From beach yoga to pub crawls, let Chunks of Canggu be your guide</p>
+</div>
+        </div>
+      </div>
+      <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span className="sr-only">Previous</span>
+      </a>
+      <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <span className="sr-only">Next</span>
+      </a>
+    </div>
+    </div>
   );
 }
+
 export default HomePageCarousel;

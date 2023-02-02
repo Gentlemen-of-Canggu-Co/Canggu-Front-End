@@ -49,58 +49,36 @@ function SliderFilter(props) {
 
   return (
     <div>
-      <Accordion style={{marginBottom: "20px"}}>
+      <Accordion style={{ margin: "20px" }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>Filter results</Typography>
+          <Typography
+            sx={{
+              fontFamily: "Teko",
+              fontSize: "20px",
+            }}
+          >
+            Filter results
+          </Typography>
         </AccordionSummary>
-        <AccordionDetails>
-          <Typography component={'div'}>
+        <AccordionDetails
+          style={{
+            alignItems: "center",
+          }}
+        >
+          <Typography component={"div"}>
             <div>
               <form onSubmit={handleSubmit}>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    // justifyContent: "space-evenly",
-                  }}
-                >
-                  <Slider
-                    style={{ width: "60vw" ,marginRight: "10px"}}
-                    aria-label="Overall"
-                    defaultValue={1}
-                    sx={{
-                      width: 300,
-                      color: "success.main",
-                    }}
-                    //   getAriaValueText={valuetext}
-                    valueLabelDisplay="auto"
-                    value={overallFilter}
-                    onChange={(event) => setOverallFilter(event.target.value)}
-                    step={1}
-                    marks={marks}
-                    min={1}
-                    max={100}
-                  />
+                <div>
+                  <p style={{ fontSize: 12, fontFamily: "Montserrat" }}>Food</p>
 
-                  <p>Overall</p>
-                </div>
-
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    // justifyContent: "space-evenly",
-                  }}
-                >
                   <Slider
-                    style={{ width: "60vw" ,marginRight: "10px"}}
+                    style={{ width: "60vw", marginRight: "10px" }}
                     aria-label="Food"
                     defaultValue={1}
-                    //   getAriaValueText={valuetext}
                     valueLabelDisplay="auto"
                     step={1}
                     value={foodFilter}
@@ -113,21 +91,17 @@ function SliderFilter(props) {
                     }}
                     max={100}
                   />
-                  <p>Food</p>
                 </div>
 
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    // justifyContent: "space-evenly",
-                  }}
-                >
+                <div>
+                  <p style={{ fontSize: 12, fontFamily: "Montserrat" }}>
+                    Coffee
+                  </p>
+
                   <Slider
-                    style={{ width: "60vw" ,marginRight: "10px"}}
+                    style={{ width: "60vw", marginRight: "10px" }}
                     aria-label="Coffee"
                     defaultValue={1}
-                    //   getAriaValueText={valuetext}
                     valueLabelDisplay="auto"
                     step={1}
                     value={coffeeFilter}
@@ -140,18 +114,15 @@ function SliderFilter(props) {
                     min={1}
                     max={100}
                   />
-                  <p>Coffee</p>
                 </div>
 
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    // justifyContent: "space-evenly",
-                  }}
-                >
+                <div>
+                  <p style={{ fontSize: 12, fontFamily: "Montserrat" }}>
+                    Ambience
+                  </p>
+
                   <Slider
-                    style={{ width: "60vw" ,marginRight: "10px"}}
+                    style={{ width: "60vw", marginRight: "10px" }}
                     aria-label="Ambience"
                     defaultValue={1}
                     name="AbienceRating"
@@ -167,9 +138,17 @@ function SliderFilter(props) {
                     min={1}
                     max={100}
                   />
-                  <p>Ambience</p>
                 </div>
-                <Button type="submit" variant="contained">
+                <Button
+                  type="submit"
+                  variant="contained"
+                  sx={{
+                    fontFamily: "Montserrat",
+                    backgroundColor: "green",
+                    marginTop: "30px",
+                    marginBottom: "10px"
+                  }}
+                >
                   Show results
                 </Button>
               </form>

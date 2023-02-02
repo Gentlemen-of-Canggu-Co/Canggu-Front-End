@@ -31,10 +31,10 @@ function SpotList() {
 
   return (
     <div>
-      <Breadcrumbs spots={spots} />
+      {/* <Breadcrumbs spots={spots} /> */}
 
-      <h1>Spots in Canggu</h1>
-      <p>Find your perfect spot, based on what matters to you.</p>
+      <h1 className="spotlist-headline">Spots in Canggu</h1>
+      <p className="spotlist-p">Find your perfect spot, based on what matters to you.</p>
       <div>
         <SliderFilter spots={spots} setFilteredSpots={setFilteredSpots} />
       </div>

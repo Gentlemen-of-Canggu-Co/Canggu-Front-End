@@ -3,7 +3,6 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import ProgressBar from "react-bootstrap/ProgressBar";
@@ -39,7 +38,9 @@ function SpotCard(props) {
                       <div>
                         <Typography component={'div'} variant="h5">{spot.name}</Typography>
                         <Typography component={'div'} variant="body2">
-                          <i>{spot.tagline}</i>
+                          <i>{spot.tagline}<span class="badge bg-secondary">{spot.priceLevel}</span></i>
+                          <br/>
+                          
                         </Typography>
                       </div>
 
@@ -56,11 +57,13 @@ function SpotCard(props) {
                             flexDirection: "column",
                             justifyContent: "space-evenly",
                             paddingLeft: "0"
+
                           }}
                         >
                           <ProgressBar
                             className="bg-secondary"
                             style={{ width: "90vw" , marginBottom:"5px"}}
+
                             animated={true}
                             now={spot.coffeeRating}
                             label={`Coffee`}
@@ -68,6 +71,7 @@ function SpotCard(props) {
                           <ProgressBar
                             className="bg-secondary"
                             style={{ width: "90vw" , marginBottom:"5px"}}
+
                             animated={true}
                             now={spot.foodRating}
                             label={`Food`}
@@ -75,14 +79,15 @@ function SpotCard(props) {
                           <ProgressBar
                             className="bg-secondary"
                             style={{ width: "90vw" }}
+
+
                             animated={true}
                             now={spot.ambienceRating}
                             label={`Ambience`}
                           />
                         </div>
-                        {/* <CardActions style={{ width: "30vw" }}>
+
                           <Link key={spot._id} to={`/spots/${spot._id}`}>
-                            <Button variant="contained">See details</Button>
                           </Link>
                         </CardActions> */}
                       </div>
