@@ -8,10 +8,13 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AddConsumable from './AddConsumable';
-import IsPrivate from "../IsPrivate/IsPrivate";
+import { useContext } from "react";
+import { AuthContext } from "../../context/auth.context";
 
 
 function ConsumableCard(props) {
+  const { isLoggedIn, isLoading } = useContext(AuthContext);
+
   const { spot, spotId, getSpots } = props;
   return (
     <div>
@@ -87,7 +90,7 @@ function ConsumableCard(props) {
               })}
           </Typography>
          
-         {IsPrivate && <Accordion>
+         {isLoggedIn && <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
