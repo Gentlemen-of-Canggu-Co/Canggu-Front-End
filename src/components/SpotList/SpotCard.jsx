@@ -35,32 +35,14 @@ function SpotCard(props) {
                       padding: "10px",
                     }}
                   >
-                    {/* <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                      }}
-                    > */}
+
                       <div>
                         <Typography component={'div'} variant="h5">{spot.name}</Typography>
                         <Typography component={'div'} variant="body2">
                           <i>{spot.tagline}</i>
                         </Typography>
                       </div>
-{/* 
-                      <p
-                        style={{
-                          fontSize: "2rem",
-                          alignContent: "center",
-                          width: "30vw",
-                          border: "solid",
-                          borderRadius: "50%",
-                        }}
-                      >
-                        {spot.overallRating}
-                      </p>
-                    </div> */}
+
                   </Box>
                 </Box>
 
@@ -132,32 +114,13 @@ function SpotCard(props) {
                 padding: "10px",
               }}
             >
-              {/* <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
-              > */}
+
                       <div>
                         <Typography component={'div'} variant="h5">{spot.name}</Typography>
                         <Typography component={'div'} variant="body2">
                           <i>{spot.tagline}</i>
                         </Typography>
                       </div>
-
-                {/* <p
-                  style={{
-                    fontSize: "2rem",
-                    alignContent: "center",
-                    width: "30vw",
-                    border: "solid",
-                    borderRadius: "50%",
-                  }}
-                >
-                  {spot.overallRating}
-                </p> */}
-              {/* </div> */}
             </Box>
           </Box>
 
