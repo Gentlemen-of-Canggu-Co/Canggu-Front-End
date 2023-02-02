@@ -8,6 +8,8 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AddConsumable from './AddConsumable';
+import IsPrivate from "./components/IsPrivate/IsPrivate";
+
 
 function ConsumableCard(props) {
   const { spot, spotId, getSpots } = props;
@@ -84,8 +86,8 @@ function ConsumableCard(props) {
                 );
               })}
           </Typography>
-          
-         <Accordion>
+         
+         {IsPrivate && <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -98,7 +100,7 @@ function ConsumableCard(props) {
         <AccordionDetails>
           <AddConsumable spotId={spotId} getSpots={getSpots}/>
           </AccordionDetails>
-          </Accordion>
+          </Accordion>}
         </AccordionDetails>
       </Accordion>
     </div> 
