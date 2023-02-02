@@ -8,7 +8,7 @@ function AlternativeNavbar (){
     return(
 
     <>
-    <Navbar style={{marginBottom: "20px"}} bg="light" variant="light">
+    <Navbar bg="light" variant="light">
         <Container>
           <Navbar.Brand href="/">
             <img
