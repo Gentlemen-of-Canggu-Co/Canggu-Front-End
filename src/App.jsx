@@ -28,23 +28,23 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/spots/:spotId" element={<SpotDetailsPage />} />
         <Route path="/spots" element={<SpotList />} />
-        <Route path="/spots/create" element={<AddSpot />} /> 
-        <Route path="/spots/:spotId/edit" element={<EditSpot />} />
+        <Route path="/spots/create" element={<IsPrivate><AddSpot /></IsPrivate>} /> 
+        <Route path="/spots/:spotId/edit" element={<IsPrivate><EditSpot /></IsPrivate>} />
         <Route path="/events" element={<EventList />} />
         <Route path="/events/:eventId" element={<EventDetailPage />} />
-        <Route path="/events/:spotId/create" element={<AddEvent />} />
-        <Route path="/events/:eventId/edit" element={<EditEvent />} />
+        <Route path="/events/:spotId/create" element={<IsPrivate><AddEvent /></IsPrivate>} />
+        <Route path="/events/:eventId/edit" element={<IsPrivate><EditEvent /></IsPrivate>} />
         <Route
           path="/consumable/:consumableId"
           element={<ConsumableDetailsPage />}
         />
-        <Route
+        {/* <Route
           path="/signup"
           element={
             <IsAnon>
               <SignupPage />
             </IsAnon>
-          }/>
+          }/> */}
         <Route
           path="/login"
           element={
