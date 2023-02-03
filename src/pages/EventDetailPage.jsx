@@ -48,14 +48,14 @@ function EventDetailPage() {
 
       <div className="card" style={{width: "100vw"}}>
   <div className="card-header">
-    <Typography><h1>{event.name} @ {spot.name}</h1></Typography>
+    <Typography><h1 style={{fontFamily: 'Montserrat'}}>{event.name} @ {spot.name}</h1></Typography>
   </div>
   <ul className="list-group list-group-flush">
     <li className="list-group-item">      <Typography>{event.startDate}: {event.startTime} - {event.endTime} | Cost: {event.price}k</Typography>
 </li>
-    <li className="list-group-item">      <Typography style={{textAlign: "justify"}}>{event.description}</Typography></li>
-    {event.signUpRequired &&<li className="list-group-item">Link to Signup: {event.signUpLink}</li>}
-    {!event.signUpRequired &&<li className="list-group-item"><Typography>No need to register. Just drop by and have fun! ❤️</Typography></li>}
+    <li className="list-group-item">      <Typography style={{textAlign: "justify", fontFamily: "Montserrat"}}>{event.description}</Typography></li>
+    {event.signUpRequired &&<li className="list-group-item"><Typography style={{fontFamily: 'Montserrat'}}>Link to Signup: {event.signUpLink}</Typography></li>}
+    {!event.signUpRequired &&<li className="list-group-item"><Typography style={{fontFamily: 'Montserrat'}}>No need to register. Just drop by and have fun! ❤️</Typography></li>}
   </ul>
 </div>
 

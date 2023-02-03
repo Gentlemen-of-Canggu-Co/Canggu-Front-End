@@ -39,8 +39,8 @@ function SpotList() {
         <SliderFilter spots={spots} setFilteredSpots={setFilteredSpots} />
       </div>
       <SpotCard spots={spots} filteredSpots={filteredSpots} />
-      <h2>SEO: About Cafes and Restaurants in Canggu</h2>
-      <p>
+      <h2 style={{fontFamily: 'Montserrat'}}>About Cafes and Restaurants in Canggu</h2>
+      <p style={{fontFamily: 'Montserrat'}}>
         A coffeehouse, coffee shop, or café is an establishment that primarily
         serves coffee of various types, notably espresso, latte, and cappuccino.
         Some coffeehouses may serve cold drinks, such as iced coffee and iced
