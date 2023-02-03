@@ -41,36 +41,29 @@ function EventDetailPage() {
 
   return (
     <div>
-      {isLoggedIn && (
-        <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-          <Link to={`/events/${event._id}/edit`}>
-            <Button variant="contained">Edit Event</Button>
-          </Link>
-          <DeleteEvent eventId={eventId} />
-        </div>
-      )}
+      
 
       <EventCard spot={spot} event={event} />
 
       {isLoading === true ? <Loading/> : <div className="card" style={{ width: "100vw" }}>
         <div className="card-header">
-          <Typography component={'div'}>
+          <Typography component={'div'} sx={{ fontFamily: 'Teko', fontSize: "30px" }}>
             <h1>
-              {event.name} @ {spot.name}
+              {event.name} at {spot.name}
             </h1>
           </Typography>
         </div>
         <ul className="list-group list-group-flush">
           <li className="list-group-item">
             {" "}
-            <Typography component={'div'}>
+            {event.price > 0 && <Typography component={'div'} sx={{ fontFamily: 'Montserrat', fontSize: "15px" }}>
               {event.startDate}: {event.startTime} - {event.endTime} | Cost:{" "}
               {event.price}k
-            </Typography>
+            </Typography>}
           </li>
           <li className="list-group-item">
             {" "}
-            <Typography component={'div'} style={{ textAlign: "justify" }}>
+            <Typography component={'div'} sx={{ fontFamily: 'Montserrat', fontSize: "15px" }}>
               {event.description}
             </Typography>
           </li>
@@ -81,7 +74,7 @@ function EventDetailPage() {
           )}
           {!event.signUpRequired && (
             <li className="list-group-item">
-              <Typography component={'div'}>
+              <Typography component={'div'} sx={{ fontFamily: 'Montserrat', fontSize: "15px" }}>
                 No need to register. Just drop by and have fun! ❤️
               </Typography>
             </li>
@@ -109,7 +102,7 @@ function EventDetailPage() {
 <Typography>No need to register. Just drop by and have fun! ❤️</Typography>
   }   */}
 
-      {isLoading === true ? <Loading/> : <div
+      <div
         style={{
           display: "inline-flex",
           justifyContent: "center",
@@ -131,7 +124,15 @@ function EventDetailPage() {
         {/* <Link to={"/events"}>
           <Button variant="contained">See more Events</Button>
         </Link> */}
-      </div>}
+      </div>
+      {isLoggedIn && (
+        <div style={{ display: "flex", justifyContent: "space-evenly", marginBottom: "20px" }}>
+          <Link to={`/events/${event._id}/edit`}>
+          <button type="button" className="btn btn-success">Edit Event</button>
+          </Link>
+          <DeleteEvent eventId={eventId} />
+        </div>
+      )}
     </div>
   );
 }

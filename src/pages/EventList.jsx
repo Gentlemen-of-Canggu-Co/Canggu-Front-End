@@ -29,7 +29,7 @@ function EventList() {
   return (
     <div>
 
-      <h1>Upcoming events in Canggu</h1>
+      <h1 className="event-list">Upcoming events in Canggu</h1>
       {isLoading ? <Loading/> :<EventCard events={events} />}
     </div>
   );
