@@ -73,7 +73,15 @@ function SliderFilter(props) {
             <div>
               <form onSubmit={handleSubmit}>
                 <div>
-                  <p style={{ fontSize: 12, fontFamily: "Montserrat" }}>Food</p>
+                  <p
+                    style={{
+                      fontSize: 12,
+                      fontFamily: "Montserrat",
+                      marginBottom: "0",
+                    }}
+                  >
+                    Food
+                  </p>
 
                   <Slider
                     style={{ width: "60vw", marginRight: "10px" }}
@@ -94,7 +102,13 @@ function SliderFilter(props) {
                 </div>
 
                 <div>
-                  <p style={{ fontSize: 12, fontFamily: "Montserrat" }}>
+                  <p
+                    style={{
+                      fontSize: 12,
+                      fontFamily: "Montserrat",
+                      marginBottom: "0",
+                    }}
+                  >
                     Coffee
                   </p>
 
@@ -117,7 +131,13 @@ function SliderFilter(props) {
                 </div>
 
                 <div>
-                  <p style={{ fontSize: 12, fontFamily: "Montserrat" }}>
+                  <p
+                    style={{
+                      fontSize: 12,
+                      fontFamily: "Montserrat",
+                      marginBottom: "0",
+                    }}
+                  >
                     Ambience
                   </p>
 
@@ -146,7 +166,7 @@ function SliderFilter(props) {
                     fontFamily: "Montserrat",
                     backgroundColor: "green",
                     marginTop: "30px",
-                    marginBottom: "10px"
+                    marginBottom: "10px",
                   }}
                 >
                   Show results

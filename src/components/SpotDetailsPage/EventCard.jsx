@@ -25,8 +25,13 @@ function EventCard(props) {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
+<<<<<<< HEAD
             <Typography component={"div"} sx={{ fontFamily: 'Teko', fontSize: "30px" }}>
               <h2>Events</h2>
+=======
+            <Typography sx={{ fontFamily: 'Teko', fontSize: "40px" }} component={"div"}>
+              <h2 >Events</h2>
+>>>>>>> 569c3a2159c0bf5d79f0be6f5314b4af0d31d50a
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -154,42 +159,9 @@ function EventCard(props) {
                 title="green iguana"
               />
 
-              {/* <Box
-                sx={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  width: "100%",
-                  bgcolor: "rgba(0, 0, 0, 0.54)",
-                  color: "white",
-                  padding: "10px",
-                }}
-              > */}
-              {/* <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                > */}
-              {/* <div> */}
-              {/* <Typography variant="h5">
-                      {event.name} @ {spot.name}
-                    </Typography> */}
-              {/* {event.price && (
-                      <Typography variant="body2">
-                        {event.startDate} | {event.startTime} | {event.price}k
-                      </Typography>
-                    )}
-                    {!event.price && (
-                      <Typography variant="body2">
-                        {event.startDate} | {event.startTime} | Free
-                      </Typography>
-                    )} */}
-              {/* </div> */}
-              {/* </div> */}
+              
             </Box>
-            {/* </Box> */}
+
           </Card>
         </div>
       )}

@@ -14,50 +14,43 @@ function SpotDetailsPage() {
   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
   const { spotId } = useParams();
   const [spot, setSpot] = useState({});
-    const [isLoading, setIsLoading] = useState(true)
-
+  const [isLoading, setIsLoading] = useState(true);
 
   const getSpot = () => {
-    setIsLoading(true)
-    axios
-      .get(`${API_URL}/api/spots/${spotId}`)
-      .then((response) => {
-        setSpot(response.data);
-        setIsLoading(false)});
-  }
+    setIsLoading(true);
+    axios.get(`${API_URL}/api/spots/${spotId}`).then((response) => {
+      setSpot(response.data);
+      setIsLoading(false);
+    });
+  };
 
   useEffect(() => {
-    getSpot()
+    getSpot();
   }, [spotId]);
 
-  if(isLoading){
-    return <Loading/>
+  if (isLoading) {
+    return <Loading />;
   }
 
   return (
     <div>
-
-{/* <div>
-      <Link to={`/spots/${spot._id}/edit`}>
-        <Button variant="contained">Edit Spot</Button>
-      </Link>
-      <Link to={`/events/${spot._id}/create`}>
-        <Button variant="contained">Add Event</Button>
-      </Link>
-</div> */}
-      {/* <Breadcrumbs spot={spot} /> */}
       <SpotCard spot={spot} />
       <Description spot={spot} />
       <ConsumableCard spotId={spotId} getSpot={getSpot} spot={spot} />
       <Menu spot={spot} />
-      { spot.events.length > 0 && <EventCard spot={spot} />}
+      {spot.events.length > 0 && <EventCard spot={spot} />}
       {isLoggedIn && (
-                    <Link to={`/events/${spotId}/create`}>
-                    <button type="button" className="btn btn-success" style={{margin: '10px'}}>Add new event</button>
-                    </Link>   
-            )}
-
-      </div>
+        <Link to={`/events/${spotId}/create`}>
+          <button
+            type="button"
+            className="btn btn-success"
+            style={{ margin: "10px" }}
+          >
+            Add new event
+          </button>
+        </Link>
+      )}
+    </div>
   );
 }
 
