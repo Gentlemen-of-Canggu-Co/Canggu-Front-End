@@ -87,11 +87,7 @@ function SpotCard(props) {
                               label={`Ambience`}
                             />
                           </div>
-                          {/* <CardActions style={{ width: "30vw" }}>
-                          <Link key={spot._id} to={`/spots/${spot._id}`}>
-                            <Button variant="contained">See details</Button>
-                          </Link>
-                        </CardActions> */}
+
                         </div>
                       </div>
                     </Typography>
