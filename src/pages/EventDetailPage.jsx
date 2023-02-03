@@ -65,6 +65,7 @@ function EventDetailPage() {
 
       <EventCard spot={spot} event={event} />
 
+
       {isLoading === true ? <Loading/> : <div className="card" style={{ width: "100vw" }}>
         <div className="card-header">
           <Typography component={'div'}>
@@ -101,6 +102,7 @@ function EventDetailPage() {
           )}
         </ul>
       </div>}
+
 
       {/* <Typography><h1>{event.name} @ {spot.name}</h1></Typography>
 
