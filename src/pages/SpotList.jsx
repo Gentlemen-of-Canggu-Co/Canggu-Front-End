@@ -1,14 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import {Link} from 'react-router-dom';
 import axios from "axios";
 import SliderFilter from "../components/SpotList/SliderFilter";
 import SpotCard from "../components/SpotList/SpotCard";
-import Breadcrumbs from "../components/Breadcrumbs"
+import { AuthContext } from "../context/auth.context";
 
 
 function SpotList() {
   const [spots, setSpots] = useState([]);
   const [filteredSpots, setFilteredSpots] = useState([]);
   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
+  const { isLoggedIn } = useContext(AuthContext);
+
 
   // useEffect(() => {
   //   axios.get(`${API_URL}/api/spots`).then((response) => {
@@ -39,6 +42,11 @@ function SpotList() {
         <SliderFilter spots={spots} setFilteredSpots={setFilteredSpots} />
       </div>
       <SpotCard spots={spots} filteredSpots={filteredSpots} />
+      {isLoggedIn && (
+                    <Link to={`/spots/create`}>
+                    <button type="button" className="btn btn-success" style={{margin: '10px'}}>Add new Spot</button>
+                    </Link>   
+            )}
       <h2>SEO: About Cafes and Restaurants in Canggu</h2>
       <p>
         A coffeehouse, coffee shop, or café is an establishment that primarily
