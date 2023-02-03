@@ -118,7 +118,7 @@ function AddEvent() {
           onChange={(event) => setEndTime(event.target.value)}
         />
         <label>Event image</label>
-        <button id="upload_widget" className="cloudinary-button">
+        <button id="upload_widget" className="cloudinary-button" style={{backgroundColor: "green"}}>
           Upload
         </button>
         <br />
@@ -137,7 +137,7 @@ function AddEvent() {
           value={signupLink}
           onChange={(event) => setSignupLink(event.target.value)}
         />
-        {eventImage && <button type="submit">Add new Event</button>}
+        {eventImage && <button type="submit" class="btn btn-success">Add new Event</button>}
       </form>
     </div>
   );

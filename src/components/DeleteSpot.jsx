@@ -1,5 +1,3 @@
-import Button from "@mui/material/Button";
-
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 const API_URL = "http://localhost:5005";
@@ -16,7 +14,7 @@ function DeleteSpot(props) {
 
   return (
     <div>
-      <Button variant="contained" onClick={handleSubmit}>Delete Spot</Button>
+      <button type="button" className="btn btn-danger" onClick={handleSubmit}>Delete Spot</button>
     </div>
   );
 }

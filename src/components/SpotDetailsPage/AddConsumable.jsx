@@ -61,8 +61,43 @@ function AddConsumable(props) {
   }};
 
   return (
-    <div className="AddConsumable">
-      <h3>Add New Consumable</h3>
+
+
+<div>
+<form onSubmit={handleSubmit}>
+    <div className="mb-3">
+  <label className="form-label">Name:</label>
+  <input type="text" className="form-control" onChange={(event) => setName(event.target.value)}/>
+    </div>
+    <div className="mb-3">
+  <label className="form-label">Tagline:</label>
+  <input type="text" className="form-control" onChange={(event) => setTagline(event.target.value)}/>
+    </div>
+    <div className="mb-3">
+  <label className="form-label">Price:</label>
+  <input type="number" className="form-control" onChange={(event) => setPrice(event.target.value)}/>
+    </div>
+    <div className="mb-3">
+  <label className="form-label">Rating:</label>
+  <input type="number" className="form-control" onChange={(event) => setRating(event.target.value)}/>
+    </div>
+    <div className="mb-3">
+    <button id="upload_widget" className="cloudinary-button" style={{backgroundColor: "green"}}>
+          Upload
+        </button>
+    </div>
+    <button type="submit" class="btn btn-success">Add Consumable</button>
+    </form>
+</div>
+
+
+  );
+}
+
+export default AddConsumable;
+
+
+    {/* <div className="AddConsumable">
 
       <form onSubmit={handleSubmit}>
         <label>Name:</label>
@@ -99,8 +134,4 @@ function AddConsumable(props) {
         </button>
         <button type="submit">Add Consumable</button>
       </form>
-    </div>
-  );
-}
-
-export default AddConsumable;
+    </div> */}
