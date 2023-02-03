@@ -15,96 +15,122 @@ function EventDetailPage() {
   const { eventId } = useParams();
   const [event, setEvent] = useState({});
   const [spot, setSpot] = useState({});
-
   const { isLoggedIn } = useContext(AuthContext);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    setIsLoading(true);
-    axios.get(`${API_URL}/api/events/${eventId}`).then((response) => {
-      setEvent(response.data);
-      console.log(response.data.owner);
-      setIsLoading(false);
-    });
-  }, [eventId]);
+    setIsLoading(true)
+    axios
+      .get(`${API_URL}/api/events/${eventId}`)
+      .then((response) => {
+        setEvent(response.data);
+        console.log(response.data.owner);
+        setIsLoading(false)})
+  }, [eventId])
+    
 
   useEffect(() => {
-    setIsLoading(true);
-    axios.get(`${API_URL}/api/spots/${event.owner}`).then((response) => {
-      setSpot(response.data);
-      console.log(response.data);
-      setIsLoading(false);
-    });
+    setIsLoading(true)
+    axios
+      .get(`${API_URL}/api/spots/${event.owner}`)
+      .then((response) => {
+        setSpot(response.data);
+        console.log(response.data)
+        setIsLoading(false)})
   }, [event.owner]);
 
   return (
     <div>
       
 
-
       <EventCard spot={spot} event={event} />
 
-      {isLoading === true ? (
-        <Loading />
-      ) : (
-        <div className="card" style={{ width: "100vw" }}>
-          <div className="card-header">
-            <Typography component={"div"}>
-              <h1>
-                {event.name} @ {spot.name}
-              </h1>
-            </Typography>
-          </div>
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">
-              {" "}
-              <Typography component={"div"}>
-                {event.startDate}: {event.startTime} - {event.endTime} | Cost:{" "}
-                {event.price}k
-              </Typography>
-            </li>
-            <li className="list-group-item">
-              {" "}
-              <Typography component={"div"} style={{ textAlign: "justify" }}>
-                {event.description}
-              </Typography>
-            </li>
-            {event.signUpRequired && (
-              <li className="list-group-item">
-                Link to Signup: {event.signUpLink}
-              </li>
-            )}
-            {!event.signUpRequired && (
-              <li className="list-group-item">
-                <Typography component={"div"}>
-                  No need to register. Just drop by and have fun! ❤️
-                </Typography>
-              </li>
-            )}
-          </ul>
+      {isLoading === true ? <Loading/> : <div className="card" style={{ width: "100vw" }}>
+        <div className="card-header">
+          <Typography component={'div'} sx={{ fontFamily: 'Teko', fontSize: "30px" }}>
+            <h1>
+              {event.name} at {spot.name}
+            </h1>
+          </Typography>
         </div>
-      )}
+        <ul className="list-group list-group-flush">
+          <li className="list-group-item">
+            {" "}
+            {event.price > 0 && <Typography component={'div'} sx={{ fontFamily: 'Montserrat', fontSize: "15px" }}>
+              {event.startDate}: {event.startTime} - {event.endTime} | Cost:{" "}
+              {event.price}k
+            </Typography>}
+          </li>
+          <li className="list-group-item">
+            {" "}
+            <Typography component={'div'} sx={{ fontFamily: 'Montserrat', fontSize: "15px" }}>
+              {event.description}
+            </Typography>
+          </li>
+          {event.signUpRequired && (
+            <li className="list-group-item">
+              Link to Signup: {event.signUpLink}
+            </li>
+          )}
+          {!event.signUpRequired && (
+            <li className="list-group-item">
+              <Typography component={'div'} sx={{ fontFamily: 'Montserrat', fontSize: "15px" }}>
+                No need to register. Just drop by and have fun! ❤️
+              </Typography>
+            </li>
+          )}
+        </ul>
+      </div>}
 
-      {isLoading === true ? (
-        <Loading />
-      ) : (
-        <div
-          style={{
-            display: "inline-flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <add-to-calendar-button
-            name={event.name}
-            options="'Google'"
-            location={spot.name}
-            startDate={event.startDate}
-            endDate={event.endDate}
-            startTime={event.startTime}
-            endTime={event.endTime}
-            timeZone="Asia/Makassar"
-          ></add-to-calendar-button>
+      {/* <Typography><h1>{event.name} @ {spot.name}</h1></Typography>
+
+      <div style={{display: "flex", justifyContent: "space-around"}}>
+      <Typography>{event.startDate}: {event.startTime} - {event.endTime}</Typography>
+      <Typography>Cost: {event.price}k</Typography>
+      </div>
+
+
+
+      <Typography style={{textAlign: "justify"}}>{event.description}</Typography>
+
+      
+{event.signUpRequired && 
+<Typography>Link to Signup: {event.signUpLink}</Typography>
+  }
+
+  {!event.signUpRequired && 
+<Typography>No need to register. Just drop by and have fun! ❤️</Typography>
+  }   */}
+
+      <div
+        style={{
+          display: "inline-flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <add-to-calendar-button
+          name={event.name}
+          options="'Google'"
+          location={spot.name}
+          startDate={event.startDate}
+          endDate={event.endDate}
+          startTime={event.startTime}
+          endTime={event.endTime}
+          timeZone="Asia/Makassar"
+          // timeZone="America/Los_Angeles"
+        ></add-to-calendar-button>
+
+        {/* <Link to={"/events"}>
+          <Button variant="contained">See more Events</Button>
+        </Link> */}
+      </div>
+      {isLoggedIn && (
+        <div style={{ display: "flex", justifyContent: "space-evenly", marginBottom: "20px" }}>
+          <Link to={`/events/${event._id}/edit`}>
+          <button type="button" className="btn btn-success">Edit Event</button>
+          </Link>
+          <DeleteEvent eventId={eventId} />
         </div>
       )}
     </div>

@@ -306,10 +306,8 @@ function EditSpot() {
           />
           <br />
 
-          <button type="submit" class="btn btn-success">
-            Edit Spot
-          </button>
-          <DeleteSpot spotId={spotId} />
+          <button type="submit" class="btn btn-success">Edit Spot</button>
+          <DeleteSpot spotId={spotId}/>
         </form>
       </div>
     </div>
