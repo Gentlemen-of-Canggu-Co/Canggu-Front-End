@@ -2,22 +2,29 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import SliderFilter from "../components/SpotList/SliderFilter";
 import SpotCard from "../components/SpotList/SpotCard";
-import Breadcrumbs from "../components/Breadcrumbs";
-
+import Loading from "../components/Loading/Loading";
 function SpotList() {
   const [spots, setSpots] = useState([]);
   const [filteredSpots, setFilteredSpots] = useState([]);
   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
+
     axios.get(`${API_URL}/api/spots`).then((response) => {
       const filteredByRatings = response.data.sort(
         (a, b) => b.overallRating - a.overallRating
       );
       setSpots(filteredByRatings);
       setFilteredSpots(filteredByRatings);
+      setIsLoading(false);
     });
   }, []);
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <div>
