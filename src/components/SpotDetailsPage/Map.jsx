@@ -7,21 +7,22 @@ import Typography from "@mui/material/Typography";
 function Map(props) {
   const { spot } = props;
 
-  return <Accordion>
-  <AccordionSummary
-    expandIcon={<ExpandMoreIcon />}
-    aria-controls="panel1a-content"
-    id="panel1a-header"
-  >
-    <Typography component={'div'}>
-      <h2>Location</h2>
-      </Typography>
-</AccordionSummary>
-        <AccordionDetails>
-  <div dangerouslySetInnerHTML={{ __html: spot.location }} />;
-  </AccordionDetails>
-  </Accordion>
-
+  return (
+    <Accordion>
+      <AccordionSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls="panel1a-content"
+        id="panel1a-header"
+      >
+        <Typography component={"div"}>
+          <h2>Location</h2>
+        </Typography>
+      </AccordionSummary>
+      <AccordionDetails>
+        <div dangerouslySetInnerHTML={{ __html: spot.location }} />;
+      </AccordionDetails>
+    </Accordion>
+  );
 }
 
 export default Map;
