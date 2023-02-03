@@ -25,8 +25,14 @@ function EventList() {
 
   return (
     <div>
+<<<<<<< HEAD
+
+      <h1 className="event-list">Upcoming events in Canggu</h1>
+      {isLoading ? <Loading/> :<EventCard events={events} />}
+=======
       <h1>Upcoming events in Canggu</h1>
       {isLoading ? <Loading /> : <EventCard events={events} />}
+>>>>>>> 569c3a2159c0bf5d79f0be6f5314b4af0d31d50a
     </div>
   );
 }

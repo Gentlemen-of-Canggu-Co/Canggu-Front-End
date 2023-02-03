@@ -60,6 +60,54 @@ function AddEvent() {
   return (
     <div>
       <h3>Add new Event</h3>
+<<<<<<< HEAD
+
+      <form onSubmit={handleSubmit}>
+    <div className="mb-3">
+  <label className="form-label">Name:</label>
+  <input type="text" className="form-control" onChange={(event) => setName(event.target.value)}/>
+    </div>
+    <div className="mb-3">
+  <label className="form-label">Description:</label>
+  <input type="text" className="form-control" onChange={(event) => setDescription(event.target.value)}/>
+    </div>
+    <div className="mb-3">
+  <label className="form-label">Price:</label>
+  <input type="number" className="form-control" onChange={(event) => setPrice(event.target.value)}/>
+    </div>
+    <div className="mb-3">
+  <label className="form-label">Start Date: YYYY-MM-DD</label>
+  <input type="text" className="form-control" onChange={(event) => setStartDate(event.target.value)}/>
+    </div>
+    <div className="mb-3">
+  <label className="form-label">End Date: YYYY-MM-DD</label>
+  <input type="text" className="form-control" onChange={(event) => setEndDate(event.target.value)}/>
+    </div>
+    <div className="mb-3">
+  <label className="form-label">Start Time: HH:MM</label>
+  <input type="text" className="form-control" onChange={(event) => setStartTime(event.target.value)}/>
+    </div>
+    <div className="mb-3">
+  <label className="form-label">End Time: HH:MM</label>
+  <input type="text" className="form-control" onChange={(event) => setEndTime(event.target.value)}/>
+    </div>
+    <div className="mb-3">
+    <label className="form-label">Event Image: </label>
+    <button id="upload_widget" className="cloudinary-button" style={{backgroundColor: "green"}}>
+          Upload
+        </button>
+    </div>
+    <div className="form-check">
+  <input type="checkbox" className="form-check-input" onChange={(event) => setSignupRequired(event.target.checked)}/>
+  <label className="form-check-label">Do you need to sign up?</label>
+    </div>
+    <div className="mb-3">
+  <label className="form-label">Link to Signup</label>
+  <input type="text" className="form-control" onChange={(event) => setSignupLink(event.target.value)}/>
+    </div>
+    <button type="submit" className="btn btn-success">Add Event</button>
+    </form>
+=======
       <form onSubmit={handleSubmit} encType="multipart/form-data">
         <label>Name</label>
         <input
@@ -147,6 +195,7 @@ function AddEvent() {
           </button>
         )}
       </form>
+>>>>>>> 569c3a2159c0bf5d79f0be6f5314b4af0d31d50a
     </div>
   );
 }

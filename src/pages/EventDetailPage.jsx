@@ -39,14 +39,7 @@ function EventDetailPage() {
 
   return (
     <div>
-      {isLoggedIn && (
-        <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-          <Link to={`/events/${event._id}/edit`}>
-            <Button variant="contained">Edit Event</Button>
-          </Link>
-          <DeleteEvent eventId={eventId} />
-        </div>
-      )}
+      
 
 
       <EventCard spot={spot} event={event} />

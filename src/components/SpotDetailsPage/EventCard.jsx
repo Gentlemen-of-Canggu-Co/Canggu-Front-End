@@ -25,8 +25,13 @@ function EventCard(props) {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
+<<<<<<< HEAD
+            <Typography component={"div"} sx={{ fontFamily: 'Teko', fontSize: "30px" }}>
+              <h2>Events</h2>
+=======
             <Typography sx={{ fontFamily: 'Teko', fontSize: "40px" }} component={"div"}>
               <h2 >Events</h2>
+>>>>>>> 569c3a2159c0bf5d79f0be6f5314b4af0d31d50a
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -116,7 +121,7 @@ function EventCard(props) {
                     <div
                       style={{
                         display: "flex",
-                        justifyContent: "space-between",
+                        justifyContent: "space-evenly",
                         alignItems: "center",
                       }}
                     >
