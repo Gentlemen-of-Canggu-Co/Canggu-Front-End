@@ -41,17 +41,17 @@ function AddSpot() {
     const myWidget = window.cloudinary.createUploadWidget(
       {
         cloudName: "dya5f34qe",
-        uploadPreset: "uw_test",
+        uploadPreset: "uw_test"
       },
       (error, result) => {
         if (!error && result && result.event === "success") {
           pics.push(result.info.secure_url);
           setSpotImage(pics[0]);
-          setMenuImage(pics[1]);
+          setMenuImage(pics[1])
         }
       }
     );
-
+    
     document.getElementById("upload_widget1").addEventListener(
       "click",
       function () {
@@ -67,21 +67,18 @@ function AddSpot() {
       false
     );
 
-    document
-      .getElementById("upload_widget1")
-      .addEventListener("click", (event) => {
-        event.preventDefault();
-      });
-    document
-      .getElementById("upload_widget2")
-      .addEventListener("click", (event) => {
-        event.preventDefault();
-      });
+    document.getElementById("upload_widget1").addEventListener("click", (event) => {
+      event.preventDefault()
+    });
+    document.getElementById("upload_widget2").addEventListener("click", (event) => {
+      event.preventDefault()
+    })  
+    
   }, []);
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-
+   
     const meal = [];
 
     if (meal1 !== "") {
@@ -135,9 +132,10 @@ function AddSpot() {
       consumables,
     };
     axios.post(`${API_URL}/api/spots`, newSpot).then((response) => {
-      console.log("this is a string", response.data);
+      console.log('this is a string', response.data);
       navigate(`/spots/${response.data._id}`);
     });
+
   };
 
   return (

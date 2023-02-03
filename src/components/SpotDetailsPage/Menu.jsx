@@ -16,15 +16,12 @@ function Menu(props) {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography
-            component={"div"}
-            sx={{ fontFamily: "Teko", fontSize: "40px" }}
-          >
+          <Typography component={'div'} sx={{ fontFamily: 'Teko', fontSize: "40px" }}>
             <h2>Menu</h2>
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography component={"div"}>
+          <Typography component={'div'}>
             {spot.menuImage && (
               <img
                 style={{ width: "100vw" }}
