@@ -358,7 +358,7 @@ function AddSpot() {
           />
           <br />
 
-          <button type="submit">Add new Spot</button>
+          <button type="submit" className="btn btn-success">Add new Spot</button>
         </form>
       </div>
     </div>
