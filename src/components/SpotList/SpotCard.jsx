@@ -42,8 +42,7 @@ function SpotCard(props) {
                         </Typography>
                         <Typography component={"div"} variant="body2" sx={{ fontFamily: 'Montserrat', fontSize: "15px" }}>
                           <i>{spot.tagline}</i>
-                          <span class="badge bg-success" style={{margin: '5px'}}>{spot.priceLevel}</span>
-
+                          <span className="badge bg-success" style={{margin: '5px'}}>{spot.priceLevel}</span>
                         </Typography>
                       </div>
                     </Box>
@@ -87,14 +86,17 @@ function SpotCard(props) {
                               label={`Ambience`}
                             />
                           </div>
-
+                          {/* <CardActions style={{ width: "30vw" }}>
+                          <Link key={spot._id} to={`/spots/${spot._id}`}>
+                            <Button variant="contained">See details</Button>
+                          </Link>
+                        </CardActions> */}
                         </div>
                       </div>
                     </Typography>
                   </CardContent>
                 </Card>
               </Link>
-
             </div>
           );
         })}
@@ -120,10 +122,10 @@ function SpotCard(props) {
               }}
             >
               <div>
-                <Typography component={"div"} variant="h5">
+                <Typography component={"div"} variant="h5" sx={{ fontFamily: 'Teko', fontSize: "30px" }}>
                   {spot.name}
                 </Typography>
-                <Typography component={"div"} variant="body2">
+                <Typography component={"div"} variant="body2" sx={{ fontFamily: 'Montserrat', fontSize: "15px" }}>
                   <i>{spot.tagline}</i>
                 </Typography>
               </div>

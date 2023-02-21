@@ -10,10 +10,12 @@ import AddEvent from "./pages/AddEvent";
 import EditEvent from "./pages/EditEvent";
 import EditSpot from "./pages/EditSpot";
 import ConsumableDetailsPage from "./pages/ConsumableDetailsPage";
+// import Navbar from "./components/Navbar";
 import IsPrivate from "./components/IsPrivate/IsPrivate";
 import IsAnon from "./components/IsAnon/IsAnon";
 import AddSpot from "./pages/AddSpot";
 import Footer from "./pages/Footer";
+import SignupPage from "./pages/SignupPage";
 import AlternativeNavbar from "./components/AlternativeNavbar";
 
 function App() {
@@ -58,10 +60,18 @@ function App() {
             </IsPrivate>
           } */}
         />
+
         <Route
           path="/consumable/:consumableId"
           element={<ConsumableDetailsPage />}
         />
+        {/* <Route
+          path="/signup"
+          element={
+            <IsAnon>
+              <SignupPage />
+            </IsAnon>
+          }/> */}
         <Route
           path="/login"
           element={

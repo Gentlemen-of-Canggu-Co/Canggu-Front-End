@@ -1,45 +1,54 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import {Link} from 'react-router-dom';
 import axios from "axios";
 import SliderFilter from "../components/SpotList/SliderFilter";
 import SpotCard from "../components/SpotList/SpotCard";
-import Loading from "../components/Loading/Loading";
+import { AuthContext } from "../context/auth.context";
+
+
 function SpotList() {
   const [spots, setSpots] = useState([]);
   const [filteredSpots, setFilteredSpots] = useState([]);
   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
-  const [isLoading, setIsLoading] = useState(true);
+  const { isLoggedIn } = useContext(AuthContext);
+
+
+  // useEffect(() => {
+  //   axios.get(`${API_URL}/api/spots`).then((response) => {
+  //     setSpots(response.data);
+  //     setFilteredSpots(response.data);
+  //   });
+  // }, []);
 
   useEffect(() => {
-    setIsLoading(true);
+    axios.get(`${API_URL}/api/spots`)
+        .then((response) => {
+            const filteredByRatings = response.data.sort((a,b) => b.overallRating - a.overallRating)
+            setSpots(filteredByRatings)
+            setFilteredSpots(filteredByRatings)
+        })
+}, [])
 
-    axios.get(`${API_URL}/api/spots`).then((response) => {
-      const filteredByRatings = response.data.sort(
-        (a, b) => b.overallRating - a.overallRating
-      );
-      setSpots(filteredByRatings);
-      setFilteredSpots(filteredByRatings);
-      setIsLoading(false);
-    });
-  }, []);
 
-  if (isLoading) {
-    return <Loading />;
-  }
+
 
   return (
     <div>
+      {/* <Breadcrumbs spots={spots} /> */}
+
       <h1 className="spotlist-headline">Spots in Canggu</h1>
-      <p className="spotlist-p">
-        Find your perfect spot, based on what matters to you.
-      </p>
+      <p className="spotlist-p">Find your perfect spot, based on what matters to you.</p>
       <div>
         <SliderFilter spots={spots} setFilteredSpots={setFilteredSpots} />
       </div>
       <SpotCard spots={spots} filteredSpots={filteredSpots} />
-      <h2 style={{ fontFamily: "Montserrat" }}>
-        About Cafes and Restaurants in Canggu
-      </h2>
-      <p style={{ fontFamily: "Montserrat" }}>
+      {isLoggedIn && (
+                    <Link to={`/spots/create`}>
+                    <button type="button" className="btn btn-success" style={{margin: '10px'}}>Add new Spot</button>
+                    </Link>   
+            )}
+      <h2>SEO: About Cafes and Restaurants in Canggu</h2>
+      <p>
         A coffeehouse, coffee shop, or café is an establishment that primarily
         serves coffee of various types, notably espresso, latte, and cappuccino.
         Some coffeehouses may serve cold drinks, such as iced coffee and iced

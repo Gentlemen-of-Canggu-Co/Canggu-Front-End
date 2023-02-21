@@ -39,7 +39,7 @@ padding-right: 25vw; */
 
   }
 
-.spotlist-headline, .upcoming-events, .jumbotron h1 {
+.spotlist-headline, .upcoming-events, .jumbotron h1, .event-list {
   font-size: 40px;
   font-family: 'Teko', sans-serif;
 }
@@ -59,4 +59,6 @@ padding-right: 25vw; */
   font-size: 20px;
 }
 
-
+.footer-links a {
+  text-decoration: none;
+}
