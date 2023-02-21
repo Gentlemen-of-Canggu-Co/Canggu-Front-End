@@ -8,6 +8,13 @@
     .cardSize{
     width: 90vw
 }
+
+    .progressBarSize{
+        width: 90vw;
+        margin-bottom: 5px
+    }
+
+    
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px){
@@ -19,6 +26,11 @@
 
 .cardSize{
     width: 48vw
+}
+
+.progressBarSize{
+    width: 48vw;
+    margin-bottom: 5px
 }
 }
 
@@ -32,6 +44,11 @@
     .cardSize{
         width: 32vw
     }
+
+    .progressBarSize{
+        width: 32vw;
+        margin-bottom: 5px
+    }
 }
 
 @media screen and (min-width: 1025px){
@@ -43,5 +60,10 @@
 
     .cardSize{
         width: 24vw
+    }
+
+    .progressBarSize{
+        width: 24vw;
+        margin-bottom: 5px
     }
 }
