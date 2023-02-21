@@ -1,0 +1,47 @@
+@media screen and (max-width: 480px){
+    .spotlistCardWrap{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+}
+
+    .cardSize{
+    width: 90vw
+}
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px){
+    .spotlistCardWrap{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+}
+
+.cardSize{
+    width: 48vw
+}
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    .spotlistCardWrap{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }  
+
+    .cardSize{
+        width: 32vw
+    }
+}
+
+@media screen and (min-width: 1025px){
+    .spotlistCardWrap{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cardSize{
+        width: 24vw
+    }
+}

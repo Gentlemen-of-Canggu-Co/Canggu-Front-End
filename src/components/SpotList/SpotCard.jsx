@@ -7,20 +7,21 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import ProgressBar from "react-bootstrap/ProgressBar";
+import "./spotlist.css"
 
 function SpotCard(props) {
   const { spots, filteredSpots, spot } = props;
   return (
-    <div>
+    <div className="spotlistCardWrap">
       {spots &&
         filteredSpots.map((spot) => {
           return (
-            <div key={spot._id}>
+            <div key={spot._id} style={{padding:"5px 3px"}}>
               <Link key={spot._id} to={`/spots/${spot._id}`}>
-                <Card sx={{ maxWidth: "100vw" }}>
+                <Card className="cardSize" >
                   <Box sx={{ position: "relative" }}>
                     <CardMedia
-                      sx={{ height: 220 }}
+                      sx={{ height: 200 }}
                       image={spot.spotImage}
                       title="green iguana"
                     />
@@ -32,7 +33,7 @@ function SpotCard(props) {
                         left: 0,
                         width: "100%",
                         height: "100%",
-                        bgcolor: "rgba(0, 0, 0, 0.24)",
+                        bgcolor: "rgba(0, 0, 0, 0.44)",
                         color: "white",
                         padding: "10px",
                       }}
@@ -63,21 +64,21 @@ function SpotCard(props) {
                           >
                             <ProgressBar
                               className="bg-secondary"
-                              style={{ width: "90vw", marginBottom: "5px" }}
+                              style={{ width: "40vw", marginBottom: "5px" }}
                               animated={true}
                               now={spot.coffeeRating}
                               label={`Coffee`}
                             />
                             <ProgressBar
                               className="bg-secondary"
-                              style={{ width: "90vw", marginBottom: "5px"}}
+                              style={{ width: "40vw", marginBottom: "5px"}}
                               animated={true}
                               now={spot.foodRating}
                               label={`Food`}
                             />
                             <ProgressBar
                               className="bg-secondary"
-                              style={{ width: "90vw" }}
+                              style={{ width: "40vw" }}
                               animated={true}
                               now={spot.ambienceRating}
                               label={`Ambience`}
@@ -92,49 +93,6 @@ function SpotCard(props) {
                       </div>
                     </Box>
                   </Box>
-
-                  {/* <CardContent>
-                    <Typography
-                      component={"div"}
-                      variant="body2"
-                      color="text.secondary"
-                    >
-                      <div style={{ display: "flex" }}>
-                        <div style={{ display: "flex", width: "100vw" }}>
-                          <div
-                            style={{
-                              display: "flex",
-                              flexDirection: "column",
-                              justifyContent: "space-evenly",
-                              paddingLeft: "0",
-                            }}
-                          >
-                            <ProgressBar
-                              className="bg-secondary"
-                              style={{ width: "90vw", marginBottom: "5px" }}
-                              animated={true}
-                              now={spot.coffeeRating}
-                              label={`Coffee`}
-                            />
-                            <ProgressBar
-                              className="bg-secondary"
-                              style={{ width: "90vw", marginBottom: "5px"}}
-                              animated={true}
-                              now={spot.foodRating}
-                              label={`Food`}
-                            />
-                            <ProgressBar
-                              className="bg-secondary"
-                              style={{ width: "90vw" }}
-                              animated={true}
-                              now={spot.ambienceRating}
-                              label={`Ambience`}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </Typography>
-                  </CardContent> */}
                 </Card>
               </Link>
             </div>

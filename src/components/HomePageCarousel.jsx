@@ -17,7 +17,8 @@ function HomePageCarousel() {
         <div className="jumbotron">
   <h1 className="display-4">Chunks of Canggu</h1>
   <p className="lead">Canggus first Café and Restaurant Finder, based on what you like.</p>
-  <button class="btn btn-primary">Browse Spots</button>
+  <a href="/spots" class="btn btn-primary">Browse Spots</a>
+
 </div>
         </div>
           {/* <div className="carousel-item " style={{backgroundImage: `url(${Bali2})`}}>
