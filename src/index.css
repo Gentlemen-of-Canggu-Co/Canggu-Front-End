@@ -19,7 +19,9 @@ body {
   
   body{
     background-color: black;
-  }
+/* padding-left: 25vw;
+padding-right: 25vw; */
+}
 
   .jumbotron {
     background: rgba(100, 100, 100, 0.5);

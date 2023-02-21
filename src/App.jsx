@@ -21,19 +21,46 @@ import AlternativeNavbar from "./components/AlternativeNavbar";
 function App() {
   return (
     <div className="App">
-      {/* <Navbar /> */}
-      {/* <Navbar /> */}
-      <AlternativeNavbar />
+      {/* <AlternativeNavbar /> */}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/spots/:spotId" element={<SpotDetailsPage />} />
         <Route path="/spots" element={<SpotList />} />
-        <Route path="/spots/create" element={<IsPrivate><AddSpot /></IsPrivate>} /> 
-        <Route path="/spots/:spotId/edit" element={<IsPrivate><EditSpot /></IsPrivate>} />
-        <Route path="/events" element={<EventList />} />
+        <Route
+          path="/spots/create"
+          element={
+            <IsPrivate>
+              <AddSpot />
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/spots/:spotId/edit"
+          element={
+            <IsPrivate>
+              <EditSpot />
+            </IsPrivate>
+          }
+        />
+        {/* <Route path="/events" element={<EventList />} />
         <Route path="/events/:eventId" element={<EventDetailPage />} />
-        <Route path="/events/:spotId/create" element={<IsPrivate><AddEvent /></IsPrivate>} />
-        <Route path="/events/:eventId/edit" element={<IsPrivate><EditEvent /></IsPrivate>} />
+        <Route
+          path="/events/:spotId/create"
+          element={
+            <IsPrivate>
+              <AddEvent />
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/events/:eventId/edit"
+          element={
+            <IsPrivate>
+              <EditEvent />
+            </IsPrivate>
+          } */}
+        />
+
         <Route
           path="/consumable/:consumableId"
           element={<ConsumableDetailsPage />}
