@@ -4,6 +4,7 @@ import axios from "axios";
 import SliderFilter from "../components/SpotList/SliderFilter";
 import SpotCard from "../components/SpotList/SpotCard";
 import { AuthContext } from "../context/auth.context";
+import "../App.css"
 
 
 function SpotList() {

@@ -14,24 +14,24 @@ function SliderFilter(props) {
   const [ambienceFilter, setAmbienceFilter] = useState(null);
   const [foodFilter, setFoodFilter] = useState(null);
 
-  const marks = [
-    {
-      value: 0,
-      label: "0",
-    },
-    {
-      value: 30,
-      label: "30",
-    },
-    {
-      value: 60,
-      label: "60",
-    },
-    {
-      value: 90,
-      label: "90",
-    },
-  ];
+  // const marks = [
+  //   {
+  //     value: 0,
+  //     label: "0",
+  //   },
+  //   {
+  //     value: 30,
+  //     label: "30",
+  //   },
+  //   {
+  //     value: 60,
+  //     label: "60",
+  //   },
+  //   {
+  //     value: 90,
+  //     label: "90",
+  //   },
+  // ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -49,9 +49,9 @@ function SliderFilter(props) {
 
   return (
     <div>
-      <Accordion style={{ margin: "20px" }}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
+      <Accordion style={{ margin: "20px"}}>
+        <AccordionSummary style={{ backgroundColor: "black" }}
+          expandIcon={<ExpandMoreIcon style={{color: "white"}} />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
@@ -59,6 +59,7 @@ function SliderFilter(props) {
             sx={{
               fontFamily: "Teko",
               fontSize: "20px",
+              color: "white"
             }}
           >
             Filter results
@@ -72,18 +73,17 @@ function SliderFilter(props) {
           <Typography component={"div"}>
             <div>
               <form onSubmit={handleSubmit}>
-                <div>
-                  <p style={{ fontSize: 12, fontFamily: "Montserrat" }}>Food</p>
+                <div style={{display: "flex"}}>
 
                   <Slider
-                    style={{ width: "60vw", marginRight: "10px" }}
+                    style={{ width: "70vw", marginRight: "10px" }}
                     aria-label="Food"
                     defaultValue={1}
                     valueLabelDisplay="auto"
                     step={1}
                     value={foodFilter}
                     onChange={(event) => setFoodFilter(event.target.value)}
-                    marks={marks}
+                    // marks={marks}
                     min={1}
                     sx={{
                       width: 300,
@@ -91,22 +91,22 @@ function SliderFilter(props) {
                     }}
                     max={100}
                   />
+                                  <div style={{ fontSize: 15, fontFamily: "Teko", width: "10vw"}}><p style={{paddingTop: "10px"}}>Food</p></div>
+
                 </div>
 
-                <div>
-                  <p style={{ fontSize: 12, fontFamily: "Montserrat" }}>
-                    Coffee
-                  </p>
+                <div style={{display: "flex"}}>
+                
 
                   <Slider
-                    style={{ width: "60vw", marginRight: "10px" }}
+                    style={{ width: "70vw", marginRight: "10px" }}
                     aria-label="Coffee"
                     defaultValue={1}
                     valueLabelDisplay="auto"
                     step={1}
                     value={coffeeFilter}
                     onChange={(event) => setCoffeeFilter(event.target.value)}
-                    marks={marks}
+                    // marks={marks}
                     sx={{
                       width: 300,
                       color: "success.main",
@@ -114,15 +114,15 @@ function SliderFilter(props) {
                     min={1}
                     max={100}
                   />
+                                  <div style={{ fontSize: 15, fontFamily: "Teko", width: "10vw"}}><p style={{paddingTop: "10px"}}>Coffee</p></div>
+
                 </div>
 
-                <div>
-                  <p style={{ fontSize: 12, fontFamily: "Montserrat" }}>
-                    Ambience
-                  </p>
+                <div style={{display: "flex"}}>
+ 
 
                   <Slider
-                    style={{ width: "60vw", marginRight: "10px" }}
+                    style={{ width: "70vw", marginRight: "10px" }}
                     aria-label="Ambience"
                     defaultValue={1}
                     name="AbienceRating"
@@ -134,10 +134,12 @@ function SliderFilter(props) {
                     }}
                     value={ambienceFilter}
                     onChange={(event) => setAmbienceFilter(event.target.value)}
-                    marks={marks}
+                    // marks={marks}
                     min={1}
                     max={100}
                   />
+                                  <div style={{ fontSize: 15, fontFamily: "Teko", width: "10vw"}}><p style={{paddingTop: "10px"}}>Ambience</p></div>
+
                 </div>
                 <Button
                   type="submit"
@@ -145,7 +147,7 @@ function SliderFilter(props) {
                   sx={{
                     fontFamily: "Montserrat",
                     backgroundColor: "green",
-                    marginTop: "30px",
+                    marginTop: "10px",
                     marginBottom: "10px"
                   }}
                 >

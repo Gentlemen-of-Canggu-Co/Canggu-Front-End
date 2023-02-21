@@ -31,7 +31,8 @@ function SpotCard(props) {
                         bottom: 0,
                         left: 0,
                         width: "100%",
-                        bgcolor: "rgba(0, 0, 0, 0.54)",
+                        height: "100%",
+                        bgcolor: "rgba(0, 0, 0, 0.24)",
                         color: "white",
                         padding: "10px",
                       }}
@@ -43,12 +44,8 @@ function SpotCard(props) {
                         <Typography component={"div"} variant="body2" sx={{ fontFamily: 'Montserrat', fontSize: "15px" }}>
                           <i>{spot.tagline}</i>
                           <span className="badge bg-success" style={{margin: '5px'}}>{spot.priceLevel}</span>
-                        </Typography>
-                      </div>
-                    </Box>
-                  </Box>
-
-                  <CardContent>
+                          <span>
+                          <CardContent>
                     <Typography
                       component={"div"}
                       variant="body2"
@@ -86,15 +83,58 @@ function SpotCard(props) {
                               label={`Ambience`}
                             />
                           </div>
-                          {/* <CardActions style={{ width: "30vw" }}>
-                          <Link key={spot._id} to={`/spots/${spot._id}`}>
-                            <Button variant="contained">See details</Button>
-                          </Link>
-                        </CardActions> */}
                         </div>
                       </div>
                     </Typography>
                   </CardContent>
+                          </span>
+                        </Typography>
+                      </div>
+                    </Box>
+                  </Box>
+
+                  {/* <CardContent>
+                    <Typography
+                      component={"div"}
+                      variant="body2"
+                      color="text.secondary"
+                    >
+                      <div style={{ display: "flex" }}>
+                        <div style={{ display: "flex", width: "100vw" }}>
+                          <div
+                            style={{
+                              display: "flex",
+                              flexDirection: "column",
+                              justifyContent: "space-evenly",
+                              paddingLeft: "0",
+                            }}
+                          >
+                            <ProgressBar
+                              className="bg-secondary"
+                              style={{ width: "90vw", marginBottom: "5px" }}
+                              animated={true}
+                              now={spot.coffeeRating}
+                              label={`Coffee`}
+                            />
+                            <ProgressBar
+                              className="bg-secondary"
+                              style={{ width: "90vw", marginBottom: "5px"}}
+                              animated={true}
+                              now={spot.foodRating}
+                              label={`Food`}
+                            />
+                            <ProgressBar
+                              className="bg-secondary"
+                              style={{ width: "90vw" }}
+                              animated={true}
+                              now={spot.ambienceRating}
+                              label={`Ambience`}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </Typography>
+                  </CardContent> */}
                 </Card>
               </Link>
             </div>
