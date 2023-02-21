@@ -3,11 +3,11 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import SpotList from "./pages/SpotList";
 import SpotDetailsPage from "./pages/SpotDetailsPage";
-import EventList from "./pages/EventList";
-import EventDetailPage from "./pages/EventDetailPage";
+// import EventList from "./pages/EventList";
+// import EventDetailPage from "./pages/EventDetailPage";
 import LoginPage from "./pages/LoginPage";
-import AddEvent from "./pages/AddEvent";
-import EditEvent from "./pages/EditEvent";
+// import AddEvent from "./pages/AddEvent";
+// import EditEvent from "./pages/EditEvent";
 import EditSpot from "./pages/EditSpot";
 import ConsumableDetailsPage from "./pages/ConsumableDetailsPage";
 // import Navbar from "./components/Navbar";
@@ -15,8 +15,8 @@ import IsPrivate from "./components/IsPrivate/IsPrivate";
 import IsAnon from "./components/IsAnon/IsAnon";
 import AddSpot from "./pages/AddSpot";
 import Footer from "./pages/Footer";
-import SignupPage from "./pages/SignupPage";
-import AlternativeNavbar from "./components/AlternativeNavbar";
+// import SignupPage from "./pages/SignupPage";
+// import AlternativeNavbar from "./components/AlternativeNavbar";
 
 function App() {
   return (
