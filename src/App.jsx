@@ -19,7 +19,7 @@ import AlternativeNavbar from "./components/AlternativeNavbar";
 function App() {
   return (
     <div className="App">
-      <AlternativeNavbar />
+      {/* <AlternativeNavbar /> */}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/spots/:spotId" element={<SpotDetailsPage />} />
@@ -40,7 +40,7 @@ function App() {
             </IsPrivate>
           }
         />
-        <Route path="/events" element={<EventList />} />
+        {/* <Route path="/events" element={<EventList />} />
         <Route path="/events/:eventId" element={<EventDetailPage />} />
         <Route
           path="/events/:spotId/create"
@@ -56,7 +56,7 @@ function App() {
             <IsPrivate>
               <EditEvent />
             </IsPrivate>
-          }
+          } */}
         />
         <Route
           path="/consumable/:consumableId"
