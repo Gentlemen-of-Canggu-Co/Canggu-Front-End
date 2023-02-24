@@ -13,14 +13,6 @@ function Pictograms(props) {
   return (
     <Typography component={'div'}>
       <div className="pictograms"
-        // style={{
-        //   display: "flex",
-        //   flexWrap: "wrap",
-        //   flexDirection: "row",
-        //   justifyContent: "space-between",
-        //   width: "100vw",
-        //   marginTop: "20px"
-        // }}
       >
         {spot.coWorkingFriendly && (
           <div className="singlePictogram">
