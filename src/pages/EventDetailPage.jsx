@@ -4,7 +4,6 @@ import { useParams, Link } from "react-router-dom";
 import "add-to-calendar-button";
 import DeleteEvent from "../components/DeleteEvent";
 import EventCard from "../components/SpotDetailsPage/EventCard";
-import Button from "@mui/material/Button";
 import { Typography } from "@mui/material";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
@@ -81,26 +80,6 @@ function EventDetailPage() {
           )}
         </ul>
       </div>}
-
-      {/* <Typography><h1>{event.name} @ {spot.name}</h1></Typography>
-
-      <div style={{display: "flex", justifyContent: "space-around"}}>
-      <Typography>{event.startDate}: {event.startTime} - {event.endTime}</Typography>
-      <Typography>Cost: {event.price}k</Typography>
-      </div>
-
-
-
-      <Typography style={{textAlign: "justify"}}>{event.description}</Typography>
-
-      
-{event.signUpRequired && 
-<Typography>Link to Signup: {event.signUpLink}</Typography>
-  }
-
-  {!event.signUpRequired && 
-<Typography>No need to register. Just drop by and have fun! ❤️</Typography>
-  }   */}
 
       <div
         style={{
