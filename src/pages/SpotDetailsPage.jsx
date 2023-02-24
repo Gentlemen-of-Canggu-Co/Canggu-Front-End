@@ -8,6 +8,8 @@ import SpotCard from "../components/SpotList/SpotCard";
 import ConsumableCard from "../components/SpotDetailsPage/ConsumableCard";
 import Loading from "../components/Loading/Loading";
 import { AuthContext } from "../context/auth.context";
+import "../components/SpotList/spotlist.css"
+
 
 function SpotDetailsPage() {
   const { isLoggedIn } = useContext(AuthContext);
@@ -36,18 +38,15 @@ function SpotDetailsPage() {
 
   return (
     <div>
-
-{/* <div>
-      <Link to={`/spots/${spot._id}/edit`}>
-        <Button variant="contained">Edit Spot</Button>
-      </Link>
-      <Link to={`/events/${spot._id}/create`}>
-        <Button variant="contained">Add Event</Button>
-      </Link>
-</div> */}
-      {/* <Breadcrumbs spot={spot} /> */}
+    <div className="desktopLayout">
+    <div>
       <SpotCard spot={spot} />
+    </div>
+    <div>
       <Description spot={spot} />
+      </div>
+      </div>
+
       <ConsumableCard spotId={spotId} getSpot={getSpot} spot={spot} />
       <Menu spot={spot} />
       { spot.events.length > 0 && <EventCard spot={spot} />}
@@ -56,8 +55,7 @@ function SpotDetailsPage() {
                     <button type="button" className="btn btn-success" style={{margin: '10px'}}>Add new event</button>
                     </Link>   
             )}
-
-      </div>
+    </div>
   );
 }
 
