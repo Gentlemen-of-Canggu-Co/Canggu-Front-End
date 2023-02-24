@@ -24,7 +24,7 @@ function Menu(props) {
           <Typography component={'div'}>
             {spot.menuImage && (
               <img
-                style={{ width: "100vw" }}
+                style={{ width: "25vw" }}
                 src={spot.menuImage}
                 alt="pictogram"
               />

@@ -9,7 +9,10 @@ function Description(props) {
   const { spot } = props;
 
   return (
-    <div>
+<div>
+
+
+    <div className="accordionHider">
       {" "}
       <Accordion>
         <AccordionSummary
@@ -29,6 +32,18 @@ function Description(props) {
         </AccordionDetails>
       </Accordion>
     </div>
+
+<div className="desktopDescription">
+  <h1>{spot.name}</h1>
+  <p>{spot.tagline}</p>
+  <p>{spot.description}</p>
+  <Pictograms spot={spot} />
+
+
+</div>
+
+
+</div>
   );
 }
 

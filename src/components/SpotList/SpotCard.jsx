@@ -99,7 +99,7 @@ function SpotCard(props) {
         })}
 
       {spot && (
-        <Card sx={{ maxWidth: "100vw" }}>
+        <Card className="sdpImgSize">
           <Box sx={{ position: "relative" }}>
             <CardMedia
               sx={{ height: 400 }}
@@ -144,22 +144,19 @@ function SpotCard(props) {
                 }}
               >
                 <ProgressBar
-                  className="bg-secondary"
-                  style={{ width: "90vw", marginBottom: "5px" }}
+                  className="bg-secondary progressBarWidth"
                   animated={true}
                   now={spot.coffeeRating}
                   label={`Coffee`}
                 />
                 <ProgressBar
-                  className="bg-secondary"
-                  style={{ width: "90vw", marginBottom: "5px" }}
+                  className="bg-secondary progressBarWidth"
                   animated={true}
                   now={spot.foodRating}
                   label={`Food`}
                 />
                 <ProgressBar
-                  className="bg-secondary"
-                  style={{ width: "90vw" }}
+                  className="bg-secondary progressBarWidth"
                   animated={true}
                   now={spot.ambienceRating}
                   label={`Ambience`}
