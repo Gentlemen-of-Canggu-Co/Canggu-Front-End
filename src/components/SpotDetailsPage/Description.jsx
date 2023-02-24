@@ -25,7 +25,7 @@ function Description(props) {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography component={'div'} style={{textAlign: "justify"}} sx={{ fontFamily: 'Montserrat', fontSize: "15px" }}>
+          <Typography component={'div'} style={{textAlign: "justify"}} sx={{ fontFamily: 'Teko', fontSize: "20px" }}>
             {spot.description}
             <Pictograms spot={spot} />
           </Typography>
@@ -34,10 +34,21 @@ function Description(props) {
     </div>
 
 <div className="desktopDescription">
-  <h1>{spot.name}</h1>
-  <p>{spot.tagline}</p>
-  <p>{spot.description}</p>
-  <Pictograms spot={spot} />
+
+
+
+  <Typography component={"div"} variant="h1" sx={{ fontFamily: 'Teko', fontSize: "60px" }}>
+                          {spot.name}
+                        </Typography>
+                        <Typography component={"div"} variant="body2" sx={{ fontFamily: 'Teko', fontSize: "15px" }}>
+                          <i>{spot.tagline}</i>
+                          <span className="badge bg-success" style={{margin: '5px'}}>{spot.priceLevel}</span>
+                        </Typography>
+                        <Typography sx={{ fontFamily: 'Teko', fontSize: "20px", textAlign: "justify" }}>{spot.description}</Typography>
+
+                        <Pictograms spot={spot} />
+
+
 
 
 </div>
