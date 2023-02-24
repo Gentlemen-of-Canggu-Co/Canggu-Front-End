@@ -72,18 +72,23 @@ function ConsumableCard(props) {
                                 {singleConsumable.tagline}
                               </Typography>
                             </div>
-
-                            <p
-                              style={{
-                                fontSize: "2rem",
-                                alignContent: "center",
-                                width: "30vw",
-                                border: "solid",
-                                borderRadius: "50%",
-                              }}
-                            >
+                            <Typography component={'div'} className="badge bg-secondary" style={{margin: '5px'}}>Price<br></br>{singleConsumable.price}k</Typography>                            
+                            
+                           {singleConsumable.rating > 79 && <Typography className="badge bg-success">
+                            Score <br></br>
                               {singleConsumable.rating}
-                            </p>
+                              </Typography>}
+
+                              {singleConsumable.rating > 59 && singleConsumable.rating< 80 && <Typography className="badge bg-warning">
+                            Score <br></br>
+                              {singleConsumable.rating}
+                              </Typography>}
+
+                              {singleConsumable.rating< 60 && <Typography className="badge bg-danger">
+                            Score <br></br>
+                              {singleConsumable.rating}
+                              </Typography>}
+
                           </div>
                         </Box>
                       </Box>
