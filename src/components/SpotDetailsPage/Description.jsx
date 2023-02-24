@@ -37,14 +37,14 @@ function Description(props) {
 
 
 
-  <Typography component={"div"} variant="h1" sx={{ fontFamily: 'Teko', fontSize: "60px" }}>
+  <Typography component={"div"} variant="h1" sx={{ fontFamily: 'Teko', fontSize: "60px", textAlign: "left", paddingLeft: "5vw" }}>
                           {spot.name}
                         </Typography>
-                        <Typography component={"div"} variant="body2" sx={{ fontFamily: 'Teko', fontSize: "15px" }}>
+                        {/* <Typography component={"div"} variant="body2" sx={{ fontFamily: 'Teko', fontSize: "15px" }}>
                           <i>{spot.tagline}</i>
                           <span className="badge bg-success" style={{margin: '5px'}}>{spot.priceLevel}</span>
-                        </Typography>
-                        <Typography sx={{ fontFamily: 'Teko', fontSize: "20px", textAlign: "justify" }}>{spot.description}</Typography>
+                        </Typography> */}
+                        <Typography sx={{ fontFamily: 'Teko', fontSize: "20px", textAlign: "justify", padding:"0 5vw 0 5vw" }}>{spot.description}</Typography>
 
                         <Pictograms spot={spot} />
 
