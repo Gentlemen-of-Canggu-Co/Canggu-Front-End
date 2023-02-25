@@ -1,10 +1,11 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-import Coco from "../assets/images/Coco.png"
 import Nav from 'react-bootstrap/Nav';
-import Logo from "../assets/images/logo.svg";
 import { useContext } from "react"; 
 import { AuthContext } from "../context/auth.context";
+import brandLogo from "../assets/images/navbarLogo.jpg"
+
+
 
 function AlternativeNavbar (){
   const {
@@ -16,23 +17,21 @@ function AlternativeNavbar (){
     return(
 
     <>
-    <Navbar bg="light" variant="light">
+    <Navbar bg="black" variant="dark">
         <Container>
           <Navbar.Brand href="/">
             <img
               alt=""
-              src={Logo}
-              width="60"
-              height="40"
+              src={brandLogo}
+              height= "60vh"
               className="d-inline-block align-top"
             />{' '}
           </Navbar.Brand>
-          <div className="navbar" style={{display: "flex"}}>
-          <Nav.Link style={{marginRight:"10px"}} href="/spots">Spots</Nav.Link>
-          <Nav.Link style={{marginRight:"10px"}} href="/events">Events</Nav.Link>
-          {isLoggedIn && <Nav.Link style={{marginRight:"10px"}} onClick={logOutUser}>Logout</Nav.Link>}
+          {/* <div className="navbar" style={{display: "flex"}}> */}
+          <Nav.Link style={{marginRight:"10px", color: "white"}} href="/spots">Browse Spots</Nav.Link>
+          {/* {isLoggedIn && <Nav.Link style={{marginRight:"10px"}} onClick={logOutUser}>Logout</Nav.Link>} */}
 
-          </div>
+          {/* </div> */}
           
         </Container>
       </Navbar>
