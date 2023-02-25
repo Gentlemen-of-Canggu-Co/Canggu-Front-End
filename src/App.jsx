@@ -10,18 +10,17 @@ import LoginPage from "./pages/LoginPage";
 // import EditEvent from "./pages/EditEvent";
 import EditSpot from "./pages/EditSpot";
 // import ConsumableDetailsPage from "./pages/ConsumableDetailsPage";
-// import Navbar from "./components/Navbar";
 import IsPrivate from "./components/IsPrivate/IsPrivate";
 import IsAnon from "./components/IsAnon/IsAnon";
 import AddSpot from "./pages/AddSpot";
 import Footer from "./pages/Footer";
 // import SignupPage from "./pages/SignupPage";
-// import AlternativeNavbar from "./components/AlternativeNavbar";
+import AlternativeNavbar from "./components/AlternativeNavbar";
 
 function App() {
   return (
     <div className="App">
-      {/* <AlternativeNavbar /> */}
+      <AlternativeNavbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/spots/:spotId" element={<SpotDetailsPage />} />
