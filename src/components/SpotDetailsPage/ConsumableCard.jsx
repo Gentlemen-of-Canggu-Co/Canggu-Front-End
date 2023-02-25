@@ -40,11 +40,11 @@ function ConsumableCard(props) {
                   <Card className="cardSize">
                     {/* <Card sx={{ maxWidth: "100vw" }}> */}
                       <Box sx={{ position: "relative" }}>
-                        <Link to={`/consumable/${singleConsumable._id}`}><CardMedia
+                        <CardMedia
                           sx={{ height: 220 }}
                           image={singleConsumable.image}
                           title="green iguana"
-                        /></Link>
+                        />
 
                         <Box
                           sx={{

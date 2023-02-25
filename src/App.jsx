@@ -9,7 +9,7 @@ import LoginPage from "./pages/LoginPage";
 // import AddEvent from "./pages/AddEvent";
 // import EditEvent from "./pages/EditEvent";
 import EditSpot from "./pages/EditSpot";
-import ConsumableDetailsPage from "./pages/ConsumableDetailsPage";
+// import ConsumableDetailsPage from "./pages/ConsumableDetailsPage";
 // import Navbar from "./components/Navbar";
 import IsPrivate from "./components/IsPrivate/IsPrivate";
 import IsAnon from "./components/IsAnon/IsAnon";
@@ -59,12 +59,12 @@ function App() {
               <EditEvent />
             </IsPrivate>
           } */}
-        />
+        {/* /> */}
 
-        <Route
+        {/* <Route
           path="/consumable/:consumableId"
           element={<ConsumableDetailsPage />}
-        />
+        /> */}
         {/* <Route
           path="/signup"
           element={

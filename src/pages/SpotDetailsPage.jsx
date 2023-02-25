@@ -49,12 +49,12 @@ function SpotDetailsPage() {
 
       <ConsumableCard spotId={spotId} getSpot={getSpot} spot={spot} />
       <Menu spot={spot} />
-      { spot.events.length > 0 && <EventCard spot={spot} />}
+      {/* { spot.events.length > 0 && <EventCard spot={spot} />}
       {isLoggedIn && (
                     <Link to={`/events/${spotId}/create`}>
                     <button type="button" className="btn btn-success" style={{margin: '10px'}}>Add new event</button>
                     </Link>   
-            )}
+            )} */}
     </div>
   );
 }
