@@ -32,13 +32,11 @@ function ConsumableCard(props) {
         </AccordionSummary>
         <AccordionDetails style={{padding: 0}}>
         <div className="spotlistCardWrap">
-          {/* <Typography component={'div'}> */}
             {spot.consumables &&
               spot.consumables.map((singleConsumable) => {
                 return (
                   <div key={singleConsumable._id}>
                   <Card className="cardSize">
-                    {/* <Card sx={{ maxWidth: "100vw" }}> */}
                       <Box sx={{ position: "relative" }}>
                         <CardMedia
                           sx={{ height: 220 }}
@@ -92,11 +90,13 @@ function ConsumableCard(props) {
                           </div>
                         </Box>
                       </Box>
+
+{/* {isLoggedIn && <Link to={`/consumables/${singleConsumable._id}/edit`}>Edit Chunk</Link>} */}
+
                     </Card>
                   </div>
                 );
               })}
-          {/* </Typography> */}
           </div>
 
          {isLoggedIn && <Accordion>

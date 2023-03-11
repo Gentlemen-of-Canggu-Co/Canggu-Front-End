@@ -43,6 +43,10 @@
         width: 90vw;
         margin: 2px 0
     }
+
+    .menuSize{
+        width: 100vw
+    }
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px){
@@ -90,6 +94,10 @@
 .progressBarWidth{
     width: 90vw;
     margin: 2px 0
+}
+
+.menuSize{
+    width: 70vw
 }
 }
 
@@ -147,6 +155,10 @@
         width:45vw;
         margin: 2px 0
     }
+
+    .menuSize{
+        width: 50vw
+    }
 }
 
 @media screen and (min-width: 1025px){
@@ -202,5 +214,9 @@
     .progressBarWidth{
         width:45vw;
         margin: 2px 0
+    }
+
+    .menuSize{
+        width: 50vw
     }
 }
