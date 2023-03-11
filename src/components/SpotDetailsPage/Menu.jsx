@@ -23,8 +23,8 @@ function Menu(props) {
         <AccordionDetails>
           <Typography component={'div'}>
             {spot.menuImage && (
-              <img
-                style={{ width: "25vw" }}
+              <img className="menuSize"
+                // style={{ width: "50vw" }}
                 src={spot.menuImage}
                 alt="pictogram"
               />
