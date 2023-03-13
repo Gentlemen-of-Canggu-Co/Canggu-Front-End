@@ -17,6 +17,7 @@ import Footer from "./pages/Footer";
 // import SignupPage from "./pages/SignupPage";
 import AlternativeNavbar from "./components/AlternativeNavbar";
 import ToplistList from "./pages/ToplistList";
+import AddToplist from "./pages/AddToplist";
 
 function App() {
   return (
@@ -31,6 +32,14 @@ function App() {
           element={
             <IsPrivate>
               <AddSpot />
+            </IsPrivate>
+          }
+        />
+                <Route
+          path="/toplists/create"
+          element={
+            <IsPrivate>
+              <AddToplist />
             </IsPrivate>
           }
         />
