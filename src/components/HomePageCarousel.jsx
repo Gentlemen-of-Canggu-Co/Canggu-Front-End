@@ -14,7 +14,7 @@ function HomePageCarousel() {
       </ol>
       <div className="carousel-inner" role="listbox">
         <div className="carousel-item active" style={{backgroundImage: `url(${Bali1})`}}>
-        <div className="jumbotron">
+        <div className="jumbotron" style={{marginTop: "25vh"}}>
   <h1 className="display-4">Chunks of Canggu</h1>
   <p className="lead">Canggus first Café and Restaurant Finder, based on what you like.</p>
   <a href="/spots" class="btn btn-primary">Browse Spots</a>

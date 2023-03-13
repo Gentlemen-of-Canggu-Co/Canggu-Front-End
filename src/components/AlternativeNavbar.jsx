@@ -18,12 +18,12 @@ function AlternativeNavbar (){
 
     <>
     <Navbar bg="black" variant="dark">
-        <Container>
+        <Container style={{marginLeft: "10px"}}>
           <Navbar.Brand href="/">
             <img
               alt=""
               src={brandLogo}
-              height= "60vh"
+              height= "30vh"
               className="d-inline-block align-top"
             />{' '}
           </Navbar.Brand>
