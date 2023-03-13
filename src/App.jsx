@@ -16,6 +16,7 @@ import AddSpot from "./pages/AddSpot";
 import Footer from "./pages/Footer";
 // import SignupPage from "./pages/SignupPage";
 import AlternativeNavbar from "./components/AlternativeNavbar";
+import ToplistList from "./pages/ToplistList";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
             </IsPrivate>
           }
         />
+        <Route path="/toplists" element={<ToplistList />} />
         {/* <Route path="/events" element={<EventList />} />
         <Route path="/events/:eventId" element={<EventDetailPage />} />
         <Route
