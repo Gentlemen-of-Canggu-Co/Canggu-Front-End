@@ -41,7 +41,7 @@ function SliderFilter(props) {
         spot.coffeeRating > coffeeFilter &&
         spot.ambienceRating > ambienceFilter &&
         spot.overallRating > overallFilter &&
-        spot.foodRating > foodFilter
+        spot.foodRating - 2 > foodFilter
     );
 
     setFilteredSpots(filteredList);
