@@ -38,8 +38,8 @@ function SliderFilter(props) {
 
     const filteredList = spots.filter(
       (spot) =>
-        spot.coffeeRating > coffeeFilter &&
-        spot.ambienceRating > ambienceFilter &&
+        spot.coffeeRating + 2 > coffeeFilter &&
+        spot.ambienceRating + 2 > ambienceFilter &&
         spot.overallRating > overallFilter &&
         spot.foodRating + 2 > foodFilter
     );
