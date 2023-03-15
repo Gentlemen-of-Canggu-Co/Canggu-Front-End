@@ -6,6 +6,8 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import "./spotlist.css"
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 
 function SpotCard(props) {
   const { spots, filteredSpots, spot } = props;
@@ -20,8 +22,10 @@ function SpotCard(props) {
                   <Box sx={{ position: "relative" }}>
                     <CardMedia
                       sx={{ height: 200 }}
+                      component = "img"
+                      loading="lazy"
                       image={spot.spotImage}
-                      title="green iguana"
+                      title={spot.name}
                     />
 
                     <Box
