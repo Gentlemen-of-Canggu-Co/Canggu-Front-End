@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import {Link} from 'react-router-dom';
 import axios from "axios";
+import ToplistCard from "../components/ToplistList/ToplistCard"
 import { AuthContext } from "../context/auth.context";
 import "../App.css"
 
@@ -19,6 +20,7 @@ function ToplistList() {
     return(
         <div>
             <h1>The Canggu Toplists</h1>
+            <ToplistCard toplists={toplists} />
         </div>
     )
 
