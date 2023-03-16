@@ -6,6 +6,7 @@ function AddToplist() {
    
 const [title, setTitle] = useState("")
 const [introText, setIntroText] = useState("")
+const [heroImage, setHeroImage] = useState("")
 const [firstPlaceSpotId, setFirstPlaceSpotId] = useState("")
 const [firstPlaceConsumableId, setFirstPlaceConsumableId] = useState("")
 const [firstPlaceText, setFirstPlaceText] = useState("")
@@ -46,6 +47,7 @@ const handleSubmit = (e) => {
     const newToplist = {
         title,
         introText,
+        heroImage,
         firstPlaceSpotId,
         firstPlaceConsumableId,
         firstPlaceText,
@@ -104,6 +106,14 @@ return (
                     name="introText"
                     value={introText}
                     onChange={(event) => setIntroText(event.target.value)}
+            />
+             <br />
+             <label>Hero image</label>
+                <input  
+                    type="text"
+                    name="heroImage"
+                    value={heroImage}
+                    onChange={(event) => setHeroImage(event.target.value)}
             />
              <br />
              <label>firstPlaceSpotId</label>
