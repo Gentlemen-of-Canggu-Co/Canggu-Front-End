@@ -18,6 +18,7 @@ import Footer from "./pages/Footer";
 import AlternativeNavbar from "./components/AlternativeNavbar";
 import ToplistList from "./pages/ToplistList";
 import AddToplist from "./pages/AddToplist";
+import TopListDetailsPage from "./pages/ToplistDetailsPage";
 
 function App() {
   return (
@@ -35,6 +36,10 @@ function App() {
             </IsPrivate>
           }
         />
+
+<Route path="/toplists/:toplistId" element={<TopListDetailsPage />} />
+
+
         <Route
           path="/toplists/create"
           element={
