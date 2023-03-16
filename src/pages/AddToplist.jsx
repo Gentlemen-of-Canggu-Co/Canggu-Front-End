@@ -79,6 +79,7 @@ const handleSubmit = (e) => {
     }
 
     axios.post(`${API_URL}/api/toplists`, newToplist).then((response) => {
+        console.log(response.data)
         navigate(`/toplists/${response.data._id}`)
     })
 }

@@ -35,7 +35,7 @@ function App() {
             </IsPrivate>
           }
         />
-                <Route
+        <Route
           path="/toplists/create"
           element={
             <IsPrivate>
@@ -52,6 +52,10 @@ function App() {
           }
         />
         <Route path="/toplists" element={<ToplistList />} />
+
+        <Route path="/toplists/:toplistId" />
+
+
         {/* <Route path="/events" element={<EventList />} />
         <Route path="/events/:eventId" element={<EventDetailPage />} />
         <Route
