@@ -25,7 +25,7 @@ function TopListCard(props) {
                       sx={{ height: 200 }}
                       component = "img"
                       loading="lazy"
-                      image="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/800px-Eq_it-na_pizza-margherita_sep2005_sml.jpg"
+                      image={toplist.heroImage}
                       title={toplist.title}
                     />
 
@@ -41,13 +41,12 @@ function TopListCard(props) {
                         padding: "10px",
                       }}
                     >
-                      <div>
-                        <Typography component={"div"} variant="h5" sx={{ fontFamily: 'Teko', fontSize: "30px" }}>
+                      <div style={{marginTop: "60px", backgroundColor: "rgba(0, 0, 0, 0.54)"}}>
+                        <Typography component={"div"} variant="h2" sx={{ fontFamily: 'Teko', fontSize: "50px" }}>
                           {toplist.title}
                         </Typography>
-                        <Typography component={"div"} variant="body2" sx={{ fontFamily: 'Montserrat', fontSize: "15px" }}>
-                          <i>{toplist.introText}</i>
-                          <span>
+                        
+                          {/* <span>
                           <CardContent>
                     <Typography
                       component={"div"}
@@ -56,13 +55,17 @@ function TopListCard(props) {
                     >
                       
                     </Typography>
+                    
                   </CardContent>
-                          </span>
-                        </Typography>
+                          </span> */}
+                          
                         
                       </div>
                     </Box>
-                  </Box>
+
+                                            </Box>
+                                            <Typography component={"div"} variant="body1" sx={{ fontFamily: 'Teko', fontSize: "20px" }}>
+                          <i>{toplist.introText}</i></Typography>
                 </Card>
         </Link>
 
