@@ -16,6 +16,7 @@ function TopListDetailsPage() {
     const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
     const { toplistId } = useParams();
     const [toplist, setToplist] = useState({});
+    const [tenthPlaceSpotId, setTenthPlaceSpotId] = useState("")
     const [isLoading, setIsLoading] = useState(true)
 
     const getToplist = () => {
@@ -26,6 +27,16 @@ function TopListDetailsPage() {
             setToplist(response.data);
             setIsLoading(false)});
       }
+
+      // if(toplist.tenthPlaceSpotId !== ""){
+      //   axios
+      //     .get(`${API_URL}/api/spots/${toplist.tenthPlaceSpotId}`)
+      //       .then((response) => {
+      //         setTenthPlaceSpotId(response.data)
+      //         console.log(response.data)
+      //       })
+      // }
+
     
       useEffect(() => {
         getToplist()
@@ -37,6 +48,11 @@ function TopListDetailsPage() {
 
     return(
         <div>
+        <img src={toplist.heroImage} alt={toplist.title} style={{width: "100vw"}}/>
+<h1>{toplist.title}</h1>
+<p>{toplist.introText}</p>
+{tenthPlaceSpotId.name && <h2>10. {tenthPlaceSpotId.name}</h2>}
+
         </div>
     )
 }
