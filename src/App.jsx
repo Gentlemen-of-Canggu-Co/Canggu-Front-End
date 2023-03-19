@@ -37,17 +37,17 @@ function App() {
           }
         />
 
-<Route path="/toplists/:toplistId" element={<TopListDetailsPage />} />
+{/* <Route path="/toplists/:toplistId" element={<TopListDetailsPage />} /> */}
 
 
-        <Route
+        {/* <Route
           path="/toplists/create"
           element={
             <IsPrivate>
               <AddToplist />
             </IsPrivate>
           }
-        />
+        /> */}
         <Route
           path="/spots/:spotId/edit"
           element={
@@ -56,7 +56,7 @@ function App() {
             </IsPrivate>
           }
         />
-        <Route path="/toplists" element={<ToplistList />} />
+        {/* <Route path="/toplists" element={<ToplistList />} /> */}
 
 
 
