@@ -5,6 +5,8 @@ import SliderFilter from "../components/SpotList/SliderFilter";
 import SpotCard from "../components/SpotList/SpotCard";
 import { AuthContext } from "../context/auth.context";
 import "../App.css"
+import Loading from "../components/Loading/Loading";
+
 
 
 function SpotList() {
@@ -12,15 +14,38 @@ function SpotList() {
   const [filteredSpots, setFilteredSpots] = useState([]);
   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
   const { isLoggedIn } = useContext(AuthContext);
+  const [isLoading, setIsLoading] = useState(true)
 
-  useEffect(() => {
-    axios.get(`${API_URL}/api/spots`)
-        .then((response) => {
-            const filteredByRatings = response.data.sort((a,b) => b.overallRating - a.overallRating)
-            setSpots(filteredByRatings)
-            setFilteredSpots(filteredByRatings)
-        })
-}, [])
+//   useEffect(() => {
+//     axios.get(`${API_URL}/api/spots`)
+//         .then((response) => {
+//             const filteredByRatings = response.data.sort((a,b) => b.overallRating - a.overallRating)
+//             setSpots(filteredByRatings)
+//             setFilteredSpots(filteredByRatings)
+//         })
+// }, [])
+
+
+
+const getSpots = () => {
+  setIsLoading(true)
+  axios.get(`${API_URL}/api/spots`)
+  .then((response) => {
+      const filteredByRatings = response.data.sort((a,b) => b.overallRating - a.overallRating)
+      setSpots(filteredByRatings)
+      setFilteredSpots(filteredByRatings)
+      setIsLoading(false)});
+}
+
+
+useEffect(() => {
+  getSpots()
+}, []);
+
+if(isLoading){
+  return <Loading/>
+}
+
 
 
 
