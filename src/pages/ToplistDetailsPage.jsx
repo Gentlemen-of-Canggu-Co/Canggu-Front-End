@@ -1,7 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
-import Menu from "../components/SpotDetailsPage/Menu";
 import Description from "../components/SpotDetailsPage/Description";
 import EventCard from "../components/SpotDetailsPage/EventCard";
 import SpotCard from "../components/SpotList/SpotCard";
