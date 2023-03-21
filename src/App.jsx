@@ -35,8 +35,8 @@ function App() {
         <Route path="/spots/:spotId/edit" element={<IsPrivate> <EditSpot /> </IsPrivate>} />
         <Route path="/spots/create" element={<IsPrivate> <AddSpot /> </IsPrivate>} />
 
-        {/* <Route path="/toplists" element={<ToplistList />} /> */}
-        {/* <Route path="/toplists/:toplistId" element={<TopListDetailsPage />} /> */}
+        <Route path="/toplists" element={<ToplistList />} />
+        <Route path="/toplists/:toplistId" element={<TopListDetailsPage />} />
         {/* <Route path="/toplists/create" element={ <IsPrivate> <AddToplist /> </IsPrivate>} /> */}
 
         {/* <Route path="/events" element={<EventList />} /> */}
