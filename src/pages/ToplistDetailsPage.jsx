@@ -15,6 +15,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import "../components/SpotList/spotlist.css";
+import ToplistSpotCard from "../components/ToplistDetailsPage/ToplistSpotCard";
 
 function TopListDetailsPage() {
   const { isLoggedIn } = useContext(AuthContext);
@@ -42,45 +43,47 @@ function TopListDetailsPage() {
 
   return (
     <div>
+      <Card className="cardSize">
+        <Box sx={{ position: "relative" }}>
+          <CardMedia
+            sx={{ height: 220 }}
+            image={toplist.heroImage}
+            title={toplist.title}
+          />
 
-<Card className="cardSize">
-            <Box sx={{ position: "relative" }}>
-              <CardMedia
-                sx={{ height: 220 }}
-                image={toplist.heroImage}
-                title={toplist.title}
-              />
+          <Box
+            sx={{
+              position: "absolute",
+              bottom: 70,
+              left: 0,
+              width: "100%",
+              bgcolor: "rgba(0, 0, 0, 0.54)",
+              color: "white",
+              padding: "10px",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <Typography component={"div"} variant="h5">
+                {toplist.title}
+              </Typography>
+            </div>
+          </Box>
+        </Box>
+      </Card>
 
-              <Box
-                sx={{
-                  position: "absolute",
-                  bottom: 70,
-                  left: 0,
-                  width: "100%",
-                  bgcolor: "rgba(0, 0, 0, 0.54)",
-                  color: "white",
-                  padding: "10px",
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                    <Typography component={"div"} variant="h5">
-                      {toplist.title}
-                    </Typography>
-                </div>
-              </Box>
-            </Box>
-          </Card>
-
-
-
-          <Typography component={'div'} style={{textAlign: "justify"}} sx={{ fontFamily: 'Teko', fontSize: "20px" }}>
-<i>{toplist.introText}</i></Typography>
+      <Typography
+        component={"div"}
+        style={{ textAlign: "justify" }}
+        sx={{ fontFamily: "Teko", fontSize: "20px" }}
+      >
+        <i>{toplist.introText}</i>
+      </Typography>
 
       {toplist.tenthPlaceName && (
         <div>
@@ -98,50 +101,15 @@ function TopListDetailsPage() {
             <i>{toplist.ninthPlaceTagline}</i>
           </Typography>
 
-          <Link to={`/spots/${toplist.tenthPlaceId}`}>
-            <Card className="cardSize">
-              <Box sx={{ position: "relative" }}>
-                <CardMedia
-                  sx={{ height: 200 }}
-                  component="img"
-                  loading="lazy"
-                  image={toplist.tenthPlaceImage}
-                  title={toplist.tenthPlaceName}
-                />
-              </Box>
-            </Card>
-            <div style={{ display: "flex" }}>
-              <div style={{ display: "flex", width: "24vw" }}>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-evenly",
-                    paddingLeft: "0",
-                  }}
-                >
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.tenthPlaceCoffeeRating}
-                    label={`Coffee`}
-                  />
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.tenthPlaceFoodRating}
-                    label={`Food`}
-                  />
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.tenthPlaceAmbienceRating}
-                    label={`Ambience`}
-                  />
-                </div>
-              </div>
-            </div>
-          </Link>
+          <ToplistSpotCard
+            spotId={toplist.tenthPlaceId}
+            spotImage={toplist.tenthPlaceImage}
+            spotName={toplist.tenthPlaceName}
+            spotCoffeeRating={toplist.tenthPlaceCoffeeRating}
+            spotFoodRating={toplist.tenthPlaceFoodRating}
+            spotAmbienceRating={toplist.tenthPlaceAmbienceRating}
+          />
+
           <p>{toplist.tenthPlaceDescription}</p>
 
           <Card className="cardSize">
@@ -231,52 +199,22 @@ function TopListDetailsPage() {
             <i>{toplist.ninthPlaceTagline}</i>
           </Typography>
 
-          <Link to={`/spots/${toplist.ninthPlaceId}`}>
-            <Card className="cardSize">
-              <Box sx={{ position: "relative" }}>
-                <CardMedia
-                  sx={{ height: 200 }}
-                  component="img"
-                  loading="lazy"
-                  image={toplist.ninthPlaceImage}
-                  title={toplist.ninthPlaceName}
-                />
-              </Box>
-            </Card>
-            <div style={{ display: "flex" }}>
-              <div style={{ display: "flex", width: "24vw" }}>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-evenly",
-                    paddingLeft: "0",
-                  }}
-                >
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.ninthPlaceCoffeeRating}
-                    label={`Coffee`}
-                  />
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.ninthPlaceFoodRating}
-                    label={`Food`}
-                  />
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.ninthPlaceAmbienceRating}
-                    label={`Ambience`}
-                  />
-                </div>
-              </div>
-            </div>
-          </Link>
-          <Typography component={'div'} style={{textAlign: "justify"}} sx={{ fontFamily: 'Teko', fontSize: "20px" }}>
-{toplist.ninthPlaceDescription}</Typography>
+          <ToplistSpotCard
+            spotId={toplist.ninthPlaceId}
+            spotImage={toplist.ninthPlaceImage}
+            spotName={toplist.ninthPlaceName}
+            spotCoffeeRating={toplist.ninthPlaceCoffeeRating}
+            spotFoodRating={toplist.ninthPlaceFoodRating}
+            spotAmbienceRating={toplist.ninthPlaceAmbienceRating}
+          />
+
+          <Typography
+            component={"div"}
+            style={{ textAlign: "justify" }}
+            sx={{ fontFamily: "Teko", fontSize: "20px" }}
+          >
+            {toplist.ninthPlaceDescription}
+          </Typography>
 
           <Card className="cardSize">
             <Box sx={{ position: "relative" }}>
@@ -365,50 +303,15 @@ function TopListDetailsPage() {
             <i>{toplist.eigthPlaceTagline}</i>
           </Typography>
 
-          <Link to={`/spots/${toplist.eigthPlaceId}`}>
-            <Card className="cardSize">
-              <Box sx={{ position: "relative" }}>
-                <CardMedia
-                  sx={{ height: 200 }}
-                  component="img"
-                  loading="lazy"
-                  image={toplist.eigthPlaceImage}
-                  title={toplist.eigthPlaceName}
-                />
-              </Box>
-            </Card>
-            <div style={{ display: "flex" }}>
-              <div style={{ display: "flex", width: "24vw" }}>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-evenly",
-                    paddingLeft: "0",
-                  }}
-                >
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.eigthPlaceCoffeeRating}
-                    label={`Coffee`}
-                  />
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.eigthPlaceFoodRating}
-                    label={`Food`}
-                  />
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.eigthPlaceAmbienceRating}
-                    label={`Ambience`}
-                  />
-                </div>
-              </div>
-            </div>
-          </Link>
+          <ToplistSpotCard
+            spotId={toplist.eigthPlaceId}
+            spotImage={toplist.eigthPlaceImage}
+            spotName={toplist.eigthPlaceName}
+            spotCoffeeRating={toplist.eigthPlaceCoffeeRating}
+            spotFoodRating={toplist.eigthPlaceFoodRating}
+            spotAmbienceRating={toplist.eigthPlaceAmbienceRating}
+          />
+
           <p>{toplist.eigthPlaceDescription}</p>
 
           <Card className="cardSize">
@@ -498,50 +401,15 @@ function TopListDetailsPage() {
             <i>{toplist.seventhPlaceTagline}</i>
           </Typography>
 
-          <Link to={`/spots/${toplist.seventhPlaceId}`}>
-            <Card className="cardSize">
-              <Box sx={{ position: "relative" }}>
-                <CardMedia
-                  sx={{ height: 200 }}
-                  component="img"
-                  loading="lazy"
-                  image={toplist.seventhPlaceImage}
-                  title={toplist.seventhPlaceName}
-                />
-              </Box>
-            </Card>
-            <div style={{ display: "flex" }}>
-              <div style={{ display: "flex", width: "24vw" }}>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-evenly",
-                    paddingLeft: "0",
-                  }}
-                >
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.seventhPlaceCoffeeRating}
-                    label={`Coffee`}
-                  />
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.seventhPlaceFoodRating}
-                    label={`Food`}
-                  />
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.seventhPlaceAmbienceRating}
-                    label={`Ambience`}
-                  />
-                </div>
-              </div>
-            </div>
-          </Link>
+          <ToplistSpotCard
+            spotId={toplist.seventhPlaceId}
+            spotImage={toplist.seventhPlaceImage}
+            spotName={toplist.seventhPlaceName}
+            spotCoffeeRating={toplist.seventhPlaceCoffeeRating}
+            spotFoodRating={toplist.seventhPlaceFoodRating}
+            spotAmbienceRating={toplist.seventhPlaceAmbienceRating}
+          />
+
           <p>{toplist.seventhPlaceDescription}</p>
 
           <Card className="cardSize">
@@ -631,50 +499,15 @@ function TopListDetailsPage() {
             <i>{toplist.sixthPlaceTagline}</i>
           </Typography>
 
-          <Link to={`/spots/${toplist.sixthPlaceId}`}>
-            <Card className="cardSize">
-              <Box sx={{ position: "relative" }}>
-                <CardMedia
-                  sx={{ height: 200 }}
-                  component="img"
-                  loading="lazy"
-                  image={toplist.sixthPlaceImage}
-                  title={toplist.sixthPlaceName}
-                />
-              </Box>
-            </Card>
-            <div style={{ display: "flex" }}>
-              <div style={{ display: "flex", width: "24vw" }}>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-evenly",
-                    paddingLeft: "0",
-                  }}
-                >
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.sixthPlaceCoffeeRating}
-                    label={`Coffee`}
-                  />
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.sixthPlaceFoodRating}
-                    label={`Food`}
-                  />
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.sixthPlaceAmbienceRating}
-                    label={`Ambience`}
-                  />
-                </div>
-              </div>
-            </div>
-          </Link>
+          <ToplistSpotCard
+            spotId={toplist.sixthPlaceId}
+            spotImage={toplist.sixthPlaceImage}
+            spotName={toplist.sixthPlaceName}
+            spotCoffeeRating={toplist.sixthPlaceCoffeeRating}
+            spotFoodRating={toplist.sixthPlaceFoodRating}
+            spotAmbienceRating={toplist.sixthPlaceAmbienceRating}
+          />
+
           <p>{toplist.sixthPlaceDescription}</p>
 
           <Card className="cardSize">
@@ -764,50 +597,15 @@ function TopListDetailsPage() {
             <i>{toplist.fifthPlaceTagline}</i>
           </Typography>
 
-          <Link to={`/spots/${toplist.fifthPlaceId}`}>
-            <Card className="cardSize">
-              <Box sx={{ position: "relative" }}>
-                <CardMedia
-                  sx={{ height: 200 }}
-                  component="img"
-                  loading="lazy"
-                  image={toplist.fifthPlaceImage}
-                  title={toplist.fifthPlaceName}
-                />
-              </Box>
-            </Card>
-            <div style={{ display: "flex" }}>
-              <div style={{ display: "flex", width: "24vw" }}>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-evenly",
-                    paddingLeft: "0",
-                  }}
-                >
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.fifthPlaceCoffeeRating}
-                    label={`Coffee`}
-                  />
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.fifthPlaceFoodRating}
-                    label={`Food`}
-                  />
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.fifthPlaceAmbienceRating}
-                    label={`Ambience`}
-                  />
-                </div>
-              </div>
-            </div>
-          </Link>
+          <ToplistSpotCard
+            spotId={toplist.fifthPlaceId}
+            spotImage={toplist.fifthPlaceImage}
+            spotName={toplist.fifthPlaceName}
+            spotCoffeeRating={toplist.fifthPlaceCoffeeRating}
+            spotFoodRating={toplist.fifthPlaceFoodRating}
+            spotAmbienceRating={toplist.fifthPlaceAmbienceRating}
+          />
+
           <p>{toplist.fifthPlaceDescription}</p>
 
           <Card className="cardSize">
@@ -897,50 +695,15 @@ function TopListDetailsPage() {
             <i>{toplist.fourthPlaceTagline}</i>
           </Typography>
 
-          <Link to={`/spots/${toplist.fourthPlaceId}`}>
-            <Card className="cardSize">
-              <Box sx={{ position: "relative" }}>
-                <CardMedia
-                  sx={{ height: 200 }}
-                  component="img"
-                  loading="lazy"
-                  image={toplist.fourthPlaceImage}
-                  title={toplist.fourthPlaceName}
-                />
-              </Box>
-            </Card>
-            <div style={{ display: "flex" }}>
-              <div style={{ display: "flex", width: "24vw" }}>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-evenly",
-                    paddingLeft: "0",
-                  }}
-                >
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.fourthPlaceCoffeeRating}
-                    label={`Coffee`}
-                  />
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.fourthPlaceFoodRating}
-                    label={`Food`}
-                  />
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.fourthPlaceAmbienceRating}
-                    label={`Ambience`}
-                  />
-                </div>
-              </div>
-            </div>
-          </Link>
+          <ToplistSpotCard
+            spotId={toplist.fourthPlaceId}
+            spotImage={toplist.fourthPlaceImage}
+            spotName={toplist.fourthPlaceName}
+            spotCoffeeRating={toplist.fourthPlaceCoffeeRating}
+            spotFoodRating={toplist.fourthPlaceFoodRating}
+            spotAmbienceRating={toplist.fourthPlaceAmbienceRating}
+          />
+
           <p>{toplist.fourthPlaceDescription}</p>
 
           <Card className="cardSize">
@@ -1030,50 +793,15 @@ function TopListDetailsPage() {
             <i>{toplist.thirdPlaceTagline}</i>
           </Typography>
 
-          <Link to={`/spots/${toplist.thirdPlaceId}`}>
-            <Card className="cardSize">
-              <Box sx={{ position: "relative" }}>
-                <CardMedia
-                  sx={{ height: 200 }}
-                  component="img"
-                  loading="lazy"
-                  image={toplist.thirdPlaceImage}
-                  title={toplist.thirdPlaceName}
-                />
-              </Box>
-            </Card>
-            <div style={{ display: "flex" }}>
-              <div style={{ display: "flex", width: "24vw" }}>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-evenly",
-                    paddingLeft: "0",
-                  }}
-                >
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.thirdPlaceCoffeeRating}
-                    label={`Coffee`}
-                  />
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.thirdPlaceFoodRating}
-                    label={`Food`}
-                  />
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.thirdPlaceAmbienceRating}
-                    label={`Ambience`}
-                  />
-                </div>
-              </div>
-            </div>
-          </Link>
+          <ToplistSpotCard
+            spotId={toplist.thirdPlaceId}
+            spotImage={toplist.thirdPlaceImage}
+            spotName={toplist.thirdPlaceName}
+            spotCoffeeRating={toplist.thirdPlaceCoffeeRating}
+            spotFoodRating={toplist.thirdPlaceFoodRating}
+            spotAmbienceRating={toplist.thirdPlaceAmbienceRating}
+          />
+
           <p>{toplist.thirdPlaceDescription}</p>
 
           <Card className="cardSize">
@@ -1163,50 +891,15 @@ function TopListDetailsPage() {
             <i>{toplist.secondPlaceTagline}</i>
           </Typography>
 
-          <Link to={`/spots/${toplist.secondPlaceId}`}>
-            <Card className="cardSize">
-              <Box sx={{ position: "relative" }}>
-                <CardMedia
-                  sx={{ height: 200 }}
-                  component="img"
-                  loading="lazy"
-                  image={toplist.secondPlaceImage}
-                  title={toplist.secondPlaceName}
-                />
-              </Box>
-            </Card>
-            <div style={{ display: "flex" }}>
-              <div style={{ display: "flex", width: "24vw" }}>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-evenly",
-                    paddingLeft: "0",
-                  }}
-                >
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.secondPlaceCoffeeRating}
-                    label={`Coffee`}
-                  />
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.secondPlaceFoodRating}
-                    label={`Food`}
-                  />
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.secondPlaceAmbienceRating}
-                    label={`Ambience`}
-                  />
-                </div>
-              </div>
-            </div>
-          </Link>
+          <ToplistSpotCard
+            spotId={toplist.secondPlaceId}
+            spotImage={toplist.secondPlaceImage}
+            spotName={toplist.secondPlaceName}
+            spotCoffeeRating={toplist.secondPlaceCoffeeRating}
+            spotFoodRating={toplist.secondPlaceFoodRating}
+            spotAmbienceRating={toplist.secondPlaceAmbienceRating}
+          />
+
           <p>{toplist.secondPlaceDescription}</p>
 
           <Card className="cardSize">
@@ -1296,50 +989,15 @@ function TopListDetailsPage() {
             <i>{toplist.firstPlaceTagline}</i>
           </Typography>
 
-          <Link to={`/spots/${toplist.firstPlaceId}`}>
-            <Card className="cardSize">
-              <Box sx={{ position: "relative" }}>
-                <CardMedia
-                  sx={{ height: 200 }}
-                  component="img"
-                  loading="lazy"
-                  image={toplist.firstPlaceImage}
-                  title={toplist.firstPlaceName}
-                />
-              </Box>
-            </Card>
-            <div style={{ display: "flex" }}>
-              <div style={{ display: "flex", width: "24vw" }}>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-evenly",
-                    paddingLeft: "0",
-                  }}
-                >
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.firstPlaceCoffeeRating}
-                    label={`Coffee`}
-                  />
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.firstPlaceFoodRating}
-                    label={`Food`}
-                  />
-                  <ProgressBar
-                    className="bg-secondary progressBarSize"
-                    animated={true}
-                    now={toplist.firstPlaceAmbienceRating}
-                    label={`Ambience`}
-                  />
-                </div>
-              </div>
-            </div>
-          </Link>
+          <ToplistSpotCard
+            spotId={toplist.firstPlaceId}
+            spotImage={toplist.firstPlaceImage}
+            spotName={toplist.firstPlaceName}
+            spotCoffeeRating={toplist.firstPlaceCoffeeRating}
+            spotFoodRating={toplist.firstPlaceFoodRating}
+            spotAmbienceRating={toplist.firstPlaceAmbienceRating}
+          />
+
           <p>{toplist.firstPlaceDescription}</p>
 
           <Card className="cardSize">
