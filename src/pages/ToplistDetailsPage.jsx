@@ -40,7 +40,7 @@ function TopListDetailsPage() {
     <ToplistHeroSection toplistHeroImage={toplist.heroImage} toplistTitle={toplist.title} />
  
 
-      <Typography className="toplistTexts"
+      <Typography className="toplistIntroText"
         component={"div"}
         style={{ textAlign: "justify" }}
         sx={{ fontFamily: "Teko", fontSize: "20px" }}
@@ -49,17 +49,17 @@ function TopListDetailsPage() {
       </Typography>
 
       {toplist.tenthPlaceName && (
-        <div>
+        <div style={{paddingTop: "10vw"}}>
           <Typography
             variant="h2"
-            sx={{ fontFamily: "Teko", fontSize: "30px" }}
+            sx={{ fontFamily: "Teko", fontSize: "50px" }}
           >
             10. {toplist.ninthPlaceName}
           </Typography>
           <Typography
             component={"div"}
             variant="body2"
-            sx={{ fontFamily: "Montserrat", fontSize: "15px" }}
+            sx={{ fontFamily: "Teko", fontSize: "25px" }}
           >
             <i>{toplist.ninthPlaceTagline}</i>
           </Typography>
@@ -80,22 +80,23 @@ function TopListDetailsPage() {
             consumableRating={toplist.tenthPlaceConsumableRating}
             consumablePrice={toplist.tenthPlaceConsumablePrice}
             consumableTagline={toplist.tenthPlaceConsumableTagline}
+            spotName={toplist.tenthPlaceName}
           />
         </div>
       )}
 
       {toplist.ninthPlaceName && (
-        <div>
+        <div style={{paddingTop: "10vw"}}>
           <Typography
             variant="h2"
-            sx={{ fontFamily: "Teko", fontSize: "30px" }}
+            sx={{ fontFamily: "Teko", fontSize: "50px" }}
           >
             9. {toplist.ninthPlaceName}
           </Typography>
           <Typography
             component={"div"}
             variant="body2"
-            sx={{ fontFamily: "Montserrat", fontSize: "15px" }}
+            sx={{ fontFamily: "Teko", fontSize: "25px" }}
           >
             <i>{toplist.ninthPlaceTagline}</i>
           </Typography>
@@ -118,22 +119,23 @@ function TopListDetailsPage() {
             consumableRating={toplist.ninthPlaceConsumableRating}
             consumablePrice={toplist.ninthPlaceConsumablePrice}
             consumableTagline={toplist.ninthPlaceConsumableTagline}
+            spotName={toplist.ninthPlaceName}
           />
         </div>
       )}
 
       {toplist.eigthPlaceName && (
-        <div>
+        <div style={{paddingTop:"10vw"}}>
           <Typography
             variant="h2"
-            sx={{ fontFamily: "Teko", fontSize: "30px" }}
+            sx={{ fontFamily: "Teko", fontSize: "50px" }}
           >
             8. {toplist.eigthPlaceName}
           </Typography>
           <Typography
             component={"div"}
             variant="body2"
-            sx={{ fontFamily: "Montserrat", fontSize: "15px" }}
+            sx={{ fontFamily: "Teko", fontSize: "25px" }}
           >
             <i>{toplist.eigthPlaceTagline}</i>
           </Typography>
@@ -156,22 +158,23 @@ function TopListDetailsPage() {
             consumableRating={toplist.eigthPlaceConsumableRating}
             consumablePrice={toplist.eigthPlaceConsumablePrice}
             consumableTagline={toplist.eigthPlaceConsumableTagline}
+            spotName={toplist.eigthPlaceName}
           />
         </div>
       )}
 
       {toplist.seventhPlaceName && (
-        <div>
+        <div style={{paddingTop: "10vw"}}>
           <Typography
             variant="h2"
-            sx={{ fontFamily: "Teko", fontSize: "30px" }}
+            sx={{ fontFamily: "Teko", fontSize: "50px" }}
           >
             7. {toplist.seventhPlaceName}
           </Typography>
           <Typography
             component={"div"}
             variant="body2"
-            sx={{ fontFamily: "Montserrat", fontSize: "15px" }}
+            sx={{ fontFamily: "Teko", fontSize: "25px" }}
           >
             <i>{toplist.seventhPlaceTagline}</i>
           </Typography>
@@ -193,22 +196,23 @@ function TopListDetailsPage() {
             consumableRating={toplist.seventhPlaceConsumableRating}
             consumablePrice={toplist.seventhPlaceConsumablePrice}
             consumableTagline={toplist.seventhPlaceConsumableTagline}
+            spotName={toplist.seventhPlaceName}
           />
         </div>
       )}
 
       {toplist.sixthPlaceName && (
-        <div>
+        <div style={{paddingTop: "10vw"}}>
           <Typography
             variant="h2"
-            sx={{ fontFamily: "Teko", fontSize: "30px" }}
+            sx={{ fontFamily: "Teko", fontSize: "50px" }}
           >
             6. {toplist.sixthPlaceName}
           </Typography>
           <Typography
             component={"div"}
             variant="body2"
-            sx={{ fontFamily: "Montserrat", fontSize: "15px" }}
+            sx={{ fontFamily: "Teko", fontSize: "25px" }}
           >
             <i>{toplist.sixthPlaceTagline}</i>
           </Typography>
@@ -230,22 +234,23 @@ function TopListDetailsPage() {
             consumableRating={toplist.sixthPlaceConsumableRating}
             consumablePrice={toplist.sixthPlaceConsumablePrice}
             consumableTagline={toplist.sixthPlaceConsumableTagline}
+            spotName={toplist.sixthPlaceName}
           />
         </div>
       )}
 
       {toplist.fifthPlaceName && (
-        <div>
+        <div style={{paddingTop: "10vw"}}>
           <Typography
             variant="h2"
-            sx={{ fontFamily: "Teko", fontSize: "30px" }}
+            sx={{ fontFamily: "Teko", fontSize: "50px" }}
           >
             5. {toplist.fifthPlaceName}
           </Typography>
           <Typography
             component={"div"}
             variant="body2"
-            sx={{ fontFamily: "Montserrat", fontSize: "15px" }}
+            sx={{ fontFamily: "Teko", fontSize: "25px" }}
           >
             <i>{toplist.fifthPlaceTagline}</i>
           </Typography>
@@ -267,22 +272,23 @@ function TopListDetailsPage() {
             consumableRating={toplist.fifthPlaceConsumableRating}
             consumablePrice={toplist.fifthPlaceConsumablePrice}
             consumableTagline={toplist.fifthPlaceConsumableTagline}
+            spotName={toplist.fifthPlaceName}
           />
         </div>
       )}
 
       {toplist.fourthPlaceName && (
-        <div>
+        <div style={{paddingTop: "10vw"}}>
           <Typography
             variant="h2"
-            sx={{ fontFamily: "Teko", fontSize: "30px" }}
+            sx={{ fontFamily: "Teko", fontSize: "50px" }}
           >
             4. {toplist.fourthPlaceName}
           </Typography>
           <Typography
             component={"div"}
             variant="body2"
-            sx={{ fontFamily: "Montserrat", fontSize: "15px" }}
+            sx={{ fontFamily: "Teko", fontSize: "25px" }}
           >
             <i>{toplist.fourthPlaceTagline}</i>
           </Typography>
@@ -304,22 +310,23 @@ function TopListDetailsPage() {
             consumableRating={toplist.fourthPlaceConsumableRating}
             consumablePrice={toplist.fourthPlaceConsumablePrice}
             consumableTagline={toplist.fourthPlaceConsumableTagline}
+            spotName={toplist.fourthPlaceName}
           />
         </div>
       )}
 
       {toplist.thirdPlaceName && (
-        <div>
+        <div style={{paddingTop: "10vw"}}>
           <Typography
             variant="h2"
-            sx={{ fontFamily: "Teko", fontSize: "30px" }}
+            sx={{ fontFamily: "Teko", fontSize: "50px" }}
           >
             3. {toplist.thirdPlaceName}
           </Typography>
           <Typography
             component={"div"}
             variant="body2"
-            sx={{ fontFamily: "Montserrat", fontSize: "15px" }}
+            sx={{ fontFamily: "Teko", fontSize: "25px" }}
           >
             <i>{toplist.thirdPlaceTagline}</i>
           </Typography>
@@ -341,22 +348,23 @@ function TopListDetailsPage() {
             consumableRating={toplist.thirdPlaceConsumableRating}
             consumablePrice={toplist.thirdPlaceConsumablePrice}
             consumableTagline={toplist.thirdPlaceConsumableTagline}
+            spotName={toplist.thirdPlaceName}
           />
         </div>
       )}
 
       {toplist.secondPlaceName && (
-        <div>
+        <div style={{paddingTop: "10vw"}}>
           <Typography
             variant="h2"
-            sx={{ fontFamily: "Teko", fontSize: "30px" }}
+            sx={{ fontFamily: "Teko", fontSize: "50px" }}
           >
             2. {toplist.secondPlaceName}
           </Typography>
           <Typography
             component={"div"}
             variant="body2"
-            sx={{ fontFamily: "Montserrat", fontSize: "15px" }}
+            sx={{ fontFamily: "Teko", fontSize: "25px" }}
           >
             <i>{toplist.secondPlaceTagline}</i>
           </Typography>
@@ -378,22 +386,23 @@ function TopListDetailsPage() {
             consumableRating={toplist.secondPlaceConsumableRating}
             consumablePrice={toplist.secondPlaceConsumablePrice}
             consumableTagline={toplist.secondPlaceConsumableTagline}
+            spotName={toplist.secondPlaceName}
           />
         </div>
       )}
 
       {toplist.firstPlaceName && (
-        <div>
+        <div style={{paddingTop: "10vw"}}>
           <Typography
             variant="h2"
-            sx={{ fontFamily: "Teko", fontSize: "30px" }}
+            sx={{ fontFamily: "Teko", fontSize: "50px" }}
           >
             1. {toplist.firstPlaceName}
           </Typography>
           <Typography
             component={"div"}
             variant="body2"
-            sx={{ fontFamily: "Montserrat", fontSize: "15px" }}
+            sx={{ fontFamily: "Teko", fontSize: "25px" }}
           >
             <i>{toplist.firstPlaceTagline}</i>
           </Typography>
@@ -415,6 +424,7 @@ function TopListDetailsPage() {
             consumableRating={toplist.firstPlaceConsumableRating}
             consumablePrice={toplist.firstPlaceConsumablePrice}
             consumableTagline={toplist.firstPlaceConsumableTagline}
+            spotName={toplist.firstPlaceName}
           />
         </div>
       )}
