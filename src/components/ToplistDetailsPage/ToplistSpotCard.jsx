@@ -9,7 +9,7 @@ function ToplistSpotCard (props){
 const { spotId, spotImage, spotName, spotCoffeeRating, spotFoodRating, spotAmbienceRating} = props
     return(
 
-        <div>
+        <div className="toplistImages">
             <Link to={`/spots/${spotId}`}>
             <Card className="cardSize">
               <Box sx={{ position: "relative" }}>
