@@ -47,6 +47,16 @@
     .menuSize{
         width: 100vw
     }
+
+    .toplistImages{
+    
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    .toplistTexts{
+       padding: 5vw
+    }
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px){

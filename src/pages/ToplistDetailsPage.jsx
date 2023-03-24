@@ -1,28 +1,22 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams, Link } from "react-router-dom";
-import Description from "../components/SpotDetailsPage/Description";
-import EventCard from "../components/SpotDetailsPage/EventCard";
-import SpotCard from "../components/SpotList/SpotCard";
-import ConsumableCard from "../components/SpotDetailsPage/ConsumableCard";
+import { useParams } from "react-router-dom";
 import Loading from "../components/Loading/Loading";
-import { AuthContext } from "../context/auth.context";
 import "../components/SpotList/spotlist.css";
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import ProgressBar from "react-bootstrap/ProgressBar";
 import "../components/SpotList/spotlist.css";
 import ToplistSpotCard from "../components/ToplistDetailsPage/ToplistSpotCard";
+import ToplistConsumableCard from "../components/ToplistDetailsPage/ToplistConsumableCard";
+import ToplistHeroSection from "../components/ToplistDetailsPage/ToplistHeroSection";
+import ToplistSpotDescription from "../components/ToplistDetailsPage/ToplistSpotDescription"
 
 function TopListDetailsPage() {
-  const { isLoggedIn } = useContext(AuthContext);
   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
   const { toplistId } = useParams();
   const [toplist, setToplist] = useState({});
-  const [tenthPlaceSpotId, setTenthPlaceSpotId] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
   const getToplist = () => {
@@ -43,41 +37,10 @@ function TopListDetailsPage() {
 
   return (
     <div>
-      <Card className="cardSize">
-        <Box sx={{ position: "relative" }}>
-          <CardMedia
-            sx={{ height: 220 }}
-            image={toplist.heroImage}
-            title={toplist.title}
-          />
+    <ToplistHeroSection toplistHeroImage={toplist.heroImage} toplistTitle={toplist.title} />
+ 
 
-          <Box
-            sx={{
-              position: "absolute",
-              bottom: 70,
-              left: 0,
-              width: "100%",
-              bgcolor: "rgba(0, 0, 0, 0.54)",
-              color: "white",
-              padding: "10px",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-            >
-              <Typography component={"div"} variant="h5">
-                {toplist.title}
-              </Typography>
-            </div>
-          </Box>
-        </Box>
-      </Card>
-
-      <Typography
+      <Typography className="toplistTexts"
         component={"div"}
         style={{ textAlign: "justify" }}
         sx={{ fontFamily: "Teko", fontSize: "20px" }}
@@ -110,76 +73,14 @@ function TopListDetailsPage() {
             spotAmbienceRating={toplist.tenthPlaceAmbienceRating}
           />
 
-          <p>{toplist.tenthPlaceDescription}</p>
-
-          <Card className="cardSize">
-            <Box sx={{ position: "relative" }}>
-              <CardMedia
-                sx={{ height: 220 }}
-                image={toplist.tenthPlaceConsumableImage}
-                title={toplist.tenthPlaceConsumableTitle}
-              />
-
-              <Box
-                sx={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  width: "100%",
-                  bgcolor: "rgba(0, 0, 0, 0.54)",
-                  color: "white",
-                  padding: "10px",
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <div>
-                    <Typography component={"div"} variant="h5">
-                      {toplist.tenthPlaceConsumableTitle}
-                    </Typography>
-                    <Typography component={"div"} variant="body2">
-                      {toplist.tenthPlaceConsumableTagline}
-                    </Typography>
-                  </div>
-                  <Typography
-                    component={"div"}
-                    className="badge bg-secondary"
-                    style={{ margin: "5px" }}
-                  >
-                    Price<br></br>
-                    {toplist.tenthPlaceConsumablePrice}k
-                  </Typography>
-
-                  {toplist.tenthPlaceConsumableRating > 79 && (
-                    <Typography className="badge bg-success">
-                      Score <br></br>
-                      {toplist.tenthPlaceConsumableRating}
-                    </Typography>
-                  )}
-
-                  {toplist.tenthPlaceConsumableRating > 59 &&
-                    toplist.tenthPlaceConsumableRating < 80 && (
-                      <Typography className="badge bg-warning">
-                        Score <br></br>
-                        {toplist.tenthPlaceConsumableRating}
-                      </Typography>
-                    )}
-
-                  {toplist.tenthPlaceConsumableRating < 60 && (
-                    <Typography className="badge bg-danger">
-                      Score <br></br>
-                      {toplist.tenthPlaceConsumableRating}
-                    </Typography>
-                  )}
-                </div>
-              </Box>
-            </Box>
-          </Card>
+<ToplistSpotDescription spotDescription={toplist.tenthPlaceDescription} />
+          <ToplistConsumableCard
+            consumableImage={toplist.tenthPlaceConsumableImage}
+            consumableTitle={toplist.tenthPlaceConsumableTitle}
+            consumableRating={toplist.tenthPlaceConsumableRating}
+            consumablePrice={toplist.tenthPlaceConsumablePrice}
+            consumableTagline={toplist.tenthPlaceConsumableTagline}
+          />
         </div>
       )}
 
@@ -208,82 +109,16 @@ function TopListDetailsPage() {
             spotAmbienceRating={toplist.ninthPlaceAmbienceRating}
           />
 
-          <Typography
-            component={"div"}
-            style={{ textAlign: "justify" }}
-            sx={{ fontFamily: "Teko", fontSize: "20px" }}
-          >
-            {toplist.ninthPlaceDescription}
-          </Typography>
+          
+          <ToplistSpotDescription spotDescription={toplist.ninthPlaceDescription} />
 
-          <Card className="cardSize">
-            <Box sx={{ position: "relative" }}>
-              <CardMedia
-                sx={{ height: 220 }}
-                image={toplist.ninthPlaceConsumableImage}
-                title={toplist.ninthPlaceConsumableTitle}
-              />
-
-              <Box
-                sx={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  width: "100%",
-                  bgcolor: "rgba(0, 0, 0, 0.54)",
-                  color: "white",
-                  padding: "10px",
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <div>
-                    <Typography component={"div"} variant="h5">
-                      {toplist.ninthPlaceConsumableTitle}
-                    </Typography>
-                    <Typography component={"div"} variant="body2">
-                      {toplist.ninthPlaceConsumableTagline}
-                    </Typography>
-                  </div>
-                  <Typography
-                    component={"div"}
-                    className="badge bg-secondary"
-                    style={{ margin: "5px" }}
-                  >
-                    Price<br></br>
-                    {toplist.ninthPlaceConsumablePrice}k
-                  </Typography>
-
-                  {toplist.ninthPlaceConsumableRating > 79 && (
-                    <Typography className="badge bg-success">
-                      Score <br></br>
-                      {toplist.ninthPlaceConsumableRating}
-                    </Typography>
-                  )}
-
-                  {toplist.ninthPlaceConsumableRating > 59 &&
-                    toplist.ninthPlaceConsumableRating < 80 && (
-                      <Typography className="badge bg-warning">
-                        Score <br></br>
-                        {toplist.ninthPlaceConsumableRating}
-                      </Typography>
-                    )}
-
-                  {toplist.ninthPlaceConsumableRating < 60 && (
-                    <Typography className="badge bg-danger">
-                      Score <br></br>
-                      {toplist.ninthPlaceConsumableRating}
-                    </Typography>
-                  )}
-                </div>
-              </Box>
-            </Box>
-          </Card>
+          <ToplistConsumableCard
+            consumableImage={toplist.ninthPlaceConsumableImage}
+            consumableTitle={toplist.ninthPlaceConsumableTitle}
+            consumableRating={toplist.ninthPlaceConsumableRating}
+            consumablePrice={toplist.ninthPlaceConsumablePrice}
+            consumableTagline={toplist.ninthPlaceConsumableTagline}
+          />
         </div>
       )}
 
@@ -312,76 +147,16 @@ function TopListDetailsPage() {
             spotAmbienceRating={toplist.eigthPlaceAmbienceRating}
           />
 
-          <p>{toplist.eigthPlaceDescription}</p>
+<ToplistSpotDescription spotDescription={toplist.eigthPlaceDescription} />
 
-          <Card className="cardSize">
-            <Box sx={{ position: "relative" }}>
-              <CardMedia
-                sx={{ height: 220 }}
-                image={toplist.eigthPlaceConsumableImage}
-                title={toplist.eigthPlaceConsumableTitle}
-              />
 
-              <Box
-                sx={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  width: "100%",
-                  bgcolor: "rgba(0, 0, 0, 0.54)",
-                  color: "white",
-                  padding: "10px",
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <div>
-                    <Typography component={"div"} variant="h5">
-                      {toplist.eigthPlaceConsumableTitle}
-                    </Typography>
-                    <Typography component={"div"} variant="body2">
-                      {toplist.eigthPlaceConsumableTagline}
-                    </Typography>
-                  </div>
-                  <Typography
-                    component={"div"}
-                    className="badge bg-secondary"
-                    style={{ margin: "5px" }}
-                  >
-                    Price<br></br>
-                    {toplist.eigthPlaceConsumablePrice}k
-                  </Typography>
-
-                  {toplist.eigthPlaceConsumableRating > 79 && (
-                    <Typography className="badge bg-success">
-                      Score <br></br>
-                      {toplist.eigthPlaceConsumableRating}
-                    </Typography>
-                  )}
-
-                  {toplist.eigthPlaceConsumableRating > 59 &&
-                    toplist.eigthPlaceConsumableRating < 80 && (
-                      <Typography className="badge bg-warning">
-                        Score <br></br>
-                        {toplist.eigthPlaceConsumableRating}
-                      </Typography>
-                    )}
-
-                  {toplist.eigthPlaceConsumableRating < 60 && (
-                    <Typography className="badge bg-danger">
-                      Score <br></br>
-                      {toplist.eigthPlaceConsumableRating}
-                    </Typography>
-                  )}
-                </div>
-              </Box>
-            </Box>
-          </Card>
+          <ToplistConsumableCard
+            consumableImage={toplist.eigthPlaceConsumableImage}
+            consumableTitle={toplist.eigthPlaceConsumableTitle}
+            consumableRating={toplist.eigthPlaceConsumableRating}
+            consumablePrice={toplist.eigthPlaceConsumablePrice}
+            consumableTagline={toplist.eigthPlaceConsumableTagline}
+          />
         </div>
       )}
 
@@ -410,76 +185,15 @@ function TopListDetailsPage() {
             spotAmbienceRating={toplist.seventhPlaceAmbienceRating}
           />
 
-          <p>{toplist.seventhPlaceDescription}</p>
+<ToplistSpotDescription spotDescription={toplist.seventhPlaceDescription} />
 
-          <Card className="cardSize">
-            <Box sx={{ position: "relative" }}>
-              <CardMedia
-                sx={{ height: 220 }}
-                image={toplist.seventhPlaceConsumableImage}
-                title={toplist.seventhPlaceConsumableTitle}
-              />
-
-              <Box
-                sx={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  width: "100%",
-                  bgcolor: "rgba(0, 0, 0, 0.54)",
-                  color: "white",
-                  padding: "10px",
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <div>
-                    <Typography component={"div"} variant="h5">
-                      {toplist.seventhPlaceConsumableTitle}
-                    </Typography>
-                    <Typography component={"div"} variant="body2">
-                      {toplist.seventhPlaceConsumableTagline}
-                    </Typography>
-                  </div>
-                  <Typography
-                    component={"div"}
-                    className="badge bg-secondary"
-                    style={{ margin: "5px" }}
-                  >
-                    Price<br></br>
-                    {toplist.seventhPlaceConsumablePrice}k
-                  </Typography>
-
-                  {toplist.seventhPlaceConsumableRating > 79 && (
-                    <Typography className="badge bg-success">
-                      Score <br></br>
-                      {toplist.seventhPlaceConsumableRating}
-                    </Typography>
-                  )}
-
-                  {toplist.seventhPlaceConsumableRating > 59 &&
-                    toplist.seventhPlaceConsumableRating < 80 && (
-                      <Typography className="badge bg-warning">
-                        Score <br></br>
-                        {toplist.seventhPlaceConsumableRating}
-                      </Typography>
-                    )}
-
-                  {toplist.seventhPlaceConsumableRating < 60 && (
-                    <Typography className="badge bg-danger">
-                      Score <br></br>
-                      {toplist.seventhPlaceConsumableRating}
-                    </Typography>
-                  )}
-                </div>
-              </Box>
-            </Box>
-          </Card>
+          <ToplistConsumableCard
+            consumableImage={toplist.seventhPlaceConsumableImage}
+            consumableTitle={toplist.seventhPlaceConsumableTitle}
+            consumableRating={toplist.seventhPlaceConsumableRating}
+            consumablePrice={toplist.seventhPlaceConsumablePrice}
+            consumableTagline={toplist.seventhPlaceConsumableTagline}
+          />
         </div>
       )}
 
@@ -508,76 +222,15 @@ function TopListDetailsPage() {
             spotAmbienceRating={toplist.sixthPlaceAmbienceRating}
           />
 
-          <p>{toplist.sixthPlaceDescription}</p>
+<ToplistSpotDescription spotDescription={toplist.sixthPlaceDescription} />
 
-          <Card className="cardSize">
-            <Box sx={{ position: "relative" }}>
-              <CardMedia
-                sx={{ height: 220 }}
-                image={toplist.sixthPlaceConsumableImage}
-                title={toplist.sixthPlaceConsumableTitle}
-              />
-
-              <Box
-                sx={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  width: "100%",
-                  bgcolor: "rgba(0, 0, 0, 0.54)",
-                  color: "white",
-                  padding: "10px",
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <div>
-                    <Typography component={"div"} variant="h5">
-                      {toplist.sixthPlaceConsumableTitle}
-                    </Typography>
-                    <Typography component={"div"} variant="body2">
-                      {toplist.sixthPlaceConsumableTagline}
-                    </Typography>
-                  </div>
-                  <Typography
-                    component={"div"}
-                    className="badge bg-secondary"
-                    style={{ margin: "5px" }}
-                  >
-                    Price<br></br>
-                    {toplist.sixthPlaceConsumablePrice}k
-                  </Typography>
-
-                  {toplist.sixthPlaceConsumableRating > 79 && (
-                    <Typography className="badge bg-success">
-                      Score <br></br>
-                      {toplist.sixthPlaceConsumableRating}
-                    </Typography>
-                  )}
-
-                  {toplist.sixthPlaceConsumableRating > 59 &&
-                    toplist.sixthPlaceConsumableRating < 80 && (
-                      <Typography className="badge bg-warning">
-                        Score <br></br>
-                        {toplist.sixthPlaceConsumableRating}
-                      </Typography>
-                    )}
-
-                  {toplist.sixthPlaceConsumableRating < 60 && (
-                    <Typography className="badge bg-danger">
-                      Score <br></br>
-                      {toplist.sixthPlaceConsumableRating}
-                    </Typography>
-                  )}
-                </div>
-              </Box>
-            </Box>
-          </Card>
+          <ToplistConsumableCard
+            consumableImage={toplist.sixthPlaceConsumableImage}
+            consumableTitle={toplist.sixthPlaceConsumableTitle}
+            consumableRating={toplist.sixthPlaceConsumableRating}
+            consumablePrice={toplist.sixthPlaceConsumablePrice}
+            consumableTagline={toplist.sixthPlaceConsumableTagline}
+          />
         </div>
       )}
 
@@ -606,76 +259,15 @@ function TopListDetailsPage() {
             spotAmbienceRating={toplist.fifthPlaceAmbienceRating}
           />
 
-          <p>{toplist.fifthPlaceDescription}</p>
+<ToplistSpotDescription spotDescription={toplist.fifthPlaceDescription} />
 
-          <Card className="cardSize">
-            <Box sx={{ position: "relative" }}>
-              <CardMedia
-                sx={{ height: 220 }}
-                image={toplist.fifthPlaceConsumableImage}
-                title={toplist.fifthPlaceConsumableTitle}
-              />
-
-              <Box
-                sx={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  width: "100%",
-                  bgcolor: "rgba(0, 0, 0, 0.54)",
-                  color: "white",
-                  padding: "10px",
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <div>
-                    <Typography component={"div"} variant="h5">
-                      {toplist.fifthPlaceConsumableTitle}
-                    </Typography>
-                    <Typography component={"div"} variant="body2">
-                      {toplist.fifthPlaceConsumableTagline}
-                    </Typography>
-                  </div>
-                  <Typography
-                    component={"div"}
-                    className="badge bg-secondary"
-                    style={{ margin: "5px" }}
-                  >
-                    Price<br></br>
-                    {toplist.fifthPlaceConsumablePrice}k
-                  </Typography>
-
-                  {toplist.fifthPlaceConsumableRating > 79 && (
-                    <Typography className="badge bg-success">
-                      Score <br></br>
-                      {toplist.fifthPlaceConsumableRating}
-                    </Typography>
-                  )}
-
-                  {toplist.fifthPlaceConsumableRating > 59 &&
-                    toplist.fifthPlaceConsumableRating < 80 && (
-                      <Typography className="badge bg-warning">
-                        Score <br></br>
-                        {toplist.fifthPlaceConsumableRating}
-                      </Typography>
-                    )}
-
-                  {toplist.fifthPlaceConsumableRating < 60 && (
-                    <Typography className="badge bg-danger">
-                      Score <br></br>
-                      {toplist.fifthPlaceConsumableRating}
-                    </Typography>
-                  )}
-                </div>
-              </Box>
-            </Box>
-          </Card>
+          <ToplistConsumableCard
+            consumableImage={toplist.fifthPlaceConsumableImage}
+            consumableTitle={toplist.fifthPlaceConsumableTitle}
+            consumableRating={toplist.fifthPlaceConsumableRating}
+            consumablePrice={toplist.fifthPlaceConsumablePrice}
+            consumableTagline={toplist.fifthPlaceConsumableTagline}
+          />
         </div>
       )}
 
@@ -704,76 +296,15 @@ function TopListDetailsPage() {
             spotAmbienceRating={toplist.fourthPlaceAmbienceRating}
           />
 
-          <p>{toplist.fourthPlaceDescription}</p>
+<ToplistSpotDescription spotDescription={toplist.fourthPlaceDescription} />
 
-          <Card className="cardSize">
-            <Box sx={{ position: "relative" }}>
-              <CardMedia
-                sx={{ height: 220 }}
-                image={toplist.fourthPlaceConsumableImage}
-                title={toplist.fourthPlaceConsumableTitle}
-              />
-
-              <Box
-                sx={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  width: "100%",
-                  bgcolor: "rgba(0, 0, 0, 0.54)",
-                  color: "white",
-                  padding: "10px",
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <div>
-                    <Typography component={"div"} variant="h5">
-                      {toplist.fourthPlaceConsumableTitle}
-                    </Typography>
-                    <Typography component={"div"} variant="body2">
-                      {toplist.fourthPlaceConsumableTagline}
-                    </Typography>
-                  </div>
-                  <Typography
-                    component={"div"}
-                    className="badge bg-secondary"
-                    style={{ margin: "5px" }}
-                  >
-                    Price<br></br>
-                    {toplist.fourthPlaceConsumablePrice}k
-                  </Typography>
-
-                  {toplist.fourthPlaceConsumableRating > 79 && (
-                    <Typography className="badge bg-success">
-                      Score <br></br>
-                      {toplist.fourthPlaceConsumableRating}
-                    </Typography>
-                  )}
-
-                  {toplist.fourthPlaceConsumableRating > 59 &&
-                    toplist.fourthPlaceConsumableRating < 80 && (
-                      <Typography className="badge bg-warning">
-                        Score <br></br>
-                        {toplist.fourthPlaceConsumableRating}
-                      </Typography>
-                    )}
-
-                  {toplist.fourthPlaceConsumableRating < 60 && (
-                    <Typography className="badge bg-danger">
-                      Score <br></br>
-                      {toplist.fourthPlaceConsumableRating}
-                    </Typography>
-                  )}
-                </div>
-              </Box>
-            </Box>
-          </Card>
+          <ToplistConsumableCard
+            consumableImage={toplist.fourthPlaceConsumableImage}
+            consumableTitle={toplist.fourthPlaceConsumableTitle}
+            consumableRating={toplist.fourthPlaceConsumableRating}
+            consumablePrice={toplist.fourthPlaceConsumablePrice}
+            consumableTagline={toplist.fourthPlaceConsumableTagline}
+          />
         </div>
       )}
 
@@ -802,76 +333,15 @@ function TopListDetailsPage() {
             spotAmbienceRating={toplist.thirdPlaceAmbienceRating}
           />
 
-          <p>{toplist.thirdPlaceDescription}</p>
+<ToplistSpotDescription spotDescription={toplist.thirdPlaceDescription} />
 
-          <Card className="cardSize">
-            <Box sx={{ position: "relative" }}>
-              <CardMedia
-                sx={{ height: 220 }}
-                image={toplist.thirdPlaceConsumableImage}
-                title={toplist.thirdPlaceConsumableTitle}
-              />
-
-              <Box
-                sx={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  width: "100%",
-                  bgcolor: "rgba(0, 0, 0, 0.54)",
-                  color: "white",
-                  padding: "10px",
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <div>
-                    <Typography component={"div"} variant="h5">
-                      {toplist.thirdPlaceConsumableTitle}
-                    </Typography>
-                    <Typography component={"div"} variant="body2">
-                      {toplist.thirdPlaceConsumableTagline}
-                    </Typography>
-                  </div>
-                  <Typography
-                    component={"div"}
-                    className="badge bg-secondary"
-                    style={{ margin: "5px" }}
-                  >
-                    Price<br></br>
-                    {toplist.thirdPlaceConsumablePrice}k
-                  </Typography>
-
-                  {toplist.thirdPlaceConsumableRating > 79 && (
-                    <Typography className="badge bg-success">
-                      Score <br></br>
-                      {toplist.thirdPlaceConsumableRating}
-                    </Typography>
-                  )}
-
-                  {toplist.thirdPlaceConsumableRating > 59 &&
-                    toplist.thirdPlaceConsumableRating < 80 && (
-                      <Typography className="badge bg-warning">
-                        Score <br></br>
-                        {toplist.thirdPlaceConsumableRating}
-                      </Typography>
-                    )}
-
-                  {toplist.thirdPlaceConsumableRating < 60 && (
-                    <Typography className="badge bg-danger">
-                      Score <br></br>
-                      {toplist.thirdPlaceConsumableRating}
-                    </Typography>
-                  )}
-                </div>
-              </Box>
-            </Box>
-          </Card>
+          <ToplistConsumableCard
+            consumableImage={toplist.thirdPlaceConsumableImage}
+            consumableTitle={toplist.thirdPlaceConsumableTitle}
+            consumableRating={toplist.thirdPlaceConsumableRating}
+            consumablePrice={toplist.thirdPlaceConsumablePrice}
+            consumableTagline={toplist.thirdPlaceConsumableTagline}
+          />
         </div>
       )}
 
@@ -900,76 +370,15 @@ function TopListDetailsPage() {
             spotAmbienceRating={toplist.secondPlaceAmbienceRating}
           />
 
-          <p>{toplist.secondPlaceDescription}</p>
+<ToplistSpotDescription spotDescription={toplist.secondPlaceDescription} />
 
-          <Card className="cardSize">
-            <Box sx={{ position: "relative" }}>
-              <CardMedia
-                sx={{ height: 220 }}
-                image={toplist.secondPlaceConsumableImage}
-                title={toplist.secondPlaceConsumableTitle}
-              />
-
-              <Box
-                sx={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  width: "100%",
-                  bgcolor: "rgba(0, 0, 0, 0.54)",
-                  color: "white",
-                  padding: "10px",
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <div>
-                    <Typography component={"div"} variant="h5">
-                      {toplist.secondPlaceConsumableTitle}
-                    </Typography>
-                    <Typography component={"div"} variant="body2">
-                      {toplist.secondPlaceConsumableTagline}
-                    </Typography>
-                  </div>
-                  <Typography
-                    component={"div"}
-                    className="badge bg-secondary"
-                    style={{ margin: "5px" }}
-                  >
-                    Price<br></br>
-                    {toplist.secondPlaceConsumablePrice}k
-                  </Typography>
-
-                  {toplist.secondPlaceConsumableRating > 79 && (
-                    <Typography className="badge bg-success">
-                      Score <br></br>
-                      {toplist.secondPlaceConsumableRating}
-                    </Typography>
-                  )}
-
-                  {toplist.secondPlaceConsumableRating > 59 &&
-                    toplist.secondPlaceConsumableRating < 80 && (
-                      <Typography className="badge bg-warning">
-                        Score <br></br>
-                        {toplist.secondPlaceConsumableRating}
-                      </Typography>
-                    )}
-
-                  {toplist.secondPlaceConsumableRating < 60 && (
-                    <Typography className="badge bg-danger">
-                      Score <br></br>
-                      {toplist.secondPlaceConsumableRating}
-                    </Typography>
-                  )}
-                </div>
-              </Box>
-            </Box>
-          </Card>
+          <ToplistConsumableCard
+            consumableImage={toplist.secondPlaceConsumableImage}
+            consumableTitle={toplist.secondPlaceConsumableTitle}
+            consumableRating={toplist.secondPlaceConsumableRating}
+            consumablePrice={toplist.secondPlaceConsumablePrice}
+            consumableTagline={toplist.secondPlaceConsumableTagline}
+          />
         </div>
       )}
 
@@ -998,76 +407,15 @@ function TopListDetailsPage() {
             spotAmbienceRating={toplist.firstPlaceAmbienceRating}
           />
 
-          <p>{toplist.firstPlaceDescription}</p>
+<ToplistSpotDescription spotDescription={toplist.firstPlaceDescription} />
 
-          <Card className="cardSize">
-            <Box sx={{ position: "relative" }}>
-              <CardMedia
-                sx={{ height: 220 }}
-                image={toplist.firstPlaceConsumableImage}
-                title={toplist.firstPlaceConsumableTitle}
-              />
-
-              <Box
-                sx={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  width: "100%",
-                  bgcolor: "rgba(0, 0, 0, 0.54)",
-                  color: "white",
-                  padding: "10px",
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <div>
-                    <Typography component={"div"} variant="h5">
-                      {toplist.firstPlaceConsumableTitle}
-                    </Typography>
-                    <Typography component={"div"} variant="body2">
-                      {toplist.firstPlaceConsumableTagline}
-                    </Typography>
-                  </div>
-                  <Typography
-                    component={"div"}
-                    className="badge bg-secondary"
-                    style={{ margin: "5px" }}
-                  >
-                    Price<br></br>
-                    {toplist.firstPlaceConsumablePrice}k
-                  </Typography>
-
-                  {toplist.firstPlaceConsumableRating > 79 && (
-                    <Typography className="badge bg-success">
-                      Score <br></br>
-                      {toplist.firstPlaceConsumableRating}
-                    </Typography>
-                  )}
-
-                  {toplist.firstPlaceConsumableRating > 59 &&
-                    toplist.firstPlaceConsumableRating < 80 && (
-                      <Typography className="badge bg-warning">
-                        Score <br></br>
-                        {toplist.firstPlaceConsumableRating}
-                      </Typography>
-                    )}
-
-                  {toplist.firstPlaceConsumableRating < 60 && (
-                    <Typography className="badge bg-danger">
-                      Score <br></br>
-                      {toplist.firstPlaceConsumableRating}
-                    </Typography>
-                  )}
-                </div>
-              </Box>
-            </Box>
-          </Card>
+          <ToplistConsumableCard
+            consumableImage={toplist.firstPlaceConsumableImage}
+            consumableTitle={toplist.firstPlaceConsumableTitle}
+            consumableRating={toplist.firstPlaceConsumableRating}
+            consumablePrice={toplist.firstPlaceConsumablePrice}
+            consumableTagline={toplist.firstPlaceConsumableTagline}
+          />
         </div>
       )}
     </div>
