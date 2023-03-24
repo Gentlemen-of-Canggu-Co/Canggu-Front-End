@@ -6,9 +6,17 @@ import { Typography } from "@mui/material";
 
 function ToplistConsumableCard(props) {
 
-const {consumableImage, consumableTitle, consumableRating, consumablePrice, consumableTagline} = props
+const {consumableImage, consumableTitle, consumableRating, consumablePrice, consumableTagline, spotName} = props
 
     return <div>
+
+<Typography
+            component={"div"}
+            sx={{ fontFamily: "Teko", fontSize: "30px" }}
+          >
+            This is what I had at {spotName}
+          </Typography>
+
 
 <Card className="toplistImages">
             <Box sx={{ position: "relative" }}>
