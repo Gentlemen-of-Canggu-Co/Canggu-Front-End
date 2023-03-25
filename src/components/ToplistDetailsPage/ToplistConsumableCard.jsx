@@ -10,7 +10,7 @@ const {consumableImage, consumableTitle, consumableRating, consumablePrice, cons
 
     return <div>
 
-<Typography
+<Typography className="desktopHeadingHidden"
             component={"div"}
             sx={{ fontFamily: "Teko", fontSize: "30px" }}
           >
@@ -18,10 +18,10 @@ const {consumableImage, consumableTitle, consumableRating, consumablePrice, cons
           </Typography>
 
 
-<Card className="toplistImages">
+<Card className="toplistConsumableImage">
             <Box sx={{ position: "relative" }}>
-              <CardMedia
-                sx={{ height: 220 }}
+              <CardMedia className="consumableImageHeight"
+                // sx={{ height: 220 }}
                 image={consumableImage}
                 title={consumableTitle}
               />

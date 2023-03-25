@@ -42,27 +42,31 @@ function TopListDetailsPage() {
 
       <Typography className="toplistIntroText"
         component={"div"}
-        style={{ textAlign: "justify" }}
+        // style={{ textAlign: "justify" }}
         sx={{ fontFamily: "Teko", fontSize: "20px" }}
       >
         <i>{toplist.introText}</i>
       </Typography>
 
       {toplist.tenthPlaceName && (
-        <div style={{paddingTop: "10vw"}}>
+        <div style={{paddingTop: "30px"}}>
           <Typography
             variant="h2"
             sx={{ fontFamily: "Teko", fontSize: "50px" }}
           >
-            10. {toplist.ninthPlaceName}
+            1. {toplist.tenthPlaceName}
           </Typography>
           <Typography
             component={"div"}
             variant="body2"
             sx={{ fontFamily: "Teko", fontSize: "25px" }}
           >
-            <i>{toplist.ninthPlaceTagline}</i>
+            <i>{toplist.tenthPlaceTagline}</i>
           </Typography>
+
+<div className="desktopToplistView">
+<div className="desktopSpotCardDescriptionFlex">
+
 
           <ToplistSpotCard
             spotId={toplist.tenthPlaceId}
@@ -72,8 +76,12 @@ function TopListDetailsPage() {
             spotFoodRating={toplist.tenthPlaceFoodRating}
             spotAmbienceRating={toplist.tenthPlaceAmbienceRating}
           />
-
+<div className="mobileViewDescription">
 <ToplistSpotDescription spotDescription={toplist.tenthPlaceDescription} />
+</div>
+</div>
+
+<div className="desktopConsumableContainer">
           <ToplistConsumableCard
             consumableImage={toplist.tenthPlaceConsumableImage}
             consumableTitle={toplist.tenthPlaceConsumableTitle}
@@ -82,11 +90,19 @@ function TopListDetailsPage() {
             consumableTagline={toplist.tenthPlaceConsumableTagline}
             spotName={toplist.tenthPlaceName}
           />
+
+</div>
+
+</div>
+<div className="desktopViewDescription">
+<ToplistSpotDescription  spotDescription={toplist.tenthPlaceDescription} />
         </div>
+        </div>
+        
       )}
 
       {toplist.ninthPlaceName && (
-        <div style={{paddingTop: "10vw"}}>
+        <div style={{paddingTop: "30px"}}>
           <Typography
             variant="h2"
             sx={{ fontFamily: "Teko", fontSize: "50px" }}
@@ -101,6 +117,10 @@ function TopListDetailsPage() {
             <i>{toplist.ninthPlaceTagline}</i>
           </Typography>
 
+<div className="desktopToplistView">
+<div className="desktopSpotCardDescriptionFlex">
+
+
           <ToplistSpotCard
             spotId={toplist.ninthPlaceId}
             spotImage={toplist.ninthPlaceImage}
@@ -109,10 +129,12 @@ function TopListDetailsPage() {
             spotFoodRating={toplist.ninthPlaceFoodRating}
             spotAmbienceRating={toplist.ninthPlaceAmbienceRating}
           />
+<div className="mobileViewDescription">
+<ToplistSpotDescription spotDescription={toplist.ninthPlaceDescription} />
+</div>
+</div>
 
-          
-          <ToplistSpotDescription spotDescription={toplist.ninthPlaceDescription} />
-
+<div className="desktopConsumableContainer">
           <ToplistConsumableCard
             consumableImage={toplist.ninthPlaceConsumableImage}
             consumableTitle={toplist.ninthPlaceConsumableTitle}
@@ -121,11 +143,19 @@ function TopListDetailsPage() {
             consumableTagline={toplist.ninthPlaceConsumableTagline}
             spotName={toplist.ninthPlaceName}
           />
+
+</div>
+
+</div>
+<div className="desktopViewDescription">
+<ToplistSpotDescription  spotDescription={toplist.ninthPlaceDescription} />
         </div>
+        </div>
+        
       )}
 
       {toplist.eigthPlaceName && (
-        <div style={{paddingTop:"10vw"}}>
+        <div style={{paddingTop: "30px"}}>
           <Typography
             variant="h2"
             sx={{ fontFamily: "Teko", fontSize: "50px" }}
@@ -140,6 +170,10 @@ function TopListDetailsPage() {
             <i>{toplist.eigthPlaceTagline}</i>
           </Typography>
 
+<div className="desktopToplistView">
+<div className="desktopSpotCardDescriptionFlex">
+
+
           <ToplistSpotCard
             spotId={toplist.eigthPlaceId}
             spotImage={toplist.eigthPlaceImage}
@@ -148,10 +182,12 @@ function TopListDetailsPage() {
             spotFoodRating={toplist.eigthPlaceFoodRating}
             spotAmbienceRating={toplist.eigthPlaceAmbienceRating}
           />
-
+<div className="mobileViewDescription">
 <ToplistSpotDescription spotDescription={toplist.eigthPlaceDescription} />
+</div>
+</div>
 
-
+<div className="desktopConsumableContainer">
           <ToplistConsumableCard
             consumableImage={toplist.eigthPlaceConsumableImage}
             consumableTitle={toplist.eigthPlaceConsumableTitle}
@@ -160,11 +196,19 @@ function TopListDetailsPage() {
             consumableTagline={toplist.eigthPlaceConsumableTagline}
             spotName={toplist.eigthPlaceName}
           />
+
+</div>
+
+</div>
+<div className="desktopViewDescription">
+<ToplistSpotDescription  spotDescription={toplist.eigthPlaceDescription} />
         </div>
+        </div>
+        
       )}
 
       {toplist.seventhPlaceName && (
-        <div style={{paddingTop: "10vw"}}>
+        <div style={{paddingTop: "30px"}}>
           <Typography
             variant="h2"
             sx={{ fontFamily: "Teko", fontSize: "50px" }}
@@ -179,6 +223,10 @@ function TopListDetailsPage() {
             <i>{toplist.seventhPlaceTagline}</i>
           </Typography>
 
+<div className="desktopToplistView">
+<div className="desktopSpotCardDescriptionFlex">
+
+
           <ToplistSpotCard
             spotId={toplist.seventhPlaceId}
             spotImage={toplist.seventhPlaceImage}
@@ -187,9 +235,12 @@ function TopListDetailsPage() {
             spotFoodRating={toplist.seventhPlaceFoodRating}
             spotAmbienceRating={toplist.seventhPlaceAmbienceRating}
           />
-
+<div className="mobileViewDescription">
 <ToplistSpotDescription spotDescription={toplist.seventhPlaceDescription} />
+</div>
+</div>
 
+<div className="desktopConsumableContainer">
           <ToplistConsumableCard
             consumableImage={toplist.seventhPlaceConsumableImage}
             consumableTitle={toplist.seventhPlaceConsumableTitle}
@@ -198,11 +249,19 @@ function TopListDetailsPage() {
             consumableTagline={toplist.seventhPlaceConsumableTagline}
             spotName={toplist.seventhPlaceName}
           />
+
+</div>
+
+</div>
+<div className="desktopViewDescription">
+<ToplistSpotDescription  spotDescription={toplist.seventhPlaceDescription} />
         </div>
+        </div>
+        
       )}
 
       {toplist.sixthPlaceName && (
-        <div style={{paddingTop: "10vw"}}>
+        <div style={{paddingTop: "30px"}}>
           <Typography
             variant="h2"
             sx={{ fontFamily: "Teko", fontSize: "50px" }}
@@ -217,6 +276,10 @@ function TopListDetailsPage() {
             <i>{toplist.sixthPlaceTagline}</i>
           </Typography>
 
+<div className="desktopToplistView">
+<div className="desktopSpotCardDescriptionFlex">
+
+
           <ToplistSpotCard
             spotId={toplist.sixthPlaceId}
             spotImage={toplist.sixthPlaceImage}
@@ -225,9 +288,12 @@ function TopListDetailsPage() {
             spotFoodRating={toplist.sixthPlaceFoodRating}
             spotAmbienceRating={toplist.sixthPlaceAmbienceRating}
           />
-
+<div className="mobileViewDescription">
 <ToplistSpotDescription spotDescription={toplist.sixthPlaceDescription} />
+</div>
+</div>
 
+<div className="desktopConsumableContainer">
           <ToplistConsumableCard
             consumableImage={toplist.sixthPlaceConsumableImage}
             consumableTitle={toplist.sixthPlaceConsumableTitle}
@@ -236,11 +302,19 @@ function TopListDetailsPage() {
             consumableTagline={toplist.sixthPlaceConsumableTagline}
             spotName={toplist.sixthPlaceName}
           />
+
+</div>
+
+</div>
+<div className="desktopViewDescription">
+<ToplistSpotDescription  spotDescription={toplist.sixthPlaceDescription} />
         </div>
+        </div>
+        
       )}
 
       {toplist.fifthPlaceName && (
-        <div style={{paddingTop: "10vw"}}>
+        <div style={{paddingTop: "30px"}}>
           <Typography
             variant="h2"
             sx={{ fontFamily: "Teko", fontSize: "50px" }}
@@ -255,6 +329,10 @@ function TopListDetailsPage() {
             <i>{toplist.fifthPlaceTagline}</i>
           </Typography>
 
+<div className="desktopToplistView">
+<div className="desktopSpotCardDescriptionFlex">
+
+
           <ToplistSpotCard
             spotId={toplist.fifthPlaceId}
             spotImage={toplist.fifthPlaceImage}
@@ -263,9 +341,12 @@ function TopListDetailsPage() {
             spotFoodRating={toplist.fifthPlaceFoodRating}
             spotAmbienceRating={toplist.fifthPlaceAmbienceRating}
           />
-
+<div className="mobileViewDescription">
 <ToplistSpotDescription spotDescription={toplist.fifthPlaceDescription} />
+</div>
+</div>
 
+<div className="desktopConsumableContainer">
           <ToplistConsumableCard
             consumableImage={toplist.fifthPlaceConsumableImage}
             consumableTitle={toplist.fifthPlaceConsumableTitle}
@@ -274,11 +355,19 @@ function TopListDetailsPage() {
             consumableTagline={toplist.fifthPlaceConsumableTagline}
             spotName={toplist.fifthPlaceName}
           />
+
+</div>
+
+</div>
+<div className="desktopViewDescription">
+<ToplistSpotDescription  spotDescription={toplist.fifthPlaceDescription} />
         </div>
+        </div>
+        
       )}
 
       {toplist.fourthPlaceName && (
-        <div style={{paddingTop: "10vw"}}>
+        <div style={{paddingTop: "30px"}}>
           <Typography
             variant="h2"
             sx={{ fontFamily: "Teko", fontSize: "50px" }}
@@ -293,6 +382,10 @@ function TopListDetailsPage() {
             <i>{toplist.fourthPlaceTagline}</i>
           </Typography>
 
+<div className="desktopToplistView">
+<div className="desktopSpotCardDescriptionFlex">
+
+
           <ToplistSpotCard
             spotId={toplist.fourthPlaceId}
             spotImage={toplist.fourthPlaceImage}
@@ -301,9 +394,12 @@ function TopListDetailsPage() {
             spotFoodRating={toplist.fourthPlaceFoodRating}
             spotAmbienceRating={toplist.fourthPlaceAmbienceRating}
           />
-
+<div className="mobileViewDescription">
 <ToplistSpotDescription spotDescription={toplist.fourthPlaceDescription} />
+</div>
+</div>
 
+<div className="desktopConsumableContainer">
           <ToplistConsumableCard
             consumableImage={toplist.fourthPlaceConsumableImage}
             consumableTitle={toplist.fourthPlaceConsumableTitle}
@@ -312,11 +408,19 @@ function TopListDetailsPage() {
             consumableTagline={toplist.fourthPlaceConsumableTagline}
             spotName={toplist.fourthPlaceName}
           />
+
+</div>
+
+</div>
+<div className="desktopViewDescription">
+<ToplistSpotDescription  spotDescription={toplist.fourthPlaceDescription} />
         </div>
+        </div>
+        
       )}
 
       {toplist.thirdPlaceName && (
-        <div style={{paddingTop: "10vw"}}>
+        <div style={{paddingTop: "30px"}}>
           <Typography
             variant="h2"
             sx={{ fontFamily: "Teko", fontSize: "50px" }}
@@ -331,6 +435,10 @@ function TopListDetailsPage() {
             <i>{toplist.thirdPlaceTagline}</i>
           </Typography>
 
+<div className="desktopToplistView">
+<div className="desktopSpotCardDescriptionFlex">
+
+
           <ToplistSpotCard
             spotId={toplist.thirdPlaceId}
             spotImage={toplist.thirdPlaceImage}
@@ -339,9 +447,12 @@ function TopListDetailsPage() {
             spotFoodRating={toplist.thirdPlaceFoodRating}
             spotAmbienceRating={toplist.thirdPlaceAmbienceRating}
           />
-
+<div className="mobileViewDescription">
 <ToplistSpotDescription spotDescription={toplist.thirdPlaceDescription} />
+</div>
+</div>
 
+<div className="desktopConsumableContainer">
           <ToplistConsumableCard
             consumableImage={toplist.thirdPlaceConsumableImage}
             consumableTitle={toplist.thirdPlaceConsumableTitle}
@@ -350,11 +461,19 @@ function TopListDetailsPage() {
             consumableTagline={toplist.thirdPlaceConsumableTagline}
             spotName={toplist.thirdPlaceName}
           />
+
+</div>
+
+</div>
+<div className="desktopViewDescription">
+<ToplistSpotDescription  spotDescription={toplist.thirdPlaceDescription} />
         </div>
+        </div>
+        
       )}
 
       {toplist.secondPlaceName && (
-        <div style={{paddingTop: "10vw"}}>
+        <div style={{paddingTop: "30px"}}>
           <Typography
             variant="h2"
             sx={{ fontFamily: "Teko", fontSize: "50px" }}
@@ -369,6 +488,10 @@ function TopListDetailsPage() {
             <i>{toplist.secondPlaceTagline}</i>
           </Typography>
 
+<div className="desktopToplistView">
+<div className="desktopSpotCardDescriptionFlex">
+
+
           <ToplistSpotCard
             spotId={toplist.secondPlaceId}
             spotImage={toplist.secondPlaceImage}
@@ -377,9 +500,12 @@ function TopListDetailsPage() {
             spotFoodRating={toplist.secondPlaceFoodRating}
             spotAmbienceRating={toplist.secondPlaceAmbienceRating}
           />
-
+<div className="mobileViewDescription">
 <ToplistSpotDescription spotDescription={toplist.secondPlaceDescription} />
+</div>
+</div>
 
+<div className="desktopConsumableContainer">
           <ToplistConsumableCard
             consumableImage={toplist.secondPlaceConsumableImage}
             consumableTitle={toplist.secondPlaceConsumableTitle}
@@ -388,11 +514,19 @@ function TopListDetailsPage() {
             consumableTagline={toplist.secondPlaceConsumableTagline}
             spotName={toplist.secondPlaceName}
           />
+
+</div>
+
+</div>
+<div className="desktopViewDescription">
+<ToplistSpotDescription  spotDescription={toplist.secondPlaceDescription} />
         </div>
+        </div>
+        
       )}
 
       {toplist.firstPlaceName && (
-        <div style={{paddingTop: "10vw"}}>
+        <div style={{paddingTop: "30px"}}>
           <Typography
             variant="h2"
             sx={{ fontFamily: "Teko", fontSize: "50px" }}
@@ -407,6 +541,10 @@ function TopListDetailsPage() {
             <i>{toplist.firstPlaceTagline}</i>
           </Typography>
 
+<div className="desktopToplistView">
+<div className="desktopSpotCardDescriptionFlex">
+
+
           <ToplistSpotCard
             spotId={toplist.firstPlaceId}
             spotImage={toplist.firstPlaceImage}
@@ -415,9 +553,12 @@ function TopListDetailsPage() {
             spotFoodRating={toplist.firstPlaceFoodRating}
             spotAmbienceRating={toplist.firstPlaceAmbienceRating}
           />
-
+<div className="mobileViewDescription">
 <ToplistSpotDescription spotDescription={toplist.firstPlaceDescription} />
+</div>
+</div>
 
+<div className="desktopConsumableContainer">
           <ToplistConsumableCard
             consumableImage={toplist.firstPlaceConsumableImage}
             consumableTitle={toplist.firstPlaceConsumableTitle}
@@ -426,7 +567,15 @@ function TopListDetailsPage() {
             consumableTagline={toplist.firstPlaceConsumableTagline}
             spotName={toplist.firstPlaceName}
           />
+
+</div>
+
+</div>
+<div className="desktopViewDescription">
+<ToplistSpotDescription  spotDescription={toplist.firstPlaceDescription} />
         </div>
+        </div>
+        
       )}
     </div>
   );

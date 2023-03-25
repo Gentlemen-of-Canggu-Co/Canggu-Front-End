@@ -7,7 +7,7 @@ import "../SpotList/spotlist.css"
 function ToplistHeroSection(props){
 const {toplistHeroImage, toplistTitle} = props
 
-    return <div className="toplistImages">
+    return <div className="heroImage">
               <Card>
         <Box sx={{ position: "relative" }}>
           <CardMedia 
