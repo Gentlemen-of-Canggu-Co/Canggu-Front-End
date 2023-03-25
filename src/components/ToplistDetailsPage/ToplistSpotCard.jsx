@@ -9,11 +9,11 @@ function ToplistSpotCard (props){
 const { spotId, spotImage, spotName, spotCoffeeRating, spotFoodRating, spotAmbienceRating} = props
     return(
 
-        <div className="toplistImages">
+        <div className="toplistSpotImage">
             <Link to={`/spots/${spotId}`}>
-            <Card className="cardSize">
+            <Card>
               <Box sx={{ position: "relative" }}>
-                <CardMedia
+                <CardMedia 
                   sx={{ height: 200 }}
                   component="img"
                   loading="lazy"
@@ -33,19 +33,19 @@ const { spotId, spotImage, spotName, spotCoffeeRating, spotFoodRating, spotAmbie
                   }}
                 >
                   <ProgressBar
-                    className="bg-secondary progressBarSize"
+                    className="bg-secondary toplistProgressBarSize"
                     animated={true}
                     now={spotCoffeeRating}
                     label={`Coffee`}
                   />
                   <ProgressBar
-                    className="bg-secondary progressBarSize"
+                    className="bg-secondary toplistProgressBarSize"
                     animated={true}
                     now={spotFoodRating}
                     label={`Food`}
                   />
                   <ProgressBar
-                    className="bg-secondary progressBarSize"
+                    className="bg-secondary toplistProgressBarSize"
                     animated={true}
                     now={spotAmbienceRating}
                     label={`Ambience`}
