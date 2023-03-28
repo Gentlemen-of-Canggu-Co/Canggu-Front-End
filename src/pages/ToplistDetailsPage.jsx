@@ -54,7 +54,7 @@ function TopListDetailsPage() {
             variant="h2"
             sx={{ fontFamily: "Teko", fontSize: "50px" }}
           >
-            1. {toplist.tenthPlaceName}
+            10. {toplist.tenthPlaceName}
           </Typography>
           <Typography
             component={"div"}
