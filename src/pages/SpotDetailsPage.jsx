@@ -9,7 +9,7 @@ import ConsumableCard from "../components/SpotDetailsPage/ConsumableCard";
 import Loading from "../components/Loading/Loading";
 import { AuthContext } from "../context/auth.context";
 import "../components/SpotList/spotlist.css"
-
+import Footer from "./Footer";
 
 function SpotDetailsPage() {
   const { isLoggedIn } = useContext(AuthContext);
@@ -37,6 +37,7 @@ function SpotDetailsPage() {
   }
 
   return (
+    <div className="footerWrap">
     <div>
     <div className="desktopLayout">
     <div>
@@ -56,6 +57,9 @@ function SpotDetailsPage() {
                     </Link>   
             )} */}
     </div>
+
+            <div><Footer /></div>
+            </div>
   );
 }
 

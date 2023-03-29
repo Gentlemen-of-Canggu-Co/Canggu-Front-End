@@ -6,6 +6,7 @@ import SpotCard from "../components/SpotList/SpotCard";
 import { AuthContext } from "../context/auth.context";
 import "../App.css"
 import Loading from "../components/Loading/Loading";
+import Footer from "./Footer";
 
 
 
@@ -51,6 +52,7 @@ if(isLoading){
 
 
   return (
+    <div className="footerWrap">
     <div>
       {/* <Breadcrumbs spots={spots} /> */}
 
@@ -69,6 +71,10 @@ if(isLoading){
       <p>
         Among a plethora of reasons, Food is one of the main staples that made Canggu one of the largest digital nomad destinations in the world. From cheap traditional indonesion food and no-nonsense eateries to high-end western cuisine and astonishing Cafés, you will have no trouble finding the dish you are craving. Or let me revise that: If you patiently search through the seemingly endless amount of places to go to, you will avoid those that are just shiny on the outside and actually find the best Cafes and Restaurants in Canggu. To make your life easier, Chunks of Canggu lists all the places that I have visited and ranks them for the quality of their food and coffee as well as their ambience. This way, you are just a quick search removed to find the perfect Cafe or Restaurant that excels at just the thing you are craving.  
       </p>
+    </div>
+
+
+    <div><Footer /></div>
     </div>
   );
 }

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
@@ -9,16 +8,12 @@ function TopListCard(props) {
   const { toplists } = props;
 
   return (
-    <div>
+    <div className="responsiveToplistTiling">
       {toplists.map((toplist) => {
         return (
-          <div key={toplist._id} style={{ padding: "5px 3px" }}>
-            {/* <Link
-              key={toplist._id}
-              to={`/toplists/${toplist._id}`}
-              style={{ textDecoration: "none" }}
-            > */}
-              <Card className="cardSize">
+          <div key={toplist._id} >
+
+              <Card className="responsiveToplistListSizing">
                 <Box sx={{ position: "relative" }}>
                   <CardMedia
                     sx={{ height: 200 }}
@@ -56,7 +51,7 @@ function TopListCard(props) {
                     </div>
                   </Box>
                 </Box>
-                <Typography
+                <Typography style={{textAlign: "justify", padding: "10px 10px 0 10px"}}
                   component={"div"}
                   variant="body1"
                   sx={{ fontFamily: "Teko", fontSize: "20px" }}
@@ -64,7 +59,7 @@ function TopListCard(props) {
                   <i>{toplist.introText}</i>
                 </Typography>
 
-                <a href={`/toplists/${toplist._id}`} className="btn btn-primary">Read more</a>
+                <a style={{marginBottom: "10px"}} href={`/toplists/${toplist._id}`} className="btn btn-primary">Read more</a>
               </Card>
             {/* </Link> */}
           </div>
