@@ -10,6 +10,7 @@ import Loading from "../components/Loading/Loading";
 import { AuthContext } from "../context/auth.context";
 import "../components/SpotList/spotlist.css"
 import Footer from "./Footer";
+import { Helmet } from 'react-helmet';
 
 function SpotDetailsPage() {
   const { isLoggedIn } = useContext(AuthContext);
@@ -38,6 +39,11 @@ function SpotDetailsPage() {
 
   return (
     <div className="footerWrap">
+          <Helmet>
+        <title>{spot.name} | Chunks of Canggu</title>
+        <meta name="description" content="Images, Review, Menu & more: Find out everything you need to know about ${spot.name}" />
+        <meta name="theme-color" content="#008f68" />
+      </Helmet>
     <div>
     <div className="desktopLayout">
     <div>
