@@ -1,13 +1,18 @@
 // import "./HomePage.css";
-
+import Footer from "./Footer";
 // import { Link } from "react-router-dom";
 
 import HomePageCarousel from "../components/HomePageCarousel";
 function HomePage() {
   return (
-    <div>
+    <div className="footerWrap">
+        <div>
+
     <HomePageCarousel/>
   </div>
+
+          <div><Footer /></div>
+          </div>
       )
 }
 export default HomePage;

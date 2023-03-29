@@ -12,6 +12,7 @@ import ToplistSpotCard from "../components/ToplistDetailsPage/ToplistSpotCard";
 import ToplistConsumableCard from "../components/ToplistDetailsPage/ToplistConsumableCard";
 import ToplistHeroSection from "../components/ToplistDetailsPage/ToplistHeroSection";
 import ToplistSpotDescription from "../components/ToplistDetailsPage/ToplistSpotDescription"
+import Footer from "./Footer";
 
 function TopListDetailsPage() {
   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
@@ -36,6 +37,7 @@ function TopListDetailsPage() {
   }
 
   return (
+    <div>
     <div>
     <ToplistHeroSection toplistHeroImage={toplist.heroImage} toplistTitle={toplist.title} />
  
@@ -577,6 +579,8 @@ function TopListDetailsPage() {
         </div>
         
       )}
+    </div>
+    <div><Footer /></div>
     </div>
   );
 }

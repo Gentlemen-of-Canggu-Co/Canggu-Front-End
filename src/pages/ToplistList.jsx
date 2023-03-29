@@ -1,9 +1,11 @@
 import { useState, useEffect, useContext } from "react";
-import {Link} from 'react-router-dom';
 import axios from "axios";
 import ToplistCard from "../components/ToplistList/ToplistCard"
 import { AuthContext } from "../context/auth.context";
 import "../App.css"
+import Footer from "./Footer";
+import "../components/SpotList/spotlist.css"
+import { Typography } from "@mui/material";
 
 function ToplistList() {
     const [toplists, setToplists] = useState([])
@@ -18,10 +20,20 @@ function ToplistList() {
     }, [])
 
     return(
-        <div>
+       
+       <div className="footerWrap">
+       <div>
             <h1>The Canggu Toplists</h1>
-            <ToplistCard toplists={toplists} />
+            <Typography
+        component={"div"}
+        sx={{ fontFamily: "Teko", fontSize: "20px" }}
+      >
+        The best, the most beautiful, the most delicious: Find your next Café or restaurant by browsing through these carefully hand-picked selections of amazing spots.
+      </Typography>            <ToplistCard toplists={toplists} />
         </div>
+
+        <div><Footer /></div>
+</div>
     )
 
 }
