@@ -7,6 +7,7 @@ import { AuthContext } from "../context/auth.context";
 import "../App.css"
 import Loading from "../components/Loading/Loading";
 import Footer from "./Footer";
+import { Helmet } from 'react-helmet';
 
 
 
@@ -53,6 +54,11 @@ if(isLoading){
 
   return (
     <div className="footerWrap">
+              <Helmet>
+        <title>Cafés & Restaurants | Chunks of Canggu</title>
+        <meta name="description" content="Find your perfect Cafe in Canggu. With images, reviews, filter options and more." />
+        <meta name="theme-color" content="#008f68" />
+      </Helmet>
     <div>
       {/* <Breadcrumbs spots={spots} /> */}
 

@@ -3,16 +3,15 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import Loading from "../components/Loading/Loading";
 import "../components/SpotList/spotlist.css";
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
 import "../components/SpotList/spotlist.css";
 import ToplistSpotCard from "../components/ToplistDetailsPage/ToplistSpotCard";
 import ToplistConsumableCard from "../components/ToplistDetailsPage/ToplistConsumableCard";
 import ToplistHeroSection from "../components/ToplistDetailsPage/ToplistHeroSection";
 import ToplistSpotDescription from "../components/ToplistDetailsPage/ToplistSpotDescription"
 import Footer from "./Footer";
+import { Helmet } from 'react-helmet';
+
 
 function TopListDetailsPage() {
   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
@@ -38,6 +37,11 @@ function TopListDetailsPage() {
 
   return (
     <div>
+            <Helmet>
+        <title>{toplist.title} | Chunks of Canggu</title>
+        <meta name="description" content="Images, Review, Menu & more: Find out everything you need to know about ${spot.name}" />
+        <meta name="theme-color" content="#008f68" />
+      </Helmet>
     <div>
     <ToplistHeroSection toplistHeroImage={toplist.heroImage} toplistTitle={toplist.title} />
  
