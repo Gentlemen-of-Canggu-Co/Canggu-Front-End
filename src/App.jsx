@@ -20,9 +20,11 @@ import ToplistList from "./pages/ToplistList";
 import AddToplist from "./pages/AddToplist";
 import TopListDetailsPage from "./pages/ToplistDetailsPage";
 
+
 function App() {
   return (
     <div className="App">
+    
       <AlternativeNavbar />
       <Routes>
 
