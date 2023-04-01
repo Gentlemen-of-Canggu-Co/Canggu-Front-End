@@ -18,20 +18,18 @@ function AlternativeNavbar (){
 
     <>
     <Navbar bg="black" variant="dark">
-        <Container style={{marginLeft: "10px"}}>
-          <Navbar.Brand href="/">
+        <Container>
+        <Navbar.Brand style={{marginLeft: "5vw"}} href="/">
             <img
-              alt=""
+              alt="Chunks of Canggu Logo"
               src={brandLogo}
-              height= "30vh"
+              height= "50vh"
               className="d-inline-block align-top"
             />{' '}
           </Navbar.Brand>
-          {/* <div className="navbar" style={{display: "flex"}}> */}
-          <Nav.Link style={{marginRight:"10px", color: "white"}} href="/spots">Browse Spots</Nav.Link>
-          {/* {isLoggedIn && <Nav.Link style={{marginRight:"10px"}} onClick={logOutUser}>Logout</Nav.Link>} */}
+          <Nav.Link style={{ color: "white"}} href="/spots">Browse Spots</Nav.Link>
+          <Nav.Link style={{marginRight: "5vw", color: "white"}} href="/toplists">Toplists</Nav.Link>
 
-          {/* </div> */}
           
         </Container>
       </Navbar>
