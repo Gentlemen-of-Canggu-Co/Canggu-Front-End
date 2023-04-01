@@ -1,4 +1,5 @@
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
+import { Typography } from '@mui/material';
 
 function Breadcrumbs(props){
 
@@ -25,21 +26,18 @@ function Breadcrumbs(props){
       <Breadcrumb.Item active>Spots</Breadcrumb.Item>
     </Breadcrumb>}
 
-     { spot && <Breadcrumb>
-      <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-      <Breadcrumb.Item href="/spots">
+     { spot && <Breadcrumb style={{marginTop:"16px", marginLeft: "16px"}}>
+      <Breadcrumb.Item style={{fontFamily:"Teko", fontSize:"20px"}} href="/">Home</Breadcrumb.Item>
+      <Breadcrumb.Item style={{fontFamily:"Teko", fontSize:"20px"}} href="/spots">
         Spots
       </Breadcrumb.Item>
-      <Breadcrumb.Item active>{spot.name}</Breadcrumb.Item>
+      <Breadcrumb.Item active style={{fontFamily:"Teko", fontSize:"20px"}}>{spot.name}</Breadcrumb.Item>
     </Breadcrumb>}  
 
-    { toplist && <Breadcrumb>
-      <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-      <Breadcrumb.Item href="/toplists">
-        Toplists
-      </Breadcrumb.Item>
-      <Breadcrumb.Item active>{toplist.title}</Breadcrumb.Item>
-    </Breadcrumb>}  
+    { toplist && <Breadcrumb className="toplistBreadcrumbMargin" style={{marginTop:"16px"}}>
+      <Breadcrumb.Item style={{fontFamily:"Teko", fontSize:"20px"}} href="/">Home</Breadcrumb.Item>
+      <Breadcrumb.Item style={{fontFamily:"Teko", fontSize:"20px"}} href="/toplists">Toplists</Breadcrumb.Item>
+      <Breadcrumb.Item style={{fontFamily:"Teko", fontSize:"20px"}} active>{toplist.title}</Breadcrumb.Item></Breadcrumb>}  
     </div>
     )
 }
