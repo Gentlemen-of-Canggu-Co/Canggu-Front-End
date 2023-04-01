@@ -11,6 +11,7 @@ import ToplistHeroSection from "../components/ToplistDetailsPage/ToplistHeroSect
 import ToplistSpotDescription from "../components/ToplistDetailsPage/ToplistSpotDescription"
 import Footer from "./Footer";
 import { Helmet } from 'react-helmet';
+import Breadcrumbs from "../components/Breadcrumbs";
 
 
 function TopListDetailsPage() {
@@ -42,7 +43,10 @@ function TopListDetailsPage() {
         <meta name="description" content="Images, Review, Menu & more: Find out everything you need to know about ${spot.name}" />
         <meta name="theme-color" content="#008f68" />
       </Helmet>
+      <Breadcrumbs toplist={toplist} />
+
     <div>
+    
     <ToplistHeroSection toplistHeroImage={toplist.heroImage} toplistTitle={toplist.title} />
  
 

@@ -11,6 +11,7 @@ import { AuthContext } from "../context/auth.context";
 import "../components/SpotList/spotlist.css"
 import Footer from "./Footer";
 import { Helmet } from 'react-helmet';
+import Breadcrumbs from "../components/Breadcrumbs";
 
 function SpotDetailsPage() {
   const { isLoggedIn } = useContext(AuthContext);
@@ -45,6 +46,7 @@ function SpotDetailsPage() {
         <meta name="theme-color" content="#008f68" />
       </Helmet>
     <div>
+    <Breadcrumbs spot={spot} />
     <div className="desktopLayout">
     <div>
       <SpotCard spot={spot} />

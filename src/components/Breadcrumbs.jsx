@@ -2,7 +2,7 @@ import Breadcrumb from 'react-bootstrap/Breadcrumb';
 
 function Breadcrumbs(props){
 
-  const {event, events, spots, spot} = props
+  const {event, events, spots, spot, toplist} = props
     return (
 
    <div>
@@ -31,6 +31,14 @@ function Breadcrumbs(props){
         Spots
       </Breadcrumb.Item>
       <Breadcrumb.Item active>{spot.name}</Breadcrumb.Item>
+    </Breadcrumb>}  
+
+    { toplist && <Breadcrumb>
+      <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+      <Breadcrumb.Item href="/toplists">
+        Toplists
+      </Breadcrumb.Item>
+      <Breadcrumb.Item active>{toplist.title}</Breadcrumb.Item>
     </Breadcrumb>}  
     </div>
     )
