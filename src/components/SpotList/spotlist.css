@@ -99,7 +99,10 @@
         min-height:  100vh;
         flex-direction: column;
         justify-content: space-between;
-      
+}
+
+    .toplistBreadcrumbMargin{
+        margin-left: 5vw;
 }
 
 }
@@ -212,6 +215,10 @@
     flex-direction: column;
     justify-content: space-between;
   
+}
+
+.toplistBreadcrumbMargin{
+    margin-left: 15vw;
 }
 }
 
@@ -331,6 +338,10 @@
         flex-direction: column;
         justify-content: space-between;
       
+}
+
+.toplistBreadcrumbMargin{
+    margin-left: 20vw;
 }
 }
 
@@ -477,4 +488,8 @@
             justify-content: space-between;
           
     }
+
+    .toplistBreadcrumbMargin{
+        margin-left: 9vw;
+}
 }
