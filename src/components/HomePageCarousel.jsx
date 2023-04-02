@@ -17,7 +17,8 @@ function HomePageCarousel() {
         <div className="jumbotron" style={{marginTop: "25vh"}}>
   <h1 className="display-4">Chunks of Canggu</h1>
   <p className="lead">Canggus first Café and Restaurant Finder, based on what you like.</p>
-  <a href="/spots" class="btn btn-primary">Browse Spots</a>
+  <a style={{marginRight: "10px"}} href="/spots" class="btn btn-primary">Browse Spots</a>
+  <a href="/toplists" class="btn btn-primary">Browse Toplists</a>
 
 </div>
         </div>

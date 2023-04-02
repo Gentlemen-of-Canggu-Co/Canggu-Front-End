@@ -28,7 +28,13 @@ function AlternativeNavbar (){
             />{' '}
           </Navbar.Brand>
           <Nav.Link style={{ color: "white"}} href="/spots">Browse Spots</Nav.Link>
-          <Nav.Link style={{marginRight: "5vw", color: "white"}} href="/toplists">Toplists</Nav.Link>
+          <Nav.Link style={{ color: "white"}} href="/toplists">Toplists</Nav.Link>
+          <Nav.Link style={{marginRight: "5vw", color: "white"}} href="https://www.instagram.com/chunksofcanggu/"><img
+              alt="Chunks of Canggu Logo"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Instagram.svg/1200px-Instagram.svg.png"
+              height= "50vh"
+              className="d-inline-block align-top"
+            />{' '}</Nav.Link>
 
           
         </Container>
