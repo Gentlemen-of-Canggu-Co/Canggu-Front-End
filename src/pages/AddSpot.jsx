@@ -24,6 +24,7 @@ function AddSpot() {
   const [outsideSeating, setOutsideSeating] = useState(false);
   const [wifiSpeed, setWifiSpeed] = useState(false);
   const [hasSockets, setHasSockets] = useState(false);
+  const [locallyOwned, setLocallyOwned] = useState(false);
   const consumables = [{}];
   const events = [{}];
   const [meal1, setMeal1] = useState("");
@@ -32,6 +33,12 @@ function AddSpot() {
   const [meal4, setMeal4] = useState("");
   const [meal5, setMeal5] = useState("");
   const [meal6, setMeal6] = useState("");
+  const [cuisine1, setCuisine1] = useState("");
+  const [cuisine2, setCuisine2] = useState("");
+  const [cuisine3, setCuisine3] = useState("");
+  const [cuisine4, setCuisine4] = useState("");
+  const [cuisine5, setCuisine5] = useState("");
+  const [cuisine6, setCuisine6] = useState("");
 
   const navigate = useNavigate();
   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5005";
@@ -105,9 +112,41 @@ function AddSpot() {
       meal.push(meal6);
     }
 
+
+    const cuisine = [];
+
+    if (cuisine1 !== "") {
+      cuisine.push(cuisine1);
+    }
+
+    if (cuisine2 !== "") {
+      cuisine.push(cuisine2);
+    }
+
+    if (cuisine3 !== "") {
+      cuisine.push(cuisine3);
+    }
+
+    if (cuisine4 !== "") {
+      cuisine.push(cuisine4);
+    }
+
+    if (cuisine5 !== "") {
+      cuisine.push(cuisine5);
+    }
+
+    if (cuisine6 !== "") {
+      cuisine.push(cuisine6);
+    }
+
+
+
+
+
     const newSpot = {
       type,
       meal,
+      cuisine,
       name,
       tagline,
       location,
@@ -128,6 +167,7 @@ function AddSpot() {
       outsideSeating,
       wifiSpeed,
       hasSockets,
+      locallyOwned,
       events,
       consumables,
     };
@@ -201,6 +241,61 @@ function AddSpot() {
             value={meal6}
             onChange={(event) => setMeal6(event.target.value)}
           />
+
+
+<br />
+          <label>Type of cuisine 1</label>
+          <input
+            type="text"
+            name="cuisine1"
+            value={cuisine1}
+            required
+            onChange={(event) => setCuisine1(event.target.value)}
+          />
+          <br />
+          <label>Type of cuisine 2</label>
+          <input
+            type="text"
+            name="cuisine2"
+            value={cuisine2}
+            onChange={(event) => setCuisine2(event.target.value)}
+          />
+          <br />
+          <label>Type of cuisine 3</label>
+          <input
+            type="text"
+            name="cuisine3"
+            value={cuisine3}
+            onChange={(event) => setCuisine3(event.target.value)}
+          />
+          <br />
+          <br />
+          <label>Type of cuisine 4</label>
+          <input
+            type="text"
+            name="cuisine4"
+            value={cuisine4}
+            onChange={(event) => setCuisine4(event.target.value)}
+          />
+          <br />
+          <label>Type of cuisine 5</label>
+          <input
+            type="text"
+            name="cuisine5"
+            value={cuisine5}
+            onChange={(event) => setCuisine5(event.target.value)}
+          />
+          <br />
+          <label>Type of cuisine 6</label>
+          <input
+            type="text"
+            name="cuisine6"
+            value={cuisine6}
+            onChange={(event) => setCuisine6(event.target.value)}
+          />
+
+
+
           <br />
           <label>Name of Spot</label>
           <input
@@ -355,6 +450,15 @@ function AddSpot() {
             name="hasSockets"
             value={hasSockets}
             onChange={(event) => setHasSockets(event.target.checked)}
+          />
+          <br />
+
+          <label>Is it locally owned?</label>
+          <input
+            type="checkbox"
+            name="locallyOwned"
+            value={locallyOwned}
+            onChange={(event) => setLocallyOwned(event.target.checked)}
           />
           <br />
 
