@@ -14,24 +14,6 @@ function SliderFilter(props) {
   const [ambienceFilter, setAmbienceFilter] = useState(null);
   const [foodFilter, setFoodFilter] = useState(null);
 
-  // const marks = [
-  //   {
-  //     value: 0,
-  //     label: "0",
-  //   },
-  //   {
-  //     value: 30,
-  //     label: "30",
-  //   },
-  //   {
-  //     value: 60,
-  //     label: "60",
-  //   },
-  //   {
-  //     value: 90,
-  //     label: "90",
-  //   },
-  // ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
