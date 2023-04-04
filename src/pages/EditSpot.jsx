@@ -11,6 +11,7 @@ function EditSpot() {
   const [type, setType] = useState([]);
   const [name, setName] = useState("");
   const [meal, setMeal] = useState([]);
+  const [cuisine, setCuisine] = useState([]);
   const [tagline, setTagline] = useState("");
   const [location, setLocation] = useState("");
   const [openingTimes, setOpeningTimes] = useState("");
@@ -30,6 +31,7 @@ function EditSpot() {
   const [outsideSeating, setOutsideSeating] = useState(false);
   const [wifiSpeed, setWifiSpeed] = useState(false);
   const [hasSockets, setHasSockets] = useState(false);
+  const [locallyOwned, setLocallyOwned] = useState(false);
   const [events, setEvents] = useState([]);
   const [consumables, setConsumables] = useState([]);
   const pics = [];
@@ -82,6 +84,7 @@ function EditSpot() {
     const editedSpot = {
       type,
       meal,
+      cuisine,
       name,
       tagline,
       location,
@@ -102,6 +105,7 @@ function EditSpot() {
       outsideSeating,
       wifiSpeed,
       hasSockets,
+      locallyOwned,
       events,
       consumables,
     };
@@ -116,6 +120,7 @@ function EditSpot() {
       setType(response.data.type);
       setName(response.data.name);
       setMeal(response.data.meal);
+      setCuisine(response.data.cuisine);
       setTagline(response.data.tagline);
       setLocation(response.data.location);
       setOpeningTimes(response.data.openingTimes);
@@ -135,6 +140,7 @@ function EditSpot() {
       setOutsideSeating(response.data.outsideSeating);
       setWifiSpeed(response.data.wifiSpeed);
       setHasSockets(response.data.hasSockets);
+      setLocallyOwned(response.data.locallyOwned)
       setConsumables(response.data.consumables);
       setEvents(response.data.events);
     });
@@ -303,6 +309,14 @@ function EditSpot() {
             name="hasSockets"
             value={hasSockets}
             onChange={(event) => setHasSockets(event.target.value)}
+          />
+          <br />
+          <label>Is it locally owned?</label>
+          <input
+            type="checkbox"
+            name="locallyOwned"
+            value={locallyOwned}
+            onChange={(event) => setLocallyOwned(event.target.value)}
           />
           <br />
 
