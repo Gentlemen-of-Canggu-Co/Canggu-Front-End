@@ -10,7 +10,6 @@ import Footer from "./Footer";
 import { Helmet } from 'react-helmet';
 
 
-
 function SpotList() {
   const [spots, setSpots] = useState([]);
   const [filteredSpots, setFilteredSpots] = useState([]);
