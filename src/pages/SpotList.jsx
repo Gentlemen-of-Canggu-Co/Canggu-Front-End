@@ -8,6 +8,8 @@ import "../App.css"
 import Loading from "../components/Loading/Loading";
 import Footer from "./Footer";
 import { Helmet } from 'react-helmet';
+// import MultipleFilters from "../components/SpotList/MultipleFilters";
+
 
 
 function SpotList() {
@@ -66,6 +68,12 @@ if(isLoading){
       <div>
         <SliderFilter spots={spots} setFilteredSpots={setFilteredSpots} />
       </div>
+
+{/* <div>
+  <MultipleFilters spots={spots} filteredSpots={filteredSpots} setFilteredSpots={setFilteredSpots} />
+</div> */}
+
+
       <SpotCard spots={spots} filteredSpots={filteredSpots} />
       {isLoggedIn && (
                     <Link to={`/spots/create`}>
