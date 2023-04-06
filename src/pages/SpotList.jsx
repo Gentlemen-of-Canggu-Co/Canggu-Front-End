@@ -19,15 +19,6 @@ function SpotList() {
   const { isLoggedIn } = useContext(AuthContext);
   const [isLoading, setIsLoading] = useState(true)
 
-//   useEffect(() => {
-//     axios.get(`${API_URL}/api/spots`)
-//         .then((response) => {
-//             const filteredByRatings = response.data.sort((a,b) => b.overallRating - a.overallRating)
-//             setSpots(filteredByRatings)
-//             setFilteredSpots(filteredByRatings)
-//         })
-// }, [])
-
 
 
 const getSpots = () => {
@@ -61,15 +52,14 @@ if(isLoading){
         <meta name="theme-color" content="#008f68" />
       </Helmet>
     <div>
-      {/* <Breadcrumbs spots={spots} /> */}
 
       <h1 className="spotlist-headline">Cafes & Restaurants in Canggu</h1>
       <p className="spotlist-p">Find your perfect spot, based on what matters to you.</p>
       <div>
         <SliderFilter spots={spots} setFilteredSpots={setFilteredSpots} />
       </div>
-
-{/* <div>
+{/* 
+<div>
   <MultipleFilters spots={spots} filteredSpots={filteredSpots} setFilteredSpots={setFilteredSpots} />
 </div> */}
 
