@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 
+
 function MultipleFilters(props) {
   const { setFilteredSpots, filteredSpots, spots } = props;
 

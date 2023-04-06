@@ -11,7 +11,6 @@ import { Helmet } from 'react-helmet';
 // import MultipleFilters from "../components/SpotList/MultipleFilters";
 
 
-
 function SpotList() {
   const [spots, setSpots] = useState([]);
   const [filteredSpots, setFilteredSpots] = useState([]);
@@ -58,6 +57,7 @@ if(isLoading){
       <div>
         <SliderFilter spots={spots} setFilteredSpots={setFilteredSpots} />
       </div>
+
 
 {/* <div>
   <MultipleFilters spots={spots} filteredSpots={filteredSpots} setFilteredSpots={setFilteredSpots} />
