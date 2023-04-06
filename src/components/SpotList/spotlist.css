@@ -106,6 +106,37 @@
 }
 
 
+/* CHATGPT STYLE ATTEMPT MULTIPLE FILTER BTTONS */
+
+.spotlistButtons {
+    display: inline-block;
+    width: 110px; /* adjust as needed */
+    margin-right: 5px; /* add some spacing between buttons */
+    margin-left: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 10px 10px;
+    font-size: 14px;
+    font-family: Teko;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button.active {
+    background-color: #3ebf65; 
+    color: #ffffff;
+  }
+  
+  button.inactive {
+    background-color: rgba(255, 255, 255, 0.63); 
+    color: black;
+    border: 1px solid black
+  }
 
 }
 
@@ -223,6 +254,37 @@
     margin-left: 15vw;
 }
 
+
+/* CHATGPT STYLE ATTEMPT MULTIPLE FILTER BTTONS */
+
+.spotlistButtons {
+    display: inline-block;
+    width: 110px; /* adjust as needed */
+    margin-right: 10px; /* add some spacing between buttons */
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 10px 10px;
+    font-size: 16px;
+    font-family: Teko;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button.active {
+    background-color: #3ebf65; 
+    color: #ffffff;
+  }
+  
+  button.inactive {
+    background-color: rgba(255, 255, 255, 0.384); 
+    color: black;
+    border: 1px solid black
+  }
 
 }
 
@@ -349,7 +411,36 @@
 }
 
 
+/* CHATGPT STYLE ATTEMPT MULTIPLE FILTER BTTONS */
 
+.spotlistButtons {
+    display: inline-block;
+    width: 110px; /* adjust as needed */
+    margin-right: 10px; /* add some spacing between buttons */
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 10px 10px;
+    font-size: 16px;
+    font-family: Teko;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button.active {
+    background-color: #3ebf65; 
+    color: #ffffff;
+  }
+  
+  button.inactive {
+    background-color: white; 
+    color: black;
+    border: 1px solid black
+  }
 }
 
 @media screen and (min-width: 1025px){
@@ -500,14 +591,44 @@
         margin-left: 9vw;
 }
 
-.spotlistActiveBtton{
+/* .spotlistActiveBtton{
     background-color: aqua;
-}
+} */
 
 
+/* CHATGPT STYLE ATTEMPT MULTIPLE FILTER BTTONS */
 
-
+.spotlistButtons {
+    display: inline-block;
+    width: 110px; /* adjust as needed */
+    margin-right: 10px; /* add some spacing between buttons */
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 10px 10px;
+    font-size: 16px;
+    font-family: Teko;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+  }
   
+  button.active {
+    background-color: #3ebf65; 
+    color: #ffffff;
+  }
+  
+  button.inactive {
+    background-color: white; 
+    color: black;
+    border: 1px solid black
+  }
+
+
+
 
   
 
