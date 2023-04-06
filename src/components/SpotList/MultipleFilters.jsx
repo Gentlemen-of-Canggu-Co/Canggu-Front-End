@@ -1,163 +1,215 @@
-// import { useState } from "react"
+import { useState } from "react";
 
-// function MultipleFilters(props){
+function MultipleFilters(props) {
+  const { setFilteredSpots, filteredSpots, spots } = props;
 
-//     const { setFilteredSpots,filteredSpots, spots } = props;
-//     const [ambienceButton, setAmbienceButton] = useState(false)
-//     const [foodButton, setFoodButton] = useState(false)
-//     const [coffeeButton, setCoffeeButton] = useState(false)
+  const [ambienceButton, setAmbienceButton] = useState(false);
+  const [foodButton, setFoodButton] = useState(false);
+  const [coffeeButton, setCoffeeButton] = useState(false);
+  const [veganButton, setVeganButton] = useState(false);
+  const [dateButton, setDateButton] = useState(false);
+  const [localButton, setLocalButton] = useState(false);
+  const [coworkingButton, setCoworkingButton] = useState(false);
 
+  const applyFilterSelection = () => {
 
-//     const [activeButton, setActiveButton] = useState(null);
-//     const [ambienceActiveButton, setAmbienceActiveButton] = useState(null);
-//     const [foodActiveButton, setFoodActiveButton] = useState(null);
-//     const [coffeeActiveButton, setCoffeeActiveButton] = useState(null);
-//     const [veganActiveButton, setVeganActiveButton] = useState(null);
-//     const [dateActiveButton, setDateActiveButton] = useState(null);
-//     const [locallyOwnedActiveButton, setLocallyOwnedActiveButton] = useState(null);
-//     const [coworkingActiveButton, setCoworkingActiveButton] = useState(null);
+let filteredList = spots
 
-// const buttonTracker = {
-//     veganButton: false,
-//     dateButton: false,
-//     locallyOwnedButton: false,
-//     coworkingButton: false, 
-//     ambienceButton: false,
-//     coffeeButton: false,
-//     foodButton: false
-// }
-    
+    if (ambienceButton) {
+      filteredList = spots.filter((spot) => {
+        return spot.ambienceRating > 79;
+      });
+      setFilteredSpots(filteredList);
+    }
 
-//   const applyFilterSelection = (selectedButton) => {
-//     console.log(`Button ${selectedButton} was clicked.`);
-//     // Add your filter selection logic here
-//     selectedButton.preventDefault();
+    if (foodButton) {
+      filteredList = spots.filter((spot) => {
+        return spot.foodRating > 79;
+      });
+      setFilteredSpots(filteredList);
+    }
 
-//     const filteredList = spots.filter(
-//       (spot) =>
-//         spot.coffeeRating > 80
-//     );
+    if (coffeeButton) {
+      filteredList = spots.filter((spot) => {
+        return spot.coffeeRating > 79;
+      });
+      setFilteredSpots(filteredList);
+    }
 
-//     setFilteredSpots(filteredList);
-//   };
+    if (veganButton) {
+      filteredList = spots.filter((spot) => {
+        return spot.veganFriendly;
+      });
+      setFilteredSpots(filteredList);
+    }
 
-//   const handleAmbienceButtonClick = (e) => {
-//     if (ambienceButton === buttonNumber) {
-//       setActiveButton(null);
-//     } else {
-//       setActiveButton(buttonNumber);
-//     }
-//   };
+    if (dateButton) {
+      filteredList = spots.filter((spot) => {
+        return spot.dateFriendly;
+      });
+      setFilteredSpots(filteredList);
+    }
 
-//   const handleButtonClick = (buttonNumber) => {
-//     if (activeButton === buttonNumber) {
-//       setActiveButton(null);
-//     } else {
-//       setActiveButton(buttonNumber);
-//     }
-//   };
+    if (coworkingButton) {
+      filteredList = spots.filter((spot) => {
+        return spot.coWorkingFriendly;
+      });
+      setFilteredSpots(filteredList);
+    }
 
-//   const handleButtonClick = (buttonNumber) => {
-//     if (activeButton === buttonNumber) {
-//       setActiveButton(null);
-//     } else {
-//       setActiveButton(buttonNumber);
-//     }
-//   };
+    if (localButton) {
+      filteredList = spots.filter((spot) => {
+        return spot.locallyOwned;
+      });
+      setFilteredSpots(filteredList);
+    }
+  };
 
-//   const handleButtonClick = (buttonNumber) => {
-//     if (activeButton === buttonNumber) {
-//       setActiveButton(null);
-//     } else {
-//       setActiveButton(buttonNumber);
-//     }
-//   };
+  const switchAmbienceButton = async (e) => {
+    e.preventDefault();
 
-//   const handleButtonClick = (buttonNumber) => {
-//     if (activeButton === buttonNumber) {
-//       setActiveButton(null);
-//     } else {
-//       setActiveButton(buttonNumber);
-//     }
-//   };
+    if (ambienceButton) {
+      setAmbienceButton(false);
+      await applyFilterSelection();
+    } else if (!ambienceButton) {
+      setAmbienceButton(true);
+      await applyFilterSelection();
+    }
+  };
 
-//   const handleButtonClick = (buttonNumber) => {
-//     if (activeButton === buttonNumber) {
-//       setActiveButton(null);
-//     } else {
-//       setActiveButton(buttonNumber);
-//     }
-//   };
+  const switchFoodButton = (e) => {
+    e.preventDefault();
 
-//   const handleButtonClick = (buttonNumber) => {
-//     if (activeButton === buttonNumber) {
-//       setActiveButton(null);
-//     } else {
-//       setActiveButton(buttonNumber);
-//     }
-//   };
+    if (foodButton) {
+      setFoodButton(false);
+      applyFilterSelection();
+    } else {
+      setFoodButton(true);
+      applyFilterSelection();
+    }
+  };
 
-//   return (
-//     <div>
-//       <form onClick={applyFilterSelection}>
-//         <button
-//           type="button"
-//           onClick={() => handleButtonClick(1)}
-//           className={activeButton === 1 ? 'active' : ''}
-//         >
-// Great Ambience        </button>
-//       </form>
-//       <form>
-//         <button
-//           type="button"
-//           onClick={() => handleButtonClick(2)}
-//           className={activeButton === 2 ? 'active' : ''}
-//         >
-// Great Food        </button>
-//       </form>
-//       <form>
-//         <button
-//           type="button"
-//           onClick={() => handleButtonClick(3)}
-//           className={activeButton === 3 ? 'active' : ''}
-//         >
-// Great Coffee        </button>
-//       </form>
-//       <form>
-//         <button
-//           type="button"
-//           onClick={() => handleButtonClick(4)}
-//           className={activeButton === 4 ? 'active' : ''}
-//         >
-// Vegan Friendly        </button>
-//       </form>
-//       <form>
-//         <button
-//           type="button"
-//           onClick={() => handleButtonClick(5)}
-//           className={activeButton === 5 ? 'active' : ''}
-//         >
-// Date Friendly        </button>
-//       </form>
-//       <form>
-//         <button
-//           type="button"
-//           onClick={() => handleButtonClick(6)}
-//           className={activeButton === 6 ? 'active' : ''}
-//         >
-// Locally owned        </button>
-//       </form>
-//       <form>
-//         <button
-//           type="button"
-//           onClick={() => handleButtonClick(7)}
-//           className={activeButton === 7 ? 'active' : ''}
-//         >
-// Coworking        </button>
-//       </form>
-//     </div>
-//   );
-  
-// }
+  const switchCoffeeButton = (e) => {
+    e.preventDefault();
 
-// export default MultipleFilters
+    if (coffeeButton) {
+      setCoffeeButton(false);
+      applyFilterSelection();
+    } else {
+      setCoffeeButton(true);
+      applyFilterSelection();
+    }
+  };
+
+  const switchVeganButton = (e) => {
+    e.preventDefault();
+
+    if (veganButton) {
+      setVeganButton(false);
+      applyFilterSelection();
+    } else {
+      setVeganButton(true);
+      applyFilterSelection();
+    }
+  };
+
+  const switchDateButton = (e) => {
+    e.preventDefault();
+
+    if (dateButton) {
+      setDateButton(false);
+      applyFilterSelection();
+    } else {
+      setDateButton(true);
+      applyFilterSelection();
+    }
+  };
+
+  const switchLocalButton = (e) => {
+    e.preventDefault();
+
+    if (localButton) {
+      setLocalButton(false);
+      applyFilterSelection();
+    } else {
+      setLocalButton(true);
+      applyFilterSelection();
+    }
+  };
+
+  const switchCoworkingButton = (e) => {
+    e.preventDefault();
+
+    if (coworkingButton) {
+      setCoworkingButton(false);
+      applyFilterSelection();
+    } else {
+      setCoworkingButton(true);
+      applyFilterSelection();
+    }
+  };
+
+  return (
+    <div>
+      <form onClick={switchAmbienceButton}>
+        <button
+          type="button"
+          className={ambienceButton ? "spotlistActiveBtton" : ""}
+        >
+          Great Ambience{" "}
+        </button>
+      </form>
+
+      <form onClick={switchFoodButton}>
+        <button
+          type="button"
+          className={foodButton ? "spotlistActiveBtton" : ""}
+        >
+          Great Food{" "}
+        </button>
+      </form>
+      <form onClick={switchCoffeeButton}>
+        <button
+          type="button"
+          className={coffeeButton ? "spotlistActiveBtton" : ""}
+        >
+          Great Coffee{" "}
+        </button>
+      </form>
+      <form onClick={switchVeganButton}>
+        <button
+          type="button"
+          className={veganButton ? "spotlistActiveBtton" : ""}
+        >
+          Vegan Friendly{" "}
+        </button>
+      </form>
+      <form onClick={switchDateButton}>
+        <button
+          type="button"
+          className={dateButton ? "spotlistActiveBtton" : ""}
+        >
+          Date Friendly{" "}
+        </button>
+      </form>
+      <form onClick={switchLocalButton}>
+        <button
+          type="button"
+          className={localButton ? "spotlistActiveBtton" : ""}
+        >
+          Locally owned{" "}
+        </button>
+      </form>
+      <form onClick={switchCoworkingButton}>
+        <button
+          type="button"
+          className={coworkingButton ? "spotlistActiveBtton" : ""}
+        >
+          Coworking{" "}
+        </button>
+      </form>
+    </div>
+  );
+}
+
+export default MultipleFilters;
