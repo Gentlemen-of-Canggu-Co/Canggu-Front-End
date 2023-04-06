@@ -58,8 +58,8 @@ if(isLoading){
       <div>
         <SliderFilter spots={spots} setFilteredSpots={setFilteredSpots} />
       </div>
-{/* 
-<div>
+
+{/* <div>
   <MultipleFilters spots={spots} filteredSpots={filteredSpots} setFilteredSpots={setFilteredSpots} />
 </div> */}
 
