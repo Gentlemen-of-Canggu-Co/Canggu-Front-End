@@ -5,6 +5,7 @@ import PoolIcon from "@mui/icons-material/Pool";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import WifiIcon from "@mui/icons-material/Wifi";
 import Typography from "@mui/material/Typography";
+import Diversity1Icon from '@mui/icons-material/Diversity1';
 import "../SpotList/spotlist.css"
 
 function Pictograms(props) {
@@ -30,8 +31,8 @@ function Pictograms(props) {
 
         {spot.veganFriendly && (
           <div className="singlePictogram">
-            <WifiIcon fontSize="large" />
-            <Typography>{spot.wifiSpeed} mb/s</Typography>
+            <VolunteerActivismIcon fontSize="large" />
+            <Typography>Vegan friendly</Typography>
           </div>
         )}
 
@@ -52,7 +53,21 @@ function Pictograms(props) {
         {spot.outsideSeating && (
           <div className="singlePictogram">
             <DeckIcon fontSize="large" />
-            <Typography>Outdoor</Typography>
+            <Typography>Outdoor Seats</Typography>
+          </div>
+        )}
+
+        {spot.wifiSpeed && (
+          <div className="singlePictogram">
+            <WifiIcon fontSize="large" />
+            <Typography>{spot.wifiSpeed} mb/s</Typography>
+          </div>
+        )}
+
+        {spot.locallyOwned && (
+          <div className="singlePictogram">
+            <Diversity1Icon fontSize="large" />
+            <Typography>Locally Owned</Typography>
           </div>
         )}
       </div>

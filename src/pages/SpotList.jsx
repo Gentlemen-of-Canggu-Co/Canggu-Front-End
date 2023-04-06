@@ -1,15 +1,14 @@
 import { useState, useEffect, useContext } from "react";
 import {Link} from 'react-router-dom';
 import axios from "axios";
-import SliderFilter from "../components/SpotList/SliderFilter";
 import SpotCard from "../components/SpotList/SpotCard";
 import { AuthContext } from "../context/auth.context";
 import "../App.css"
 import Loading from "../components/Loading/Loading";
 import Footer from "./Footer";
 import { Helmet } from 'react-helmet';
-// import MultipleFilters from "../components/SpotList/MultipleFilters";
-
+import MultipleFilters from "../components/SpotList/MultipleFilters";
+import { Typography } from "@mui/material";
 
 function SpotList() {
   const [spots, setSpots] = useState([]);
@@ -52,16 +51,15 @@ if(isLoading){
       </Helmet>
     <div>
 
-      <h1 className="spotlist-headline">Cafes & Restaurants in Canggu</h1>
-      <p className="spotlist-p">Find your perfect spot, based on what matters to you.</p>
-      <div>
-        <SliderFilter spots={spots} setFilteredSpots={setFilteredSpots} />
-      </div>
+      <h1 style={{marginTop:"10px"}} className="spotlist-headline">Cafes & Restaurants in Canggu</h1>
+      <Typography component={"div"} variant="body1" sx={{ fontFamily: 'Teko', fontSize: "25px" }}>
+                  Filter for your perfect spot, based on what matters to you.
+                </Typography>
 
 
-{/* <div>
+<div>
   <MultipleFilters spots={spots} filteredSpots={filteredSpots} setFilteredSpots={setFilteredSpots} />
-</div> */}
+</div>
 
 
       <SpotCard spots={spots} filteredSpots={filteredSpots} />

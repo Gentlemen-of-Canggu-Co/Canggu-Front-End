@@ -34,34 +34,26 @@ function SpotCard(props) {
                         bottom: 0,
                         left: 0,
                         width: "100%",
-                        height: "100%",
+                        height: "80%",
                         bgcolor: "rgba(0, 0, 0, 0.14)",
                         color: "white",
                         padding: "10px",
                       }}
                     >
                       <div>
-                        <Typography component={"div"} variant="h5" sx={{ fontFamily: 'Teko', fontSize: "30px" }}>
+                        <Typography component={"div"} variant="h5" sx={{ fontFamily: 'Teko', fontSize: "30px"}}>
                           {spot.name}
                         </Typography>
                         <Typography component={"div"} variant="body2" sx={{ fontFamily: 'Montserrat', fontSize: "15px" }}>
                           <i>{spot.tagline}</i>
                           <span className="badge bg-success" style={{margin: '5px'}}>{spot.priceLevel}</span>
-                          <span>
-                          <CardContent>
-                    <Typography
-                      component={"div"}
-                      variant="body2"
-                      color="text.secondary"
-                    >
-                      
-                    </Typography>
-                  </CardContent>
-                          </span>
+
                         </Typography>
                         
                       </div>
                     </Box>
+
+
                   </Box>
                 </Card>
                 <div style={{ display: "flex" }}>
@@ -76,19 +68,19 @@ function SpotCard(props) {
                           >
                             <ProgressBar
                               className="bg-secondary progressBarSize"
-                              animated={true}
+                              animated={false}
                               now={spot.coffeeRating}
                               label={`Coffee`}
                             />
                             <ProgressBar
                               className="bg-secondary progressBarSize"
-                              animated={true}
+                              animated={false}
                               now={spot.foodRating}
                               label={`Food`}
                             />
                             <ProgressBar
                               className="bg-secondary progressBarSize"
-                              animated={true}
+                              animated={false}
                               now={spot.ambienceRating}
                               label={`Ambience`}
                             />
@@ -106,7 +98,7 @@ function SpotCard(props) {
             <CardMedia
               sx={{ height: 400 }}
               image={spot.spotImage}
-              title="green iguana"
+              title={spot.name}
             />
 
             <Box
@@ -147,19 +139,19 @@ function SpotCard(props) {
               >
                 <ProgressBar
                   className="bg-secondary progressBarWidth"
-                  animated={true}
+                  animated={false}
                   now={spot.coffeeRating}
                   label={`Coffee`}
                 />
                 <ProgressBar
                   className="bg-secondary progressBarWidth"
-                  animated={true}
+                  animated={false}
                   now={spot.foodRating}
                   label={`Food`}
                 />
                 <ProgressBar
                   className="bg-secondary progressBarWidth"
-                  animated={true}
+                  animated={false}
                   now={spot.ambienceRating}
                   label={`Ambience`}
                 />

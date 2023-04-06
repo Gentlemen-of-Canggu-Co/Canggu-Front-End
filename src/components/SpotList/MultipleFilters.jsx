@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import Typography from "@mui/material/Typography";
 
 function MultipleFilters(props) {
   const { setFilteredSpots, filteredSpots, spots } = props;
@@ -57,9 +57,28 @@ function MultipleFilters(props) {
 
   return (
     <div>
+      {/* <Accordion style={{ margin: "20px"}}>
+
+<AccordionSummary style={{ backgroundColor: "black" }}
+          expandIcon={<ExpandMoreIcon style={{color: "white"}} />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography
+            sx={{
+              fontFamily: "Teko",
+              fontSize: "20px",
+              color: "white"
+            }}
+          >
+            Filter results
+          </Typography>
+        </AccordionSummary> */}
+
+<div>
       <button
         type="button"
-        className={filters.ambience ? "spotlistActiveBtton" : ""}
+        className={filters.ambience ? "active spotlistButtons" : "inactive spotlistButtons"}
         onClick={() => handleFilterChange("ambience")}
       >
         Great Ambience
@@ -67,7 +86,7 @@ function MultipleFilters(props) {
 
       <button
         type="button"
-        className={filters.food ? "spotlistActiveBtton" : ""}
+        className={filters.food ? "active spotlistButtons" : "inactive spotlistButtons"}
         onClick={() => handleFilterChange("food")}
       >
         Great Food
@@ -75,7 +94,7 @@ function MultipleFilters(props) {
 
       <button
         type="button"
-        className={filters.coffee ? "spotlistActiveBtton" : ""}
+        className={filters.coffee ? "active spotlistButtons" : "inactive spotlistButtons"}
         onClick={() => handleFilterChange("coffee")}
       >
         Great Coffee
@@ -83,7 +102,7 @@ function MultipleFilters(props) {
 
       <button
         type="button"
-        className={filters.vegan ? "spotlistActiveBtton" : ""}
+        className={filters.vegan ? "active spotlistButtons" : "inactive spotlistButtons"}
         onClick={() => handleFilterChange("vegan")}
       >
         Vegan Friendly
@@ -91,7 +110,7 @@ function MultipleFilters(props) {
 
       <button
         type="button"
-        className={filters.date ? "spotlistActiveBtton" : ""}
+        className={filters.date ? "active spotlistButtons" : "inactive spotlistButtons"}
         onClick={() => handleFilterChange("date")}
       >
         Date Friendly
@@ -99,7 +118,7 @@ function MultipleFilters(props) {
 
       <button
         type="button"
-        className={filters.coworking ? "spotlistActiveBtton" : ""}
+        className={filters.coworking ? "active spotlistButtons" : "inactive spotlistButtons"}
         onClick={() => handleFilterChange("coworking")}
       >
         Coworking
@@ -107,13 +126,17 @@ function MultipleFilters(props) {
 
       <button
         type="button"
-        className={filters.local ? "spotlistActiveBtton" : ""}
+        className={filters.local ? "active spotlistButtons" : "inactive spotlistButtons"}
         onClick={() => handleFilterChange("local")}
       >
 Locally owned      </button>
+</div>
+<div>
+{filteredSpots < spots && <Typography component={"div"} variant="h5" sx={{ fontFamily: 'Teko', fontSize: "30px" }}>
+{filteredSpots.length} Spots fit your selection.
+                </Typography>}
+</div>
+{/* // </Accordion> */}
 </div>)}
 
 export default MultipleFilters
-
-     
-

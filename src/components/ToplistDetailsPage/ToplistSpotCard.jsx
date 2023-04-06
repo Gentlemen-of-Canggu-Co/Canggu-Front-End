@@ -34,19 +34,19 @@ const { spotId, spotImage, spotName, spotCoffeeRating, spotFoodRating, spotAmbie
                 >
                   <ProgressBar
                     className="bg-secondary toplistProgressBarSize"
-                    animated={true}
+                    animated={false}
                     now={spotCoffeeRating}
                     label={`Coffee`}
                   />
                   <ProgressBar
                     className="bg-secondary toplistProgressBarSize"
-                    animated={true}
+                    animated={false}
                     now={spotFoodRating}
                     label={`Food`}
                   />
                   <ProgressBar
                     className="bg-secondary toplistProgressBarSize"
-                    animated={true}
+                    animated={false}
                     now={spotAmbienceRating}
                     label={`Ambience`}
                   />
