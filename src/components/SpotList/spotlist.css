@@ -105,6 +105,8 @@
         margin-left: 5vw;
 }
 
+
+
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px){
@@ -220,6 +222,8 @@
 .toplistBreadcrumbMargin{
     margin-left: 15vw;
 }
+
+
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px){
@@ -343,6 +347,9 @@
 .toplistBreadcrumbMargin{
     margin-left: 20vw;
 }
+
+
+
 }
 
 @media screen and (min-width: 1025px){
@@ -498,5 +505,10 @@
 }
 
 
+
+
+  
+
+  
 
 }
