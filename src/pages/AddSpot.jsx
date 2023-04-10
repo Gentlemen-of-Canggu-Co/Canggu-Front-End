@@ -197,7 +197,6 @@ function AddSpot() {
             type="text"
             name="meal1"
             value={meal1}
-            required
             onChange={(event) => setMeal1(event.target.value)}
           />
           <br />
@@ -249,7 +248,6 @@ function AddSpot() {
             type="text"
             name="cuisine1"
             value={cuisine1}
-            required
             onChange={(event) => setCuisine1(event.target.value)}
           />
           <br />
