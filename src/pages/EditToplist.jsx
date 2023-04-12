@@ -471,8 +471,10 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
             onChange={(event) => setTitle(event.target.value)}
           />
           <br />
+         
           <label>Title Image</label>
           <input
+          
             type="text"
             name="heroImage"
             value={heroImage}
@@ -489,10 +491,11 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
 <div style={{display: "flex"}}>
 
-        <div>
+        <div style={{border: "1px solid black"}}>
 
-          <label>First Place Id</label>
+          <label className="form-label">First Place Id</label>
           <input
+          className="form-control"
             type="text"
             name="firstPlaceId"
             value={firstPlaceId}
@@ -501,6 +504,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>1st Place Spotimage</label>
           <input
+          className="form-control"
             type="text"
             name="firstPlaceImage"
             value={firstPlaceImage}
@@ -509,6 +513,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>1st Place Name</label>
           <input
+          className="form-control"
             type="text"
             name="firstPlaceName"
             value={firstPlaceName}
@@ -517,6 +522,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>1st Place Tagline</label>
           <input
+          className="form-control"
             type="text"
             name="firstPlaceTagline"
             value={firstPlaceTagline}
@@ -525,6 +531,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>1st Place Description</label>
           <input
+          className="form-control"
             type="text"
             name="firstPlaceDescription"
             value={firstPlaceDescription}
@@ -533,6 +540,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>1st Place Price Level</label>
           <input
+          className="form-control"
             type="text"
             name="firstPlacePriceLevel"
             value={firstPlacePriceLevel}
@@ -541,6 +549,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>1st Place Coffee Rating</label>
           <input
+          className="form-control"
             type="number"
             name="firstPlaceCoffeeRating"
             value={firstPlaceCoffeeRating}
@@ -549,6 +558,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>1st Place Food Rating</label>
           <input
+          className="form-control"
             type="number"
             name="firstPlaceFoodRating"
             value={firstPlaceFoodRating}
@@ -557,6 +567,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>1st Place Ambience Rating</label>
           <input
+          className="form-control"
             type="number"
             name="firstPlaceAmbienceRating"
             value={firstPlaceAmbienceRating}
@@ -565,6 +576,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>1st Place Consumable Title</label>
           <input
+          className="form-control"
             type="text"
             name="firstPlaceConsumableTitle"
             value={firstPlaceConsumableTitle}
@@ -573,6 +585,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>1st Place Consumable Tagline</label>
           <input
+          className="form-control"
             type="text"
             name="firstPlaceConsumableTagline"
             value={firstPlaceConsumableTagline}
@@ -581,6 +594,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>1st Place Consumable Price</label>
           <input
+          className="form-control"
             type="text"
             name="firstPlaceConsumablePrice"
             value={firstPlaceConsumablePrice}
@@ -589,6 +603,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>1st Place Consumable Rating</label>
           <input
+          className="form-control"
             type="text"
             name="firstPlaceConsumableRating"
             value={firstPlaceConsumableRating}
@@ -597,6 +612,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>1st Place Consumable Image</label>
           <input
+          className="form-control"
             type="text"
             name="firstPlaceConsumableImage"
             value={firstPlaceConsumableImage}
@@ -605,10 +621,11 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           </div>
 
-          <div>
+          <div style={{border: "1px solid black"}}>
 
           <label>2nd Place Id</label>
           <input
+          className="form-control"
             type="text"
             name="secondPlaceId"
             value={secondPlaceId}
@@ -617,6 +634,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>2nd Place Spotimage</label>
           <input
+          className="form-control"
             type="text"
             name="secondPlaceImage"
             value={secondPlaceImage}
@@ -625,6 +643,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>2nd Place Name</label>
           <input
+          className="form-control"
             type="text"
             name="secondPlaceName"
             value={secondPlaceName}
@@ -633,6 +652,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>2nd Place Tagline</label>
           <input
+          className="form-control"
             type="text"
             name="secondPlaceTagline"
             value={secondPlaceTagline}
@@ -641,6 +661,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>2nd Place Description</label>
           <input
+          className="form-control"
             type="text"
             name="secondPlaceDescription"
             value={secondPlaceDescription}
@@ -649,6 +670,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>2nd Place Price Level</label>
           <input
+          className="form-control"
             type="text"
             name="secondPlacePriceLevel"
             value={secondPlacePriceLevel}
@@ -657,6 +679,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>2nd Place Coffee Rating</label>
           <input
+          className="form-control"
             type="number"
             name="secondPlaceCoffeeRating"
             value={secondPlaceCoffeeRating}
@@ -665,6 +688,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>2nd Place Food Rating</label>
           <input
+          className="form-control"
             type="number"
             name="secondPlaceFoodRating"
             value={secondPlaceFoodRating}
@@ -673,6 +697,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>2nd Place Ambience Rating</label>
           <input
+          className="form-control"
             type="number"
             name="secondPlaceAmbienceRating"
             value={secondPlaceAmbienceRating}
@@ -681,6 +706,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>2nd Place Consumable Title</label>
           <input
+          className="form-control"
             type="text"
             name="secondPlaceConsumableTitle"
             value={secondPlaceConsumableTitle}
@@ -689,6 +715,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>2nd Place Consumable Tagline</label>
           <input
+          className="form-control"
             type="text"
             name="secondPlaceConsumableTagline"
             value={secondPlaceConsumableTagline}
@@ -697,6 +724,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>2nd Place Consumable Price</label>
           <input
+          className="form-control"
             type="text"
             name="secondPlaceConsumablePrice"
             value={secondPlaceConsumablePrice}
@@ -705,6 +733,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>2nd Place Consumable Rating</label>
           <input
+          className="form-control"
             type="text"
             name="secondPlaceConsumableRating"
             value={secondPlaceConsumableRating}
@@ -713,6 +742,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>2nd Place Consumable Image</label>
           <input
+          className="form-control"
             type="text"
             name="secondPlaceConsumableImage"
             value={secondPlaceConsumableImage}
@@ -721,10 +751,11 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           </div>
 
-          <div>
+          <div style={{border: "1px solid black"}}>
 
           <label>3rd Place Id</label>
           <input
+          className="form-control"
             type="text"
             name="thirdPlaceId"
             value={thirdPlaceId}
@@ -733,6 +764,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>3rd Place Spotimage</label>
           <input
+          className="form-control"
             type="text"
             name="thirdPlaceImage"
             value={thirdPlaceImage}
@@ -741,6 +773,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>3rd Place Name</label>
           <input
+          className="form-control"
             type="text"
             name="thirdPlaceName"
             value={thirdPlaceName}
@@ -749,6 +782,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>3rd Place Tagline</label>
           <input
+          className="form-control"
             type="text"
             name="thirdPlaceTagline"
             value={thirdPlaceTagline}
@@ -757,6 +791,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>3rd Place Description</label>
           <input
+          className="form-control"
             type="text"
             name="thirdPlaceDescription"
             value={thirdPlaceDescription}
@@ -765,6 +800,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>3rd Place Price Level</label>
           <input
+          className="form-control"
             type="text"
             name="thirdPlacePriceLevel"
             value={thirdPlacePriceLevel}
@@ -773,6 +809,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>3rd Place Coffee Rating</label>
           <input
+          className="form-control"
             type="number"
             name="thirdPlaceCoffeeRating"
             value={thirdPlaceCoffeeRating}
@@ -781,6 +818,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>3rd Place Food Rating</label>
           <input
+          className="form-control"
             type="number"
             name="thirdPlaceFoodRating"
             value={thirdPlaceFoodRating}
@@ -789,6 +827,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>3rd Place Ambience Rating</label>
           <input
+          className="form-control"
             type="number"
             name="thirdPlaceAmbienceRating"
             value={thirdPlaceAmbienceRating}
@@ -797,6 +836,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>3rd Place Consumable Title</label>
           <input
+          className="form-control"
             type="text"
             name="thirdPlaceConsumableTitle"
             value={thirdPlaceConsumableTitle}
@@ -805,6 +845,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>3rd Place Consumable Tagline</label>
           <input
+          className="form-control"
             type="text"
             name="thirdPlaceConsumableTagline"
             value={thirdPlaceConsumableTagline}
@@ -813,6 +854,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>3rd Place Consumable Price</label>
           <input
+          className="form-control"
             type="text"
             name="thirdPlaceConsumablePrice"
             value={thirdPlaceConsumablePrice}
@@ -821,6 +863,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>3rd Place Consumable Rating</label>
           <input
+          className="form-control"
             type="text"
             name="thirdPlaceConsumableRating"
             value={thirdPlaceConsumableRating}
@@ -829,6 +872,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           <label>3rd Place Consumable Image</label>
           <input
+          className="form-control"
             type="text"
             name="thirdPlaceConsumableImage"
             value={thirdPlaceConsumableImage}
@@ -837,10 +881,11 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
           <br />
           </div>
 
-          <div>
+          <div style={{border: "1px solid black"}}>
 
 <label>4th Place Id</label>
 <input
+          className="form-control"
   type="text"
   name="fourthPlaceId"
   value={fourthPlaceId}
@@ -849,6 +894,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
 <br />
 <label>4th Place Spotimage</label>
 <input
+          className="form-control"
   type="text"
   name="fourthPlaceImage"
   value={fourthPlaceImage}
@@ -857,6 +903,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
 <br />
 <label>4th Place Name</label>
 <input
+          className="form-control"
   type="text"
   name="fourthPlaceName"
   value={fourthPlaceName}
@@ -865,6 +912,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
 <br />
 <label>4th Place Tagline</label>
 <input
+          className="form-control"
   type="text"
   name="fourthPlaceTagline"
   value={fourthPlaceTagline}
@@ -873,6 +921,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
 <br />
 <label>4th Place Description</label>
 <input
+          className="form-control"
   type="text"
   name="fourthPlaceDescription"
   value={fourthPlaceDescription}
@@ -881,6 +930,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
 <br />
 <label>4th Place Price Level</label>
 <input
+          className="form-control"
   type="text"
   name="fourthPlacePriceLevel"
   value={fourthPlacePriceLevel}
@@ -889,6 +939,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
 <br />
 <label>4th Place Coffee Rating</label>
 <input
+          className="form-control"
   type="number"
   name="fourthPlaceCoffeeRating"
   value={fourthPlaceCoffeeRating}
@@ -897,6 +948,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
 <br />
 <label>4th Place Food Rating</label>
 <input
+          className="form-control"
   type="number"
   name="fourthPlaceFoodRating"
   value={fourthPlaceFoodRating}
@@ -905,6 +957,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
 <br />
 <label>4th Place Ambience Rating</label>
 <input
+          className="form-control"
   type="number"
   name="fourthPlaceAmbienceRating"
   value={fourthPlaceAmbienceRating}
@@ -913,6 +966,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
 <br />
 <label>4th Place Consumable Title</label>
 <input
+          className="form-control"
   type="text"
   name="fourthPlaceConsumableTitle"
   value={fourthPlaceConsumableTitle}
@@ -921,6 +975,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
 <br />
 <label>4th Place Consumable Tagline</label>
 <input
+          className="form-control"
   type="text"
   name="fourthPlaceConsumableTagline"
   value={fourthPlaceConsumableTagline}
@@ -929,6 +984,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
 <br />
 <label>4th Place Consumable Price</label>
 <input
+          className="form-control"
   type="text"
   name="fourthPlaceConsumablePrice"
   value={fourthPlaceConsumablePrice}
@@ -937,6 +993,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
 <br />
 <label>4th Place Consumable Rating</label>
 <input
+          className="form-control"
   type="text"
   name="fourthPlaceConsumableRating"
   value={fourthPlaceConsumableRating}
@@ -945,6 +1002,7 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
 <br />
 <label>4th Place Consumable Image</label>
 <input
+          className="form-control"
   type="text"
   name="fourthPlaceConsumableImage"
   value={fourthPlaceConsumableImage}
@@ -953,9 +1011,10 @@ const [tenthPlaceConsumableImage, setTenthPlaceConsumableImage] = useState("")
 <br />
 </div>
 
-<div>
+<div style={{border: "1px solid black"}}>
 <label>5th Place Id</label>
 <input
+          className="form-control"
 type="text"
 name="fifthPlaceId"
 value={fifthPlaceId}
@@ -964,6 +1023,7 @@ onChange={(event) => setFifthPlaceId(event.target.value)}
 <br />
 <label>5th Place Spotimage</label>
 <input
+          className="form-control"
 type="text"
 name="fifthPlaceImage"
 value={fifthPlaceImage}
@@ -972,6 +1032,7 @@ onChange={(event) => setFifthPlaceImage(event.target.value)}
 <br />
 <label>5th Place Name</label>
 <input
+          className="form-control"
 type="text"
 name="fifthPlaceName"
 value={fifthPlaceName}
@@ -980,6 +1041,7 @@ onChange={(event) => setFifthPlaceName(event.target.value)}
 <br />
 <label>5th Place Tagline</label>
 <input
+          className="form-control"
 type="text"
 name="fifthPlaceTagline"
 value={fifthPlaceTagline}
@@ -988,6 +1050,7 @@ onChange={(event) => setFifthPlaceTagline(event.target.value)}
 <br />
 <label>5th Place Description</label>
 <input
+          className="form-control"
 type="text"
 name="fifthPlaceDescription"
 value={fifthPlaceDescription}
@@ -996,6 +1059,7 @@ onChange={(event) => setFifthPlaceDescription(event.target.value)}
 <br />
 <label>5th Place Price Level</label>
 <input
+          className="form-control"
 type="text"
 name="fifthPlacePriceLevel"
 value={fifthPlacePriceLevel}
@@ -1004,6 +1068,7 @@ onChange={(event) => setFifthPlacePriceLevel(event.target.value)}
 <br />
 <label>5th Place Coffee Rating</label>
 <input
+          className="form-control"
 type="number"
 name="fifthPlaceCoffeeRating"
 value={fifthPlaceCoffeeRating}
@@ -1012,6 +1077,7 @@ onChange={(event) => setFifthPlaceCoffeeRating(Number(event.target.value))}
 <br />
 <label>5th Place Food Rating</label>
 <input
+          className="form-control"
 type="number"
 name="fifthPlaceFoodRating"
 value={fifthPlaceFoodRating}
@@ -1020,6 +1086,7 @@ onChange={(event) => setFifthPlaceFoodRating(Number(event.target.value))}
 <br />
 <label>5th Place Ambience Rating</label>
 <input
+          className="form-control"
 type="number"
 name="fifthPlaceAmbienceRating"
 value={fifthPlaceAmbienceRating}
@@ -1028,6 +1095,7 @@ onChange={(event) => setFifthPlaceAmbienceRating(Number(event.target.value))}
 <br />
 <label>5th Place Consumable Title</label>
 <input
+          className="form-control"
 type="text"
 name="fifthPlaceConsumableTitle"
 value={fifthPlaceConsumableTitle}
@@ -1036,6 +1104,7 @@ onChange={(event) => setFifthPlaceConsumableTitle(event.target.value)}
 <br />
 <label>5th Place Consumable Tagline</label>
 <input
+          className="form-control"
 type="text"
 name="fifthPlaceConsumableTagline"
 value={fifthPlaceConsumableTagline}
@@ -1044,6 +1113,7 @@ onChange={(event) => setFifthPlaceConsumableTagline(event.target.value)}
 <br />
 <label>5th Place Consumable Price</label>
 <input
+          className="form-control"
 type="text"
 name="fifthPlaceConsumablePrice"
 value={fifthPlaceConsumablePrice}
@@ -1052,6 +1122,7 @@ onChange={(event) => setFifthPlaceConsumablePrice(event.target.value)}
 <br />
 <label>5th Place Consumable Rating</label>
 <input
+          className="form-control"
 type="text"
 name="fifthPlaceConsumableRating"
 value={fifthPlaceConsumableRating}
@@ -1060,6 +1131,7 @@ onChange={(event) => setFifthPlaceConsumableRating(event.target.value)}
 <br />
 <label>5th Place Consumable Image</label>
 <input
+          className="form-control"
 type="text"
 name="fifthPlaceConsumableImage"
 value={fifthPlaceConsumableImage}
@@ -1068,9 +1140,10 @@ onChange={(event) => setFifthPlaceConsumableImage(event.target.value)}
 <br />
 </div>
 
-<div>
+<div style={{border: "1px solid black"}}>
 <label>6th Place Id</label>
 <input
+          className="form-control"
 type="text"
 name="sixthPlaceId"
 value={sixthPlaceId}
@@ -1079,6 +1152,7 @@ onChange={(event) => setSixthPlaceId(event.target.value)}
 <br />
 <label>6th Place Spotimage</label>
 <input
+          className="form-control"
 type="text"
 name="sixthPlaceImage"
 value={sixthPlaceImage}
@@ -1087,6 +1161,7 @@ onChange={(event) => setSixthPlaceImage(event.target.value)}
 <br />
 <label>6th Place Name</label>
 <input
+          className="form-control"
 type="text"
 name="sixthPlaceName"
 value={sixthPlaceName}
@@ -1095,6 +1170,7 @@ onChange={(event) => setSixthPlaceName(event.target.value)}
 <br />
 <label>6th Place Tagline</label>
 <input
+          className="form-control"
 type="text"
 name="sixthPlaceTagline"
 value={sixthPlaceTagline}
@@ -1103,6 +1179,7 @@ onChange={(event) => setSixthPlaceTagline(event.target.value)}
 <br />
 <label>6th Place Description</label>
 <input
+          className="form-control"
 type="text"
 name="sixthPlaceDescription"
 value={sixthPlaceDescription}
@@ -1111,6 +1188,7 @@ onChange={(event) => setSixthPlaceDescription(event.target.value)}
 <br />
 <label>6th Place Price Level</label>
 <input
+          className="form-control"
 type="text"
 name="sixthPlacePriceLevel"
 value={sixthPlacePriceLevel}
@@ -1119,6 +1197,7 @@ onChange={(event) => setSixthPlacePriceLevel(event.target.value)}
 <br />
 <label>6th Place Coffee Rating</label>
 <input
+          className="form-control"
 type="number"
 name="sixthPlaceCoffeeRating"
 value={sixthPlaceCoffeeRating}
@@ -1127,6 +1206,7 @@ onChange={(event) => setSixthPlaceCoffeeRating(Number(event.target.value))}
 <br />
 <label>6th Place Food Rating</label>
 <input
+          className="form-control"
 type="number"
 name="sixthPlaceFoodRating"
 value={sixthPlaceFoodRating}
@@ -1135,6 +1215,7 @@ onChange={(event) => setSixthPlaceFoodRating(Number(event.target.value))}
 <br />
 <label>6th Place Ambience Rating</label>
 <input
+          className="form-control"
 type="number"
 name="sixthPlaceAmbienceRating"
 value={sixthPlaceAmbienceRating}
@@ -1143,6 +1224,7 @@ onChange={(event) => setSixthPlaceAmbienceRating(Number(event.target.value))}
 <br />
 <label>6th Place Consumable Title</label>
 <input
+          className="form-control"
 type="text"
 name="sixthPlaceConsumableTitle"
 value={sixthPlaceConsumableTitle}
@@ -1151,6 +1233,7 @@ onChange={(event) => setSixthPlaceConsumableTitle(event.target.value)}
 <br />
 <label>6th Place Consumable Tagline</label>
 <input
+          className="form-control"
 type="text"
 name="sixthPlaceConsumableTagline"
 value={sixthPlaceConsumableTagline}
@@ -1159,6 +1242,7 @@ onChange={(event) => setSixthPlaceConsumableTagline(event.target.value)}
 <br />
 <label>6th Place Consumable Price</label>
 <input
+          className="form-control"
 type="text"
 name="sixthPlaceConsumablePrice"
 value={sixthPlaceConsumablePrice}
@@ -1167,6 +1251,7 @@ onChange={(event) => setSixthPlaceConsumablePrice(event.target.value)}
 <br />
 <label>6th Place Consumable Rating</label>
 <input
+          className="form-control"
 type="text"
 name="sixthPlaceConsumableRating"
 value={sixthPlaceConsumableRating}
@@ -1175,6 +1260,7 @@ onChange={(event) => setSixthPlaceConsumableRating(event.target.value)}
 <br />
 <label>6th Place Consumable Image</label>
 <input
+          className="form-control"
 type="text"
 name="sixthPlaceConsumableImage"
 value={sixthPlaceConsumableImage}
@@ -1183,9 +1269,10 @@ onChange={(event) => setSixthPlaceConsumableImage(event.target.value)}
 </div>
 
 
-<div>
+<div style={{border: "1px solid black"}}>
   <label>7th Place Id</label>
   <input
+          className="form-control"
     type="text"
     name="seventhPlaceId"
     value={seventhPlaceId}
@@ -1194,6 +1281,7 @@ onChange={(event) => setSixthPlaceConsumableImage(event.target.value)}
   <br />
   <label>7th Place Spotimage</label>
   <input
+          className="form-control"
     type="text"
     name="seventhPlaceImage"
     value={seventhPlaceImage}
@@ -1202,6 +1290,7 @@ onChange={(event) => setSixthPlaceConsumableImage(event.target.value)}
   <br />
   <label>7th Place Name</label>
   <input
+          className="form-control"
     type="text"
     name="seventhPlaceName"
     value={seventhPlaceName}
@@ -1210,6 +1299,7 @@ onChange={(event) => setSixthPlaceConsumableImage(event.target.value)}
   <br />
   <label>7th Place Tagline</label>
   <input
+          className="form-control"
     type="text"
     name="seventhPlaceTagline"
     value={seventhPlaceTagline}
@@ -1218,6 +1308,7 @@ onChange={(event) => setSixthPlaceConsumableImage(event.target.value)}
   <br />
   <label>7th Place Description</label>
   <input
+          className="form-control"
     type="text"
     name="seventhPlaceDescription"
     value={seventhPlaceDescription}
@@ -1226,6 +1317,7 @@ onChange={(event) => setSixthPlaceConsumableImage(event.target.value)}
   <br />
   <label>7th Place Price Level</label>
   <input
+          className="form-control"
     type="text"
     name="seventhPlacePriceLevel"
     value={seventhPlacePriceLevel}
@@ -1234,6 +1326,7 @@ onChange={(event) => setSixthPlaceConsumableImage(event.target.value)}
   <br />
   <label>7th Place Coffee Rating</label>
   <input
+          className="form-control"
     type="number"
     name="seventhPlaceCoffeeRating"
     value={seventhPlaceCoffeeRating}
@@ -1242,6 +1335,7 @@ onChange={(event) => setSixthPlaceConsumableImage(event.target.value)}
   <br />
   <label>7th Place Food Rating</label>
   <input
+          className="form-control"
     type="number"
     name="seventhPlaceFoodRating"
     value={seventhPlaceFoodRating}
@@ -1250,6 +1344,7 @@ onChange={(event) => setSixthPlaceConsumableImage(event.target.value)}
   <br />
   <label>7th Place Ambience Rating</label>
   <input
+          className="form-control"
     type="number"
     name="seventhPlaceAmbienceRating"
     value={seventhPlaceAmbienceRating}
@@ -1258,6 +1353,7 @@ onChange={(event) => setSixthPlaceConsumableImage(event.target.value)}
   <br />
   <label>7th Place Consumable Title</label>
   <input
+          className="form-control"
     type="text"
     name="seventhPlaceConsumableTitle"
     value={seventhPlaceConsumableTitle}
@@ -1266,6 +1362,7 @@ onChange={(event) => setSixthPlaceConsumableImage(event.target.value)}
   <br />
   <label>7th Place Consumable Tagline</label>
   <input
+          className="form-control"
     type="text"
     name="seventhPlaceConsumableTagline"
     value={seventhPlaceConsumableTagline}
@@ -1274,6 +1371,7 @@ onChange={(event) => setSixthPlaceConsumableImage(event.target.value)}
   <br />
   <label>7th Place Consumable Price</label>
   <input
+          className="form-control"
     type="text"
     name="seventhPlaceConsumablePrice"
     value={seventhPlaceConsumablePrice}
@@ -1282,6 +1380,7 @@ onChange={(event) => setSixthPlaceConsumableImage(event.target.value)}
   <br />
   <label>7th Place Consumable Rating</label>
 <input
+          className="form-control"
 type="text"
 name="seventhPlaceConsumableRating"
 value={seventhPlaceConsumableRating}
@@ -1290,6 +1389,7 @@ onChange={(event) => setSeventhPlaceConsumableRating(event.target.value)}
 <br />
 <label>7th Place Consumable Image</label>
 <input
+          className="form-control"
 type="text"
 name="seventhPlaceConsumableImage"
 value={seventhPlaceConsumableImage}
@@ -1298,9 +1398,10 @@ onChange={(event) => setSeventhPlaceConsumableImage(event.target.value)}
 
 </div>
 
-<div>
+<div style={{border: "1px solid black"}}>
   <label>8th Place Id</label>
   <input
+          className="form-control"
     type="text"
     name="eigthPlaceId"
     value={eigthPlaceId}
@@ -1309,6 +1410,7 @@ onChange={(event) => setSeventhPlaceConsumableImage(event.target.value)}
   <br />
   <label>8th Place Spotimage</label>
   <input
+          className="form-control"
     type="text"
     name="eigthPlaceImage"
     value={eigthPlaceImage}
@@ -1317,6 +1419,7 @@ onChange={(event) => setSeventhPlaceConsumableImage(event.target.value)}
   <br />
   <label>8th Place Name</label>
   <input
+          className="form-control"
     type="text"
     name="eigthPlaceName"
     value={eigthPlaceName}
@@ -1325,6 +1428,7 @@ onChange={(event) => setSeventhPlaceConsumableImage(event.target.value)}
   <br />
   <label>8th Place Tagline</label>
   <input
+          className="form-control"
     type="text"
     name="eigthPlaceTagline"
     value={eigthPlaceTagline}
@@ -1333,6 +1437,7 @@ onChange={(event) => setSeventhPlaceConsumableImage(event.target.value)}
   <br />
   <label>8th Place Description</label>
   <input
+          className="form-control"
     type="text"
     name="eigthPlaceDescription"
     value={eigthPlaceDescription}
@@ -1341,6 +1446,7 @@ onChange={(event) => setSeventhPlaceConsumableImage(event.target.value)}
   <br />
   <label>8th Place Price Level</label>
   <input
+          className="form-control"
     type="text"
     name="eigthPlacePriceLevel"
     value={eigthPlacePriceLevel}
@@ -1349,6 +1455,7 @@ onChange={(event) => setSeventhPlaceConsumableImage(event.target.value)}
   <br />
   <label>8th Place Coffee Rating</label>
   <input
+          className="form-control"
     type="number"
     name="eigthPlaceCoffeeRating"
     value={eigthPlaceCoffeeRating}
@@ -1357,6 +1464,7 @@ onChange={(event) => setSeventhPlaceConsumableImage(event.target.value)}
   <br />
   <label>8th Place Food Rating</label>
   <input
+          className="form-control"
     type="number"
     name="eigthPlaceFoodRating"
     value={eigthPlaceFoodRating}
@@ -1365,6 +1473,7 @@ onChange={(event) => setSeventhPlaceConsumableImage(event.target.value)}
   <br />
   <label>8th Place Ambience Rating</label>
   <input
+          className="form-control"
     type="number"
     name="eigthPlaceAmbienceRating"
     value={eigthPlaceAmbienceRating}
@@ -1373,6 +1482,7 @@ onChange={(event) => setSeventhPlaceConsumableImage(event.target.value)}
   <br />
   <label>8th Place Consumable Title</label>
   <input
+          className="form-control"
     type="text"
     name="eigthPlaceConsumableTitle"
     value={eigthPlaceConsumableTitle}
@@ -1381,6 +1491,7 @@ onChange={(event) => setSeventhPlaceConsumableImage(event.target.value)}
   <br />
   <label>8th Place Consumable Tagline</label>
   <input
+          className="form-control"
     type="text"
     name="eigthPlaceConsumableTagline"
     value={eigthPlaceConsumableTagline}
@@ -1389,6 +1500,7 @@ onChange={(event) => setSeventhPlaceConsumableImage(event.target.value)}
   <br />
   <label>8th Place Consumable Price</label>
   <input
+          className="form-control"
     type="text"
     name="eigthPlaceConsumablePrice"
     value={eigthPlaceConsumablePrice}
@@ -1397,6 +1509,7 @@ onChange={(event) => setSeventhPlaceConsumableImage(event.target.value)}
   <br />
   <label>8th Place Consumable Rating</label>
 <input
+          className="form-control"
 type="text"
 name="eigthPlaceConsumableRating"
 value={eigthPlaceConsumableRating}
@@ -1405,6 +1518,7 @@ onChange={(event) => setEigthPlaceConsumableRating(event.target.value)}
 <br />
 <label>8th Place Consumable Image</label>
 <input
+          className="form-control"
 type="text"
 name="eigthPlaceConsumableImage"
 value={eigthPlaceConsumableImage}
@@ -1413,9 +1527,10 @@ onChange={(event) => setEigthPlaceConsumableImage(event.target.value)}
 
 </div>
 
-<div>
+<div style={{border: "1px solid black"}}>
   <label>9th Place Id</label>
   <input
+          className="form-control"
     type="text"
     name="ninthPlaceId"
     value={ninthPlaceId}
@@ -1424,6 +1539,7 @@ onChange={(event) => setEigthPlaceConsumableImage(event.target.value)}
   <br />
   <label>9th Place Spotimage</label>
   <input
+          className="form-control"
     type="text"
     name="ninthPlaceImage"
     value={ninthPlaceImage}
@@ -1432,6 +1548,7 @@ onChange={(event) => setEigthPlaceConsumableImage(event.target.value)}
   <br />
   <label>9th Place Name</label>
   <input
+          className="form-control"
     type="text"
     name="ninthPlaceName"
     value={ninthPlaceName}
@@ -1440,6 +1557,7 @@ onChange={(event) => setEigthPlaceConsumableImage(event.target.value)}
   <br />
   <label>9th Place Tagline</label>
   <input
+          className="form-control"
     type="text"
     name="ninthPlaceTagline"
     value={ninthPlaceTagline}
@@ -1448,6 +1566,7 @@ onChange={(event) => setEigthPlaceConsumableImage(event.target.value)}
   <br />
   <label>9th Place Description</label>
   <input
+          className="form-control"
     type="text"
     name="ninthPlaceDescription"
     value={ninthPlaceDescription}
@@ -1456,6 +1575,7 @@ onChange={(event) => setEigthPlaceConsumableImage(event.target.value)}
   <br />
   <label>9th Place Price Level</label>
   <input
+          className="form-control"
     type="text"
     name="ninthPlacePriceLevel"
     value={ninthPlacePriceLevel}
@@ -1464,6 +1584,7 @@ onChange={(event) => setEigthPlaceConsumableImage(event.target.value)}
   <br />
   <label>9th Place Coffee Rating</label>
   <input
+          className="form-control"
     type="number"
     name="ninthPlaceCoffeeRating"
     value={ninthPlaceCoffeeRating}
@@ -1472,6 +1593,7 @@ onChange={(event) => setEigthPlaceConsumableImage(event.target.value)}
   <br />
   <label>9th Place Food Rating</label>
   <input
+          className="form-control"
     type="number"
     name="ninthPlaceFoodRating"
     value={ninthPlaceFoodRating}
@@ -1480,6 +1602,7 @@ onChange={(event) => setEigthPlaceConsumableImage(event.target.value)}
   <br />
   <label>9th Place Ambience Rating</label>
   <input
+          className="form-control"
     type="number"
     name="ninthPlaceAmbienceRating"
     value={ninthPlaceAmbienceRating}
@@ -1488,6 +1611,7 @@ onChange={(event) => setEigthPlaceConsumableImage(event.target.value)}
   <br />
   <label>9th Place Consumable Title</label>
   <input
+          className="form-control"
     type="text"
     name="ninthPlaceConsumableTitle"
     value={ninthPlaceConsumableTitle}
@@ -1496,6 +1620,7 @@ onChange={(event) => setEigthPlaceConsumableImage(event.target.value)}
   <br />
   <label>9th Place Consumable Tagline</label>
   <input
+          className="form-control"
     type="text"
     name="ninthPlaceConsumableTagline"
     value={ninthPlaceConsumableTagline}
@@ -1504,6 +1629,7 @@ onChange={(event) => setEigthPlaceConsumableImage(event.target.value)}
   <br />
   <label>9th Place Consumable Price</label>
   <input
+          className="form-control"
     type="text"
     name="ninthPlaceConsumablePrice"
     value={ninthPlaceConsumablePrice}
@@ -1512,6 +1638,7 @@ onChange={(event) => setEigthPlaceConsumableImage(event.target.value)}
   <br />
   <label>9th Place Consumable Rating</label>
 <input
+          className="form-control"
 type="text"
 name="ninthPlaceConsumableRating"
 value={ninthPlaceConsumableRating}
@@ -1520,6 +1647,7 @@ onChange={(event) => setNinthPlaceConsumableRating(event.target.value)}
 <br />
 <label>9th Place Consumable Image</label>
 <input
+          className="form-control"
 type="text"
 name="ninthPlaceConsumableImage"
 value={ninthPlaceConsumableImage}
@@ -1528,9 +1656,10 @@ onChange={(event) => setNinthPlaceConsumableImage(event.target.value)}
 
 </div>
 
-<div>
+<div style={{border: "1px solid black"}}>
   <label>10th Place Id</label>
   <input
+          className="form-control"
     type="text"
     name="tenthPlaceId"
     value={tenthPlaceId}
@@ -1539,6 +1668,7 @@ onChange={(event) => setNinthPlaceConsumableImage(event.target.value)}
   <br />
   <label>10th Place Spotimage</label>
   <input
+          className="form-control"
     type="text"
     name="tenthPlaceImage"
     value={tenthPlaceImage}
@@ -1547,6 +1677,7 @@ onChange={(event) => setNinthPlaceConsumableImage(event.target.value)}
   <br />
   <label>10th Place Name</label>
   <input
+          className="form-control"
     type="text"
     name="tenthPlaceName"
     value={tenthPlaceName}
@@ -1555,6 +1686,7 @@ onChange={(event) => setNinthPlaceConsumableImage(event.target.value)}
   <br />
   <label>10th Place Tagline</label>
   <input
+          className="form-control"
     type="text"
     name="tenthPlaceTagline"
     value={tenthPlaceTagline}
@@ -1563,6 +1695,7 @@ onChange={(event) => setNinthPlaceConsumableImage(event.target.value)}
   <br />
   <label>10th Place Description</label>
   <input
+          className="form-control"
     type="text"
     name="tenthPlaceDescription"
     value={tenthPlaceDescription}
@@ -1571,6 +1704,7 @@ onChange={(event) => setNinthPlaceConsumableImage(event.target.value)}
   <br />
   <label>10th Place Price Level</label>
   <input
+          className="form-control"
     type="text"
     name="tenthPlacePriceLevel"
     value={tenthPlacePriceLevel}
@@ -1579,6 +1713,7 @@ onChange={(event) => setNinthPlaceConsumableImage(event.target.value)}
   <br />
   <label>10th Place Coffee Rating</label>
   <input
+          className="form-control"
     type="number"
     name="tenthPlaceCoffeeRating"
     value={tenthPlaceCoffeeRating}
@@ -1587,6 +1722,7 @@ onChange={(event) => setNinthPlaceConsumableImage(event.target.value)}
   <br />
   <label>10th Place Food Rating</label>
   <input
+          className="form-control"
     type="number"
     name="tenthPlaceFoodRating"
     value={tenthPlaceFoodRating}
@@ -1595,6 +1731,7 @@ onChange={(event) => setNinthPlaceConsumableImage(event.target.value)}
   <br />
   <label>10th Place Ambience Rating</label>
   <input
+          className="form-control"
     type="number"
     name="tenthPlaceAmbienceRating"
     value={tenthPlaceAmbienceRating}
@@ -1603,6 +1740,7 @@ onChange={(event) => setNinthPlaceConsumableImage(event.target.value)}
   <br />
   <label>10th Place Consumable Title</label>
   <input
+          className="form-control"
     type="text"
     name="tenthPlaceConsumableTitle"
     value={tenthPlaceConsumableTitle}
@@ -1611,6 +1749,7 @@ onChange={(event) => setNinthPlaceConsumableImage(event.target.value)}
   <br />
   <label>10th Place Consumable Tagline</label>
   <input
+          className="form-control"
     type="text"
     name="tenthPlaceConsumableTagline"
     value={tenthPlaceConsumableTagline}
@@ -1619,6 +1758,7 @@ onChange={(event) => setNinthPlaceConsumableImage(event.target.value)}
   <br />
   <label>10th Place Consumable Price</label>
   <input
+          className="form-control"
     type="text"
     name="tenthPlaceConsumablePrice"
     value={tenthPlaceConsumablePrice}
@@ -1627,6 +1767,7 @@ onChange={(event) => setNinthPlaceConsumableImage(event.target.value)}
   <br />
   <label>10th Place Consumable Rating</label>
 <input
+          className="form-control"
 type="text"
 name="tenthPlaceConsumableRating"
 value={tenthPlaceConsumableRating}
@@ -1635,6 +1776,7 @@ onChange={(event) => setTenthPlaceConsumableRating(event.target.value)}
 <br />
 <label>10th Place Consumable Image</label>
 <input
+          className="form-control"
 type="text"
 name="tenthPlaceConsumableImage"
 value={tenthPlaceConsumableImage}
