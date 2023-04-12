@@ -183,6 +183,8 @@ function AddSpot() {
       <div>
         <h3>Add new Spot</h3>
         <form onSubmit={handleSubmit}>
+        <div style={{display: "flex", justifyContent: "space-evenly"}}>
+        <div>
           <label>Type of Spot</label>
           <input
             type="text"
@@ -192,110 +194,7 @@ function AddSpot() {
             onChange={(event) => setType(event.target.value)}
           />
           <br />
-          <label>Type of Meal 1</label>
-          <input
-            type="text"
-            name="meal1"
-            value={meal1}
-            onChange={(event) => setMeal1(event.target.value)}
-          />
-          <br />
-          <label>Type of Meal 2</label>
-          <input
-            type="text"
-            name="meal2"
-            value={meal2}
-            onChange={(event) => setMeal2(event.target.value)}
-          />
-          <br />
-          <label>Type of Meal 3</label>
-          <input
-            type="text"
-            name="meal3"
-            value={meal3}
-            onChange={(event) => setMeal3(event.target.value)}
-          />
-          <br />
-          <br />
-          <label>Type of Meal 4</label>
-          <input
-            type="text"
-            name="meal4"
-            value={meal4}
-            onChange={(event) => setMeal4(event.target.value)}
-          />
-          <br />
-          <label>Type of Meal 5</label>
-          <input
-            type="text"
-            name="meal5"
-            value={meal5}
-            onChange={(event) => setMeal5(event.target.value)}
-          />
-          <br />
-          <label>Type of Meal 6</label>
-          <input
-            type="text"
-            name="meal6"
-            value={meal6}
-            onChange={(event) => setMeal6(event.target.value)}
-          />
-
-
-<br />
-          <label>Type of cuisine 1</label>
-          <input
-            type="text"
-            name="cuisine1"
-            value={cuisine1}
-            onChange={(event) => setCuisine1(event.target.value)}
-          />
-          <br />
-          <label>Type of cuisine 2</label>
-          <input
-            type="text"
-            name="cuisine2"
-            value={cuisine2}
-            onChange={(event) => setCuisine2(event.target.value)}
-          />
-          <br />
-          <label>Type of cuisine 3</label>
-          <input
-            type="text"
-            name="cuisine3"
-            value={cuisine3}
-            onChange={(event) => setCuisine3(event.target.value)}
-          />
-          <br />
-          <br />
-          <label>Type of cuisine 4</label>
-          <input
-            type="text"
-            name="cuisine4"
-            value={cuisine4}
-            onChange={(event) => setCuisine4(event.target.value)}
-          />
-          <br />
-          <label>Type of cuisine 5</label>
-          <input
-            type="text"
-            name="cuisine5"
-            value={cuisine5}
-            onChange={(event) => setCuisine5(event.target.value)}
-          />
-          <br />
-          <label>Type of cuisine 6</label>
-          <input
-            type="text"
-            name="cuisine6"
-            value={cuisine6}
-            onChange={(event) => setCuisine6(event.target.value)}
-          />
-
-
-
-          <br />
-          <label>Name of Spot</label>
+          <label style={{fontFamily: "Teko"}}>Name of Spot</label>
           <input
             type="text"
             name="name"
@@ -304,7 +203,7 @@ function AddSpot() {
             onChange={(event) => setName(event.target.value)}
           />
           <br />
-          <label>Tagline</label>
+          <label style={{fontFamily: "Teko"}}>Tagline</label>
           <input
             type="text"
             name="tagline"
@@ -312,32 +211,8 @@ function AddSpot() {
             required
             onChange={(event) => setTagline(event.target.value)}
           />
-          <br />
-          <label>Maps Location</label>
-          <input
-            type="text"
-            name="location"
-            value={location}
-            onChange={(event) => setLocation(event.target.value)}
-          />
-          <br />
-          <label>Opening Times</label>
-          <input
-            type="text"
-            name="openingTimes"
-            value={openingTimes}
-            onChange={(event) => setOpeningTimes(event.target.value)}
-          />
-          <br />
-          <button id="upload_widget1" className="cloudinary-button">
-            Upload Spot Image
-          </button>
-          <br />
-          <button id="upload_widget2" className="cloudinary-button">
-            Upload Menu image
-          </button>
-          <br />
-          <label>priceLevel</label>
+                    <br />
+          <label style={{fontFamily: "Teko"}}>priceLevel</label>
           <input
             type="text"
             name="priceLevel"
@@ -346,15 +221,7 @@ function AddSpot() {
             onChange={(event) => setPriceLevel(event.target.value)}
           />
           <br />
-          <label>description</label>
-          <input
-            type="text"
-            name="description"
-            value={description}
-            onChange={(event) => setDescription(event.target.value)}
-          />
-          <br />
-          <label>Overall Ratign</label>
+          <label style={{fontFamily: "Teko"}}>Overall Ratign</label>
           <input
             type="number"
             name="overallRating"
@@ -362,7 +229,7 @@ function AddSpot() {
             onChange={(event) => setOverallRating(Number(event.target.value))}
           />
           <br />
-          <label>Coffee Rating</label>
+          <label style={{fontFamily: "Teko"}}>Coffee Rating</label>
           <input
             type="number"
             name="coffeeRating"
@@ -370,7 +237,7 @@ function AddSpot() {
             onChange={(event) => setCoffeeRating(Number(event.target.value))}
           />
           <br />
-          <label>Drink Rating</label>
+          <label style={{fontFamily: "Teko"}}>Drink Rating</label>
           <input
             type="number"
             name="drinkRating"
@@ -378,7 +245,7 @@ function AddSpot() {
             onChange={(event) => setDrinkRating(Number(event.target.value))}
           />
           <br />
-          <label>Food Rating</label>
+          <label style={{fontFamily: "Teko"}}>Food Rating</label>
           <input
             type="number"
             name="foodRating"
@@ -386,15 +253,143 @@ function AddSpot() {
             onChange={(event) => setFoodRating(Number(event.target.value))}
           />
           <br />
-          <label>Ambience Rating</label>
+          <label style={{fontFamily: "Teko"}}>Ambience Rating</label>
           <input
             type="number"
             name="ambienceRating"
             value={ambienceRating}
             onChange={(event) => setAmbienceRating(Number(event.target.value))}
           />
+          </div>
+
+          <div>
           <br />
-          <label>Is it vegan friendly?</label>
+          <label style={{fontFamily: "Teko"}}>Type of Meal 1</label>
+          <input
+            type="text"
+            name="meal1"
+            value={meal1}
+            onChange={(event) => setMeal1(event.target.value)}
+          />
+          <br />
+          <label style={{fontFamily: "Teko"}}>Type of Meal 2</label>
+          <input
+            type="text"
+            name="meal2"
+            value={meal2}
+            onChange={(event) => setMeal2(event.target.value)}
+          />
+          <br />
+          <label style={{fontFamily: "Teko"}}>Type of Meal 3</label>
+          <input
+            type="text"
+            name="meal3"
+            value={meal3}
+            onChange={(event) => setMeal3(event.target.value)}
+          />
+
+          <br />
+          <label style={{fontFamily: "Teko"}}>Type of Meal 4</label>
+          <input
+            type="text"
+            name="meal4"
+            value={meal4}
+            onChange={(event) => setMeal4(event.target.value)}
+          />
+          {/* <br />
+          <label style={{fontFamily: "Teko"}}>Type of Meal 5</label>
+          <input
+            type="text"
+            name="meal5"
+            value={meal5}
+            onChange={(event) => setMeal5(event.target.value)}
+          />
+          <br />
+          <label style={{fontFamily: "Teko"}}>Type of Meal 6</label>
+          <input
+            type="text"
+            name="meal6"
+            value={meal6}
+            onChange={(event) => setMeal6(event.target.value)}
+          /> */}
+
+
+<br />
+          <label style={{fontFamily: "Teko"}}>Type of cuisine 1</label>
+          <input
+            type="text"
+            name="cuisine1"
+            value={cuisine1}
+            onChange={(event) => setCuisine1(event.target.value)}
+          />
+          <br />
+          <label style={{fontFamily: "Teko"}}>Type of cuisine 2</label>
+          <input
+            type="text"
+            name="cuisine2"
+            value={cuisine2}
+            onChange={(event) => setCuisine2(event.target.value)}
+          />
+          <br />
+          <label style={{fontFamily: "Teko"}}>Type of cuisine 3</label>
+          <input
+            type="text"
+            name="cuisine3"
+            value={cuisine3}
+            onChange={(event) => setCuisine3(event.target.value)}
+          />
+          <br />
+
+          <label style={{fontFamily: "Teko"}}>Type of cuisine 4</label>
+          <input
+            type="text"
+            name="cuisine4"
+            value={cuisine4}
+            onChange={(event) => setCuisine4(event.target.value)}
+          />
+          {/* <br />
+          <label style={{fontFamily: "Teko"}}>Type of cuisine 5</label>
+          <input
+            type="text"
+            name="cuisine5"
+            value={cuisine5}
+            onChange={(event) => setCuisine5(event.target.value)}
+          />
+          <br />
+          <label style={{fontFamily: "Teko"}}>Type of cuisine 6</label>
+          <input
+            type="text"
+            name="cuisine6"
+            value={cuisine6}
+            onChange={(event) => setCuisine6(event.target.value)}
+          /> */}
+
+</div>
+<div>
+          
+          {/* <br />
+          <label style={{fontFamily: "Teko"}}>Maps Location</label>
+          <input
+            type="text"
+            name="location"
+            value={location}
+            onChange={(event) => setLocation(event.target.value)}
+          />
+          <br />
+          <label style={{fontFamily: "Teko"}}>Opening Times</label>
+          <input
+            type="text"
+            name="openingTimes"
+            value={openingTimes}
+            onChange={(event) => setOpeningTimes(event.target.value)}
+          /> */}
+ 
+
+          <br />
+
+          
+    
+          <label style={{fontFamily: "Teko"}}>Is it vegan friendly?</label>
           <input
             type="checkbox"
             name="veganFriendly"
@@ -402,7 +397,7 @@ function AddSpot() {
             onChange={(event) => setVeganFriendly(event.target.checked)}
           />
           <br />
-          <label>Does it have a pool?</label>
+          <label style={{fontFamily: "Teko"}}>Does it have a pool?</label>
           <input
             type="checkbox"
             name="hasPool"
@@ -410,7 +405,7 @@ function AddSpot() {
             onChange={(event) => setHasPool(event.target.checked)}
           />
           <br />
-          <label>Is it Coworking friendly?</label>
+          <label style={{fontFamily: "Teko"}}>Is it Coworking friendly?</label>
           <input
             type="checkbox"
             name="coWorkingFriendly"
@@ -418,7 +413,7 @@ function AddSpot() {
             onChange={(event) => setCoWorkingFriendly(event.target.checked)}
           />
           <br />
-          <label>Is it suited for Dates?</label>
+          <label style={{fontFamily: "Teko"}}>Is it suited for Dates?</label>
           <input
             type="checkbox"
             name="dateFriendly"
@@ -426,7 +421,7 @@ function AddSpot() {
             onChange={(event) => setDateFriendly(event.target.checked)}
           />
           <br />
-          <label>Does it have outside Seating?</label>
+          <label style={{fontFamily: "Teko"}}>Does it have outside Seating?</label>
           <input
             type="checkbox"
             name="outsideSeating"
@@ -434,7 +429,7 @@ function AddSpot() {
             onChange={(event) => setOutsideSeating(event.target.checked)}
           />
           <br />
-          <label>How fast is the Wifi?</label>
+          <label style={{fontFamily: "Teko"}}>How fast is the Wifi?</label>
           <input
             type="number"
             name="wifiSpeed"
@@ -442,7 +437,7 @@ function AddSpot() {
             onChange={(event) => setWifiSpeed(Number(event.target.value))}
           />
           <br />
-          <label>Are sockets available?</label>
+          <label style={{fontFamily: "Teko"}}>Are sockets available?</label>
           <input
             type="checkbox"
             name="hasSockets"
@@ -451,7 +446,7 @@ function AddSpot() {
           />
           <br />
 
-          <label>Is it locally owned?</label>
+          <label style={{fontFamily: "Teko"}}>Is it locally owned?</label>
           <input
             type="checkbox"
             name="locallyOwned"
@@ -459,7 +454,25 @@ function AddSpot() {
             onChange={(event) => setLocallyOwned(event.target.checked)}
           />
           <br />
-
+          <button id="upload_widget1" className="cloudinary-button">
+            Upload Spot Image
+          </button>
+          <br />
+          <button style={{marginTop:"10px"}} id="upload_widget2" className="cloudinary-button">
+            Upload Menu image
+          </button>
+</div>
+</div>
+          <label style={{fontFamily: "Teko"}}>description</label>
+          <textarea
+            type="text"
+            rows="10"
+            cols="100"
+            name="description"
+            value={description}
+            onChange={(event) => setDescription(event.target.value)}
+          />
+          <br></br>
           <button type="submit" className="btn btn-success">Add new Spot</button>
         </form>
       </div>
