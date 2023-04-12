@@ -19,6 +19,7 @@ import AlternativeNavbar from "./components/AlternativeNavbar";
 import ToplistList from "./pages/ToplistList";
 import AddToplist from "./pages/AddToplist";
 import TopListDetailsPage from "./pages/ToplistDetailsPage";
+import EditToplist from "./pages/EditToplist";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
 
         <Route path="/toplists" element={<ToplistList />} />
         <Route path="/toplists/:toplistId" element={<TopListDetailsPage />} />
+        <Route path="/toplists/:toplistId/edit" element={<IsPrivate> <EditToplist /> </IsPrivate>} />
         <Route path="/toplists/create" element={ <IsPrivate> <AddToplist /> </IsPrivate>} />
 
         {/* <Route path="/events" element={<EventList />} /> */}
