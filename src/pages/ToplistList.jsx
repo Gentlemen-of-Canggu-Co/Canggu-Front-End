@@ -26,8 +26,8 @@ function ToplistList() {
             <h1 style={{fontFamily: "Teko", fontSize: "50px", paddingLeft: "5vw", paddingRight: "5vw", marginTop: "10px", marginBottom: "0"}}>The Canggu Toplists</h1>
             <Typography
         component={"div"}
-        sx={{ fontFamily: "Teko", fontSize: "25px", textJustify: "justify" }}
-        style={{textAlign: "justify", paddingLeft: "5vw", paddingRight: "5vw"}}
+        sx={{ fontFamily: "Teko", fontSize: "25px" }}
+        style={{ paddingLeft: "5vw", paddingRight: "5vw", display: "flex", justifyContent:"center"}}
       >
         Find your next Café or restaurant by browsing through these carefully hand-picked selections of amazing spots.
       </Typography>            <ToplistCard toplists={toplists} />
