@@ -23,7 +23,7 @@ function AlternativeNavbar (){
             <img
               alt="Chunks of Canggu Logo"
               src={brandLogo}
-              height= "50vh"
+              height= "40vh"
               className="d-inline-block align-top"
             />{' '}
           </Navbar.Brand>
@@ -31,8 +31,8 @@ function AlternativeNavbar (){
           <Nav.Link style={{ color: "white"}} href="/toplists">Toplists</Nav.Link>
           <Nav.Link style={{marginRight: "5vw", color: "white"}} href="https://www.instagram.com/chunksofcanggu/"><img
               alt="Chunks of Canggu Logo"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Instagram.svg/1200px-Instagram.svg.png"
-              height= "50vh"
+              src="https://res.cloudinary.com/dki0gzjzg/image/upload/v1681357838/1200px-Instagram.svg_ujdsiw.png"
+              height= "40vh"
               className="d-inline-block align-top"
             />{' '}</Nav.Link>
 
